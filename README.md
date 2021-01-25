@@ -5,9 +5,10 @@ Notes taken in LaTeX in real time during lectures. The repository is organized a
 * **`snippets.cson`**: file with several snippets in Coffee Script Object Notation, for atom editor environment, useful to maximize the efficiency when writing notes.
 
 <br>
+
 Links to the complete notes:
-* **[Digital Signal Processing](https://github.com/RoccoA97/LaTeX_notes/blob/main/Digital_Signal_Processing/main/main.pdf)**;
-* **[Subnuclear Physics](https://github.com/RoccoA97/LaTeX_notes/blob/main/Subnuclear_Physics/main/main.pdf)**.
+* [**Digital Signal Processing**](https://github.com/RoccoA97/LaTeX_notes/blob/main/Digital_Signal_Processing/main/main.pdf);
+* [**Subnuclear Physics**](https://github.com/RoccoA97/LaTeX_notes/blob/main/Subnuclear_Physics/main/main.pdf).
 
 
 
