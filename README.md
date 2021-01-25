@@ -4,6 +4,11 @@ Notes taken in LaTeX in real time during lectures. The repository is organized a
 * **`Subnuclear_Physics`**: folder with lectures notes of the Master degree course "Subnuclear Physics", held by professor Donatella Lucchesi at the University of Padua (Academic Year 2019/2020);
 * **`snippets.cson`**: file with several snippets in Coffee Script Object Notation, for atom editor environment, useful to maximize the efficiency when writing notes.
 
+<br>
+Links to the complete notes:
+* [**Digital Signal Processing**](#https://github.com/RoccoA97/LaTeX_notes/blob/main/Digital_Signal_Processing/main/main.pdf);
+* [**Subnuclear Physics**](#https://github.com/RoccoA97/LaTeX_notes/blob/main/Subnuclear_Physics/main/main.pdf).
+
 
 
 
