@@ -20,20 +20,20 @@ Lectures notes of the Master degree course "Subnuclear Physics", held by profess
 
 ### Topics of the course
 The topics treated during the course are:
-* introduction and recap;
-* detectors for particle physics experiments;
-* cross section of electron-positron scattering to muon-antimuon or to hadrons;
-* strong interactions, in particular:
+* **introduction and recap**;
+* **detectors for particle physics experiments**;
+* **cross section of electron-positron scattering to muon-antimuon or to hadrons**;
+* **strong interactions**, in particular:
     * deep inelastic scattering;
     * the gluons;
     * QCD theory;
     * partons and jets;
-* electroweak interactions, in particular:
+* **electroweak interactions**, in particular:
     * V-A weak theory;
     * gauge theory and symmetry breaking;
     * Cabibbo theory and CKM;
     * CP violation, the B meson system;
-* new physics, in particular:
+* **new physics**, in particular:
     * neutrino and physics beyond Standard Model;
     * Higgs physics and properties.
 
@@ -53,9 +53,9 @@ Lectures notes of the Master degree course "Digital Signal Processing", held by 
 
 ### Topics of the course
 The topics treated during the course are:
-* introduction and motivations of the field of Digital Signal Processing;
-* discrete-time signals;
-* discrete-time systems;
-* Fourier analysis, with particular attention to the discete Fourier transform;
-* z-transform;
-* concepts and techniques for filter design.
+* **introduction and motivations** of the field of Digital Signal Processing;
+* **discrete-time signals**;
+* **discrete-time systems**;
+* **Fourier analysis**, with particular attention to the discete Fourier transform;
+* **z-transform**;
+* **concepts and techniques for filter design**.
