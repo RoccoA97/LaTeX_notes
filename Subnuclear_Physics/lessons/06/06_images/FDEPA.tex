@@ -1,0 +1,17 @@
+% https://tex.stackexchange.com/questions/367315/tikz-feynman-too-big-vertex-label
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage{siunitx}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\begin{document}
+\feynmandiagram[scale=1.8][horizontal=a to b] {
+    i1 [particle=\(e^-\)]
+    -- [fermion, arrow size=0.8pt, momentum'={[arrow style=red, arrow shorten=0.3]\(p_-\)}] a [label=\({\mu}\)]
+    -- [fermion, arrow size=0.8pt, rmomentum'={[arrow style=red, arrow shorten=0.3]\(p_+\)}]
+    i2 [particle=\(e^+\)],
+    a -- [photon, edge label=\(\gamma\), momentum'={[arrow style=blue, arrow shorten=0.3]\(q\)}]
+    b [label=\(\nu\)],
+    f1 [particle=\(\mu^+\)]
+    -- [fermion, arrow size=0.8pt, rmomentum'={[arrow style=red, arrow shorten=0.3]\(p_+'\)}] b
+    -- [fermion, arrow size=0.8pt, momentum'={[arrow style=red, arrow shorten=0.3]\(p_-'\)}] f2 [particle=\(\mu^-\)],
+};
+\end{document}

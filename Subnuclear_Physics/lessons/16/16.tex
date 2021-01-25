@@ -1,0 +1,165 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{05}{05}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 16.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\subsection{Measurements of \( Z^{0} \) mass}
+%https://home.cern/science/accelerators/large-electron-positron-collider
+One of the most successful measurement of the \( Z^0 \) boson mass was performed at LEP (Large Electron-Positron) collider. It was built at CERN and its structure is showed in Figure \ref{fig:L16_LEPC}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{16}/16_images/LEPC.png}
+	\caption{\label{fig:L16_LEPC} Map of LEP collider.}
+\end{figure}
+
+The tunnel is 27 kilometers long and it has four interaction points: ALEPH, OPAL, DELPHI and L3. When the LEP collider started operation in August 1989 it accelerated the electrons and positrons to a total energy of \( 45 \ \si{GeV} \) each to enable production of the \( Z \) boson, which has a mass of \( 91 \ \si{GeV} \). The accelerator was upgraded later to enable production of a pair of \( W \) bosons, each having a mass of \( 80 \ \si{GeV} \). LEP collider energy eventually topped at \( 209 \ \si{GeV} \) at the end in 2000. At a Lorentz factor of over 200,000 (given by the particle energy divided by rest mass, so \( 104.5 \ \si{GeV} / 0.511 \ \si{MeV} \)), LEP still holds the particle accelerator speed record, extremely close to the limiting speed of light. At the end of 2000, LEP was shut down and then dismantled in order to make room in the tunnel for the construction of the Large Hadron Collider (LHC).
+
+LEP was fed with electrons and positrons delivered by CERN's accelerator complex. The particles were generated and initially accelerated by the LEP Pre-Injector, and further accelerated to nearly the speed of light by the Proton Synchrotron and the Super Proton Synchrotron. From there, they were injected into the LEP ring.
+As in all ring colliders, the LEP's ring consisted of many magnets which forced the charged particles into a circular trajectory (so that they stay inside the ring), RF accelerators which accelerated the particles with radio frequency waves, and quadrupoles that focussed the particle beam (i.e. keep the particles together). The function of the accelerators was to increase the particles' energies so that heavy particles can be created when the particles collide. When the particles were accelerated to maximum energy (and focused to bunches), an electron and a positron bunch were made to collide with each other at one of the collision points of the detector. When an electron and a positron collide, they annihilate to a virtual particle, either a photon or a \( Z \) boson. The virtual particle almost immediately decays into other elementary particles (fermion and antifermion), which are then detected by the four huge particle detectors.
+
+Let's see now one of the most important measurements done by LEP: the \( Z^0 \) line shape. The method employed consists in scanning the \( e^+e^- \) cross section in steps of energy. This can be achieved by preparing \( e^- \) and \( e^+ \) at a precise energy such that the energy in the center of  mass \( \sqrt{s} \) is equal to the value of the step under study. By doing sevaral experiments in which the energy is increased, we get the cross section dependence on \( \sqrt{s} \). What can be observed in its plot is a resonance at around \( 91 \ \si{GeV} \), modeled by a Breit-Wigner:
+\begin{equation}
+	\sigma
+	\sim
+	\abs{\frac{1}{s - m^2_Z + i m_Z \Gamma_Z}}
+	\label{eq:}
+\end{equation}
+where \( \Gamma_Z \) is the width of the shape. The energy resolution of LEP \( \Delta E_{\mathrm{LEP}} \) is much smaller that \( \Gamma_Z \), for this reason the Breit-Wigner shape is clearly visible in experimental data. The result is showed in Figure \ref{fig:L16_LEPZLS}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{16}/16_images/LEPZLS.png}
+	\caption{\label{fig:L16_LEPZLS} Cross section dependence on \( \sqrt{s} \) and resonance.}
+\end{figure}
+
+Before extracting from the fit the width \( \Gamma_Z \), we have to be sure that the cross section prediction (i.e. the fit model) should take into account radiative corrections (photons attached to the external legs of \( e^- \) and \( e^+ \) in the Feynman diagrams). The Initial State Radiation (ISR) causes a reduction in the height of the peak in the cross section for \( \sqrt{s} \le 91 \ \si{GeV} \). For \( \sqrt{s} > 91 \ \si{GeV} \), ISR increases the height of the peak.
+
+The experimental results of LEP and other experiments for \( Z^0 \) mass measurement are given in Figure \ref{fig:L16_Z0MER}. The most precise measurement up to now is:
+\begin{equation}
+	M_Z
+	=
+	91.1876 \pm 0.0021 \ \si{GeV}
+	\label{eq:}
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{16}/16_images/Z0MER.png}
+	\caption{\label{fig:L16_Z0MER} Experimental data on \( e^+e^- \rightarrow \text{hadrons} \) cross section from several experiments.}
+\end{figure}
+
+The second thing that we can measure is the number of neutrino families. The width of the \( Z \) has several contributions:
+\begin{equation}
+	\Gamma_Z
+	=
+	\Gamma_{ee} + \Gamma_{\mu\mu} + \Gamma_{\tau\tau} + \Gamma_{\mathrm{had}} + \Gamma_{\mathrm{inv}}
+	=
+	\Gamma_{\ell\ell} + \Gamma_{\mathrm{had}} + \Gamma_{\mathrm{inv}}
+	\label{eq:}
+\end{equation}
+Concerning the first three pieces, we can write them in a unique \( \Gamma_{\ell\ell} \) since it is experimentally proved by measuring the branching ratio that the contribution for every type of lepton is the same. \( \Gamma_{\mathrm{inv}} \) can be written as the number of neutring families multiplied by every \( \Gamma_{\mathrm{inv},i} \) if the only invisibles are the neutrinos. By fitting the cross section with the number of neutrino families as a free parameter, we get a result like the one in Figure \ref{fig:L16_Z0NFN}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{16}/16_images/Z0NFN.png}
+	\caption{\label{fig:L16_Z0NFN} Shape of the \( Z \) boson cross section curve with respect to the number of neutrino families and fit with experimental data.}
+\end{figure}
+
+The result of this procedure is that the number of neutrino families is:
+\begin{equation}
+	N_{\nu}
+	=
+	2.9840 \pm 0.0082
+	\label{eq:}
+\end{equation}
+
+
+
+\subsection{Measurement of \( A_\mathrm{BF} \)}
+%Not in programme
+Another quantity that can be measured in \( e^+e^- \) annihilation process is the Forward-Backward Asymmetry. Its definition is:
+\begin{equation}
+	A_{\mathrm{FB}}
+	=
+	\frac{N_{\mathrm{F}} - N_{\mathrm{B}}}{N_{\mathrm{F}} + N_{\mathrm{B}}}
+	\label{eq:}
+\end{equation}
+where \( N_{\mathrm{F}} \) is the number of events with forward production of particles and \( N_{\mathrm{B}} \) is the number of events with backward production. More precisely, the products of the \( e^+e^- \) collisions are emitted at an angle \( \theta \) with respect to the beam axis. If \( \cos\theta \) is greater than zero, this is a ``forward event'', otherwise it is a ``backward event''.
+
+What we can do is to measure \( N_{\mathrm{F}} \) and \( N_{\mathrm{B}} \) for different final states (\( f\bar{f} \): \( \mu^+\mu^- \), \( \tau^+\tau^- \), \( b\bar{b} \), \( c\bar{c} \), \( \dots \)) and for different center of mass energies.
+An example of the experimental results for \( b\bar{b} \) and \( c\bar{c} \) products is showed in Figure \ref{fig:L16_FBABC}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{16}/16_images/FBABC.png}
+	\caption{\label{fig:L16_FBABC} Forward-Backward Asymmetry for \( b\bar{b} \) (in red) and \( c\bar{c} \) (in green) depending on the center of mass energy \( \sqrt{s} \).}
+\end{figure}
+
+Concerning the width, we have the following dependence:
+\begin{equation}
+	\Gamma(Z^0 \rightarrow f\bar{f})
+	\approx
+	\frac{g^2}{\cos^2\theta_W} m_Z (I_3 - Q \sin^2\theta_W)
+	\label{eq:}
+\end{equation}
+So the asymmetry is due to a different way of producing the leptons or the hadrons in the final state, related to the isospin of the final state and to the \( \cos \) and \( \sin \) of the Weinberg angle.
+
+Forward-Backward Asymmetry has been measured in several decay channels in order to obtain sufficient data to get the Weinberg angle. Among these, the decay into \( b\bar{b} \) is particularly important for New Physics searches.
+
+
+
+\subsection{Determination of the Weinberg angle}
+%Not in programme
+The measurement of the Weinberg angle was performed by the collaboration of several experiments, in particular LEP and the Stanford Linear Accelerator Center (SLAC).
+
+The Stanford Linear Collider (SLC) was a linear accelerator that collided electrons and positrons at SLAC. The center of mass energy was about \( \sqrt{s} = 90 \ \si{GeV} \), equal to the mass of the \( Z \) boson, which the accelerator was designed to study. Although largely overshadowed by the Large Electron–Positron Collider at CERN, which began running in 1989, the highly polarized electron beam at SLC (close to 80\%) made certain unique measurements possible, such as parity violation in \( Z \) Boson-\( b \) quark coupling. The structure of the facility is showed in Figure \ref{fig:L16_SLCS}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{16}/16_images/SLCS.png}
+	\caption{\label{fig:L16_SLCS} Structure of the SLC experiment.}
+\end{figure}
+
+At the SLC, the asymmetry \( A_e \) was measured as an asymmetry in the total rate of \( Z \) production from \( e^+e^- \). In a circular accelerator, electron beam polarization is typically destroyed as the beams carry out many circuits of the ring. However, linear acceleration naturally preserves the electron polarization. The experiments at SLAC took advantage of this. Using polarized laser light, electrons were produced with preferential left- or right-handed polarization at the front of the accelerator, transported over \( 4 \ \si{km} \) to the collider interaction point, and then annihilated with positrons to create \( Z \) bosons. The correlation of the laser polarization with the rate for \( Z \) production allowed a measurement of the asymmetry in which almost all systematic errors cancelled. The experiment measured:
+\begin{equation}
+	A_e
+	=
+	0.1516 \pm 0.0021
+	\label{eq:}
+\end{equation}
+It is interesting that:
+\begin{equation}
+	A_e
+	\frac{\qty(\frac{1}{2} -s^2_w)^2 - s^2_w}{\qty(\frac{1}{2} -s^2_w)^2 + s^2_w}
+	=
+	\frac{\frac{1}{4} - s^2_w}{2s^4_w + \qty(\frac{1}{4} - s^2_w)}
+	\approx
+	8 \qty(\frac{1}{4} - s^2_w)
+	\label{eq:}
+\end{equation}
+where \( s_w \) is the sine of the Weinberg angle. Sincce the actual value of \( s^2_w \) is close to \( \frac{1}{4} \), this very accurate value of \( A_e \) turns into an even more accurate value of \( s^2_w \):
+\begin{equation}
+	s^2_w
+	=
+	0.23109 \pm 0.00026
+	\label{eq:}
+\end{equation}
+For \( b \) quarks, the polarization asymmetry is expected to be almost maximal. This prediction could be tested at the SLC by using the polarized \( e^- \) beam to produce events with \( b \) quarks in the final state. Recall that the angular distributions in polarized \( e^+e^- \) annihilation depend on the fermion polarizations:
+\begin{align}
+	\dv{\sigma}{\cos\theta}(e^-_Le^+_R \rightarrow b_L\bar{b}_R)
+	&\sim
+	(1 + \cos\theta)^2
+	\\
+	\dv{\sigma}{\cos\theta}(e^-_Re^+_L \rightarrow b_L\bar{b}_R)
+	&\sim
+	(1 - \cos\theta)^2
+\end{align}
+
+\end{document}

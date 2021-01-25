@@ -1,0 +1,30 @@
++ Arguments:
+    ++
+
++ Labels:
+    ++ Equations (eq:):
+		L04_BBF		=	Bethe-Bloch Formula
+		L04_RLA		=	Radiation Length Approximation
+		L04_CEA		=	Critical Energy Approximation
+		L04_PPCS	=	Pair Production Cross Section
+		L04_PIP		=	Primary Ionization Process
+		L04_SIP		=	Secondary Ionization Process
+		L04_INOP	=	Ionization Number Of Particles
+		L04_MPG		=	Multiplication Process Gain
+		L04_DCSI	=	Drift Chamber Spatial Information
+		L04_LF		=	Lorentz Force
+
+    ++ Figures (fig:):
+		L04_BBFP	=	Bethe-Bloch Formula Plot
+		L04_TELE	=	Total Energy Loss Electrons
+		L04_ELS		=	Energy Loss Summary
+		L04_IPM		=	Interaction Photon Matter
+		L04_4WR		=	4 Work Regions
+		L04_MPC		=	Multiwire Proportional Chamber
+		L04_DC		=	Drift Chamber
+		L04_PNJ		=	P N Junction
+		L04_SMD		=	Silicon Microstrip Detector
+		L04_TR		=	Tracking Reconstruction
+
+	++ Tables (tab:):
+		L04_BBFS	=	Bethe-Bloch Formula Symbols

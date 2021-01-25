@@ -1,0 +1,210 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{29}{04}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 15.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\section{Experimental tests of electroweak interaction}
+
+\subsection{Discovery of the neutral current}
+%https://home.cern/news/news/physics/forty-years-neutral-currents
+The discovery of neutral currents lies in the development of the electroweak theory. The theory proposed by Sheldon Glashow, Steven Weinberg, and Abdus Salam in the 1960s tried to unify electromagnetic and weak interaction between elementary particles. Their theory predicted the existence of the \( W^{\pm} \) and \( Z^0 \) bosons as propagators of the weak force. Exchange of a \( Z^0 \) boson transfers momentum, spin, and energy but leaves the particle's quantum numbers unaffected. Since there is no transfer of electric charge, the exchange of a \( Z^0 \) is referred to as ``neutral current''. So, neutral currents were a prediction of the electroweak theory.
+
+Their discovery takes place in the experiment Gargamelle. It was a bubble chamber at CERN designed to detect neutrinos. It was 4.8 metres long and 2 metres in diameter, weighed 1000 tonnes. It held nearly 12 cubic metres of heavy-liquid freon (CF3Br) and not the usual liquid hydrogen. The discovery involved the search for two types of events:
+\begin{itemize}
+	\item one involved the interaction of a neutrino with an electron in the liquid:
+		\begin{align}
+			\nu + e^- &\longrightarrow \nu + e^-	\\
+			\overset{-}{\nu} + e^- &\longrightarrow \overset{-}{\nu} + e^-
+		\end{align}
+	\item in the other the neutrino scattered from a hadron (proton or neutron), for example:
+		\begin{align}
+			\nu + p &\longrightarrow \nu + p	\\
+			\nu + n &\longrightarrow \nu + p + \pi^-	\\
+			\nu + p &\longrightarrow \nu + n + \pi^+
+		\end{align}
+\end{itemize}
+In the latter case, the signature of a neutral current event was an isolated vertex from which only hadrons were produced. So, we can have neutral current or charged current events:
+\begin{align}
+	\text{NC:} \ \nu/\bar{\nu} + N &\longrightarrow \nu/\bar{\nu} + \text{hadrons}	\\
+	\text{CC:} \ \nu/\bar{\nu} + N &\longrightarrow \mu^-/\mu^+ + \text{hadrons}
+\end{align}
+which are distinguished respectively by the absence of any possible muon, or the presence of one, and only one, possible muon.
+
+Concerning the experimental setup, neutrino/antineutrino beams were directed to Gargamelle. To bend the tracks of charged particles, Gargamelle was surrounded by a magnet providing a 2 Tesla field. The coils of the magnet was made of copper cooled down with water, and followed the oblong shape of Gargamelle. In order to maintain the liquid at an adequate temperature several water tubes surrounded the chamber body, to regulate the temperature. When recording an event, the chamber was illuminated and photographed. The illumination system emitted light that was scattered at 90° by the bubbles, and sent to the optics.
+
+By this way it was possible to measure the following cross sections of the processes listed previously:
+\begin{equation}
+	\frac{\d{^2\sigma}}{\d{x} \d{y}}(\overset{(-)}{\nu}N \rightarrow \mu^{(+)}X)
+	\label{eq:}
+\end{equation}
+The leptonic events have small cross-sections, but correspondingly small background. The hadronic events have larger backgrounds, most extensively due to neutrons produced when neutrinos interact in the material around the chamber. Neutrons, being of no charge, would not be detected in the bubble chamber, and the detection of their interactions would mimic neutral currents events. In order to reduce the neutron background, the energy of the hadronic events had to be greater than \( 1 \ \si{GeV} \).
+
+So, the quantity we have to measure is the ratio between NC and CC events:
+\begin{equation}
+	R^{\nu}
+	=
+	\frac{\sigma(\nu, \text{nc})}{\sigma(\nu, \text{cc})}
+	\qquad
+	R^{\overline{\nu}}
+	=
+	\frac{\sigma(\overline{\nu}, \text{nc})}{\sigma(\overline{\nu}, \text{cc})}
+	\label{eq:}
+\end{equation}
+Moreover, an interesting result comes out if we compute the ratio of the different cross sections:
+\begin{equation}
+	r
+	=
+	\frac{\sigma(\overline{\nu}, -\text{cc})}{\sigma(\nu, \text{cc})}
+	\label{eq:}
+\end{equation}
+In fact, it is not not equal to 1. This is due to the fact that the target is made of matter and so we don't have a symmetric situation.
+
+By July 1973, the collaboration of the experiment had confirmed as many as 166 hadronic events, and one electron event. In both cases, the neutrino enters invisibly, interacts and then moves on, again invisibly. On 3 September the collaboration published two papers on these events in the same issue of Physics Letters. In its short career at the SPS, Gargamelle succeeded in observing for the first time a touchstone weak interaction, involving only leptons, in which a muon-type neutrino hits an electron, producing an electron-neutrino and a muon. However in 1979 the chamber ceased operation after cracks had appeared that proved impossible to repair.
+
+
+
+\subsection{Discovery of \( W^{\pm} \) and \( Z^0 \) bosons}
+%https://cds.cern.ch/record/2103277/files/9789814644150_0006.pdf
+The discovery of the \( W^{\pm} \) and \( Z^0 \) bosons themselves had to wait for the construction of a particle accelerator powerful enough to produce them. The first such machine that became available was the Super Proton Synchrotron, where unambiguous signals of \( W \) bosons were seen in January 1983 during a series of experiments made possible by Carlo Rubbia and Simon van der Meer. The actual experiments were called UA1 (led by Rubbia) and UA2 (led by Pierre Darriulat), and were the collaborative effort of many people.
+
+The first physics run of the CERN collider took place at the end of 1981. The total integrated luminosity recorded by the two experiments during that run was not yet sufficient to detect the \( W \) and \( Z \) bosons, but that run demonstrated that there were no conceptual obstacles to further increase the luminosity to the required values by a careful tuning of all the machines involved in the collider operation (PS, AA, SPS) and of the interconnecting beam transfer lines.
+
+\subsubsection*{\( W^{\pm} \) bosons}
+The \( W \) boson decays predominantly (\( \sim 70\% \)) to quark–antiquark pairs (\( q\bar{q}' \)), which appear as two hadronic jets. Such configurations are overwhelmed by two-jet
+production from hard parton scattering, hence both experiments had chosen to detect the \( W \) by identifying its leptonic decays:
+\begin{align}
+	W^{\pm} &\longrightarrow e^{\pm} \nu_e (\bar{\nu}_e)	&&	\text{UA1 and UA2}	\\
+	W^{\pm} &\longrightarrow \mu^{\pm} \nu_{\mu} (\bar{\nu}_{\mu})	&&	\text{UA1 only}
+\end{align}
+The signal from \( W \rightarrow e\nu_e \) was expected to have the following features:
+\begin{itemize}
+	\item the presence of a high transverse momentum (\( p_T \)) isolated electron;
+	\item a peak in the electron \( p_T \) distribution at \( \frac{m_W}{2} \) (the ``Jacobian'' peak);
+	\item the presence of high missing transverse momentum from the undetected neutrino.
+\end{itemize}
+
+These features are the consequence of the main mechanism of \( W \) production (quark-antiquark annihilation), which results mainly in \( W \) bosons almost collinear with the beam axis, hence the decay electron and neutrino emitted at large angles to the beam axis have large \( p_T \). We note that the missing longitudinal momentum cannot be measured at hadron colliders because of the large number of high-energy secondary particles emitted at very small angles to the beam which cannot be detected because their trajectories are inside the machine vacuum pipe. The missing transverse momentum vector (\( \va{p}_T^{\mathrm{miss}} \)) is defined as:
+\begin{equation}
+	\va{p}_T^{\mathrm{miss}}
+	=
+	- \sum_{\text{cells}} \va{p}_T
+	\label{eq:}
+\end{equation}
+where \( \va{p}_T \) is the transverse component of a vector associated with each calorimeter cell, with direction from the event vertex to the cell centre and length equal to the energy deposition in that cell, and the sum is extended to all cells with an energy deposition larger than zero. In an ideal detector with no measurement errors, for events with an undetected neutrino in the final-state it follows from momentum conservation that \( \va{p}_T^{\mathrm{miss}} \) is equal to the neutrino transverse momentum.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{15}/15_images/WMTE.png}
+	\caption{\label{fig:L15_WMTE} UA1 distribution of the missing transverse momentum. The events shown as dark areas in this plot contain a high \( p_T \) electron.}
+\end{figure}
+
+Figure \ref{fig:L15_WMTE} shows that \( \abs{\va{p}_T^{\mathrm{miss}}} \) distribution, as measured by UA1 from the 1982 data. There is a component decreasing approximately as \( \abs{\va{p}_T^{\mathrm{miss}}}^2 \) due to the effect of calorimeter resolution in events without significant \( \abs{\va{p}_T^{\mathrm{miss}}} \), followed by a flat component due to events with genuine \( \abs{\va{p}_T^{\mathrm{miss}}} \).
+Six events with high \( \abs{\va{p}_T^{\mathrm{miss}}} \) in the distribution contain a high \( p_T \) electron. The \( \va{p}_T^{\mathrm{miss}} \) vector in these events is almost back-to-back with the electron transverse momentum vector. These events are interpreted as due to \( W \rightarrow e\nu_e \) decay. This result was first announced at a CERN seminar on January 20, 1983. The results from the UA2 search for the same events was presented at a CERN seminar on the following day.
+
+
+\subsubsection*{\( Z \) bosons}
+The process searched for \( Z \) boson discovery was:
+\begin{equation}
+	Z \longrightarrow e^+e^-
+	\label{eq:}
+\end{equation}
+The first step of the analysis required the presence of two calorimeter clusters consistent with electrons and having a transverse energy \( E_T > 25 \ \si{GeV} \). Among the data recorded during the 1982–83 collider run, 152 events were found to satisfy these conditions. The next step required the presence of an isolated track with \( p_T > 7 \ \si{GeV/c} \) pointing to at least one of the two clusters. Six events satisfy this requirement, showing already a clustering at high invariant mass values, as expected from \( Z \rightarrow e^+e^- \) decay. Of these events, four were found to have an isolated tracks with \( p_T > 7 \ \si{GeV/c} \) pointing to both clusters. They were consistent with a unique value of the \( e^+e^- \) invariant mass within the calorimeter resolution. This search is illustrated in Figure \ref{fig:L15_ZUIMCP}. One of these events is displayed in Figure \ref{fig:L15_ZEPE}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{\figpath{15}/15_images/ZUIMCP.png}
+	\caption{\label{fig:L15_ZUIMCP} Search for the decay \( Z \rightarrow e^+e^- \) in UA1.}
+\end{figure}
+
+\begin{figure}[!h]
+	\begin{minipage}[c]{0.5\linewidth}
+		\subfloat[][]{ \includegraphics[width=0.9\textwidth]{\figpath{15}/15_images/ZEPEA.png}}
+	\end{minipage}
+	\begin{minipage}[]{0.5\linewidth}
+		\centering
+		\subfloat[][]{\includegraphics[width=0.9\textwidth]{\figpath{15}/15_images/ZEPEB.png}}
+	\end{minipage}
+	\caption{\label{fig:L15_ZEPE} One of the \( Z \rightarrow e^+e^- \) events in UA1: (a) display of all reconstructed tracks and calorimeter hit cells; (b) only tracks with \( p_T > 2 \ \si{GeV/c} \) and calorimeter cells with \( E_T > 2 \ \si{GeV} \) are showed.}
+\end{figure}
+
+An event consistent with the decay \( Z \rightarrow \mu^+\mu^- \) was also found by UA1 among the data collected in 1983. The mean of the mass distribution of all lepton pairs found by UA1 was:
+\begin{equation}
+	m_Z
+	=
+	95.2 \pm 2.5 \pm 3.0 \ \si{GeV}
+	\label{eq:}
+\end{equation}
+where the first error is statistical and the second one originates from the systematic uncertainty on the calorimeter energy scale.
+
+Concerning the UA2 search for the decay \( Z \rightarrow e^+e^- \) among the 1982-83 data, first, pairs of energy depositions in the calorimeter consistent with two isolated electrons and with \( E_T > 25 \ \si{GeV} \) were selected. Then, an isolated track consistent with an electron (from preshower information) was required to point to at least one of the clusters. Eight events satisfied these requirements: of these, three events had isolated tracks consistent with electrons pointing to both clusters. The weighted average of the invariant mass values for the eight events was:
+\begin{equation}
+	m_Z
+	=
+	91.9 \pm 1.3 \pm 1.4 \ \si{GeV}
+	\label{eq:}
+\end{equation}
+where the first error is statistical and the second one originates from the systematic uncertainty on the calorimeter energy scale. The latter is smaller than the corresponding UA1 value because the smaller size of the UA2 calorimeter, and its modularity, allow frequent recalibrations on electron beams of known energies from the CERN SPS.
+
+Figure \ref{fig:L15_WZLP} shows the energy deposited in the UA2 calorimeter by a \( W \rightarrow e\nu \) and by a \( Z \rightarrow e^+e^- \) event. Such distributions, usually called ``Lego plots'', illustrate the remarkable topologies of such events, with large amounts of energy deposited in a very small number of calorimeter cells, and little or no energy in the remaining cells.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{\figpath{15}/15_images/WZLP.png}
+	\caption{\label{fig:L15_WZLP} The energy deposited in the UA2 calorimeter for a \( W \rightarrow e\nu \) (on the left) and a \( Z \rightarrow e^+e^- \) event (on the right).}
+\end{figure}
+
+
+
+\subsection{Measurements of \( W^{\pm} \) mass}
+After the discovery of the \( W \) and \( Z \) bosons at SPS in UA1 and UA2 experiments, Tevatron collider was built at Fermilab, where \( p\bar{p} \) collisions at \( \sqrt{s} = 1.8 \ \si{TeV} \) were studied. The idea was to increase the energy in order to discover new particles and to produce a higher quantity of \( W \) and \( Z \) bosons. In particular, a sufficient quantity of \( W \) bosons was needed to measure its mass, which was an important point for EW theory. In fact, the mass \( m_W \) is connected to one of the coupling constants and to the Higgs field vacuum expectation.
+
+In the experiment, the following decay process was studied:
+\begin{equation}
+	W^{\pm}
+	\longrightarrow
+	e^{\pm} \nu (\bar{\nu})
+	\label{eq:}
+\end{equation}
+It was not possible to detect directly neutrino, but since they appear as momentum missing, it was possible to know they were in the final state. For this reason, the invariant transverse mass was reconstructed rather than the more common invariant mass. For the \( W \) boson, the invariant mass reads:
+\begin{equation}
+	M_{W}^2
+	=
+	(p_e + p_{\nu})^2
+	=
+	2p_e \cdot p_{\nu}
+	=
+	2(E_e E_{W} - \va{p}_e \cdot \va{p}_{\nu})
+	\label{eq:}
+\end{equation}
+We assume that the mass of the neutrino and of the electron is approximately zero, so the energies \( E_e \) and \( E_{\nu} \) are equal. For the invariant transverse mass, first of all we take the transverse plane to the axis, namely the \( z \) axis, to which the momenta of \( p \) and \( \bar{p} \) are parallel/antiparallel. Therefore, we get:
+\begin{equation}
+	M^2_{W,T}
+	=
+	2(E_e E_{\nu} - \va{p}_{T,e} \cdot \va{p}_{T,\nu})
+	\label{eq:}
+\end{equation}
+So, going to the transverse plane removes the uncertainties on the energy along \( z \). The results obtained from this analysis in the experiment are in Figure \ref{fig:L15_TWMN}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{15}/15_images/TWMN.png}
+	\caption{\label{fig:L15_TWMN} The \( M_T \) distribution for muons (top) and the \( p_{e,T} \) distribution for electrons (bottom). The data (points) and the best-fit simulation template (histogram) including backgrounds (shaded) are showed. The arrows indicate the fitting range.}
+\end{figure}
+
+How can we translate the transverse invariant mass into the invariant mass? Using Monte Carlo simulations, we can generate samples of events (toy experiments) where we assume the EW theory is correct and \( M_W \) is considered a parameter, since we don't know it exactly, but we have a range in which it is bounded. Then, we perform a global fit of the \( M_{W,T} \), \( E_{T} \) or \( p_{T} \) using templates made by Monte Carlo data. Using this method, it is possible to extract the \( W \) invariant mass.
+
+A list of several measurements of the \( W^{\pm} \) bosons mass is showed in Figure \ref{fig:L15_WMM}. There are several sources that contribute to the uncertainty. The most significant ones are provided by the parton distribution, by the lepton energy scale and resolution and by the recoil energy scale and resolution.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{15}/15_images/WMM.png}
+	\caption{\label{fig:L15_WMM} \( W \) mass measurements in several experiments and comparison.}
+\end{figure}
+
+\end{document}

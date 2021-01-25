@@ -1,0 +1,299 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{18}{03}{2020}
+
+
+\begin{document}
+
+\chapter{Detectors for Particle Physics}
+
+\marginpar{ \textbf{Lecture 4.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\section{Recap: interaction of particles with matter}
+The way we identify particles is through their interaction with matter. So, we can detect:
+\begin{itemize}
+    \item Charged particles based on ionization, breamsstrahlung, Cherenkov effect.
+    \item \( \gamma \)-rays based on photoelectric/Compton effect and pair production.
+    \item Neutrons based on strong interaction.
+    \item Neutrinos based on weak interaction.
+\end{itemize}
+We will give only a phenomenological treatment since the goal is to be able to understand the implications for detector design.
+
+\subsection{Interactions involving the electrons and heavier particles}
+\marginpar{Interaction through ionization}
+A relativistic charged particle with a mass much greater that the mass of the electron, when passing through the matter, is subject to a loss of energy due to the interaction with atomic electrons. These ones can be substracted from the atom and then can be detected. From the total charge collected by the electrodes of a detector, it is possible to know the original interacting particle. The equation that describes this interaction and the loss of energy is the \textbf{Bethe-Bloch Equation} (in natural units):
+\begin{equation}
+    - \left\langle \dv{E}{x} \right\rangle
+    =
+    K \rho \frac{Z}{A} \frac{z^2}{\beta^2}
+    \qty[ \frac{1}{2} \log \frac{2 m_e c^2 \beta^2 \gamma^2 T_\mathrm{max}}{I^2} - \beta^2 - \frac{\delta(\beta \gamma)}{2} - \frac{C}{z} ]
+    \label{eq:L04_BBF}
+\end{equation}
+where the meaning of the various symbols is given in Table \ref{tab:L04_BBFS}. A plot showing the stopping power in function of the factor \( \beta \gamma \) is given in Figure \ref{fig:L04_BBFP}. In particular, from this plot we can see some interesting characteristics of the energy loss process. In the first part, the particle loses more energy when the its velocity is slower, so the trend is \( \sim \frac{1}{\beta^2} \). When the energy increases, a minimum is met, whose \( x \)-axis value is approximately the same for every material. The right part of the plot with respect to this minimum shows a gain in the energy loss which is due to relativistic effects.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|l|}
+		\hline
+		\textbf{Symbol}	&	\textbf{Physical meaning}	\\
+		\hline
+		\( K \)					&	Constant [\( 0.307075 \ \si{MeV g^{-1} cm^2} \)]\\
+		\( \rho \)				&	Density of the absorber							\\
+		\( Z \)					&	Atomic number of absorber						\\
+		\( A \)					&	Atomic mass of absorber							\\
+		\( z \)					&	Atomic number of incident particle				\\
+		\( \beta \)				&	Particle velocity in units of \( c \)			\\
+		\( \gamma \)			&	Relativistic factor derived from \( \beta \)	\\
+		\( T_\mathrm{max} \)	&	Maximum energy transfer in a single collision	\\
+		\( I \)					&	Ionization potential of the absorber			\\
+		\hline
+	\end{tabular}
+	\caption{Bethe-Bloch formula: meaning of all the symbols figuring in its expression.}
+	\label{tab:L04_BBFS}
+\end{table}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{\figpath{04}/04_images/BBFP.png}
+	\caption{\label{fig:L04_BBFP} Few examples for different materials of Bethe-Bloch formula.}
+\end{figure}
+
+\medskip
+\marginpar{Breamsstrahlung energy loss}
+The Bethe-Bloch formula is valid for particles much heavier than the electron. For this kind of particles, we have that relativistic effects even at low energies, since its mass is lower in comparison with the other particles. So, the electron loses energy through ionization (at lower energies) and \textbf{breamsstrahlung}, namely \textit{braking radiation}, when deflected by another charged particle (at higher energies). The different materials that the electron can pass through, are characterized by their \textbf{radiation length} \( X_0 \), which is a quantity empirically defined as the distance covered by an electron beam before its energy decreases by a factor \( \frac{1}{e} \) (63\%.). It is measured in \( \si{g/cm^2} \) and an approximation of its expression is:
+\begin{equation}
+    X_0
+    =
+    \frac{A}{4 \alpha N_A Z^2 r^2_e \log \frac{183}{Z^{\frac{1}{3}}}}
+    \label{eq:L04_RLA}
+\end{equation}
+Moreover, there exists a point in which the loss of energy due to ionization and the loss of eergy due to breamsstrahlung are equal. This point is called \textbf{critical energy} \( E_\mathrm{c} \) and a relatively good approximation of its value is:
+\begin{equation}
+    E_\mathrm{c}
+    \approx
+    \frac{600 \ \si{MeV}}{Z}
+    \label{eq:L04_CEA}
+\end{equation}
+
+\marginpar{Energy loss as a function of other parameters}
+Concerning the trend of these losses, we find that the ionization loss decreases logarithmically with \( E \) and increases linearly with \( Z \), while bremsstrahlung loss increases approximately linearly with \( E \) and it is the dominant process at high energies. This is evident in the plots in Figures \ref{fig:L04_TELE} and \ref{fig:L04_ELS}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{04}/04_images/TELE.png}
+	\caption{\label{fig:L04_TELE} Total energy loss for electrons.}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{\figpath{04}/04_images/ELS.png}
+	\caption{\label{fig:L04_ELS} Energy loss summary.}
+\end{figure}
+
+
+
+\subsection{Interaction of photon with the matter}
+Photons can lose energy in several ways. The possibilities are:
+\begin{itemize}
+    \item Photoelectric effect on atoms at low energy.
+    \item Compton effect, which is important at medium range energies.
+    \item Pair production, which is the dominant process at higher energies.
+\end{itemize}
+It goes without saying that we will focus on pair production, since we are discussing topics whose energies are relatively high. Concerning the cross section of this process, it is approximated by:
+\begin{equation}
+    \sigma_\mathrm{pair}
+    =
+    \frac{7}{9} \frac{N_A}{A} \frac{1}{X_0}
+    \label{eq:L04_PPCS}
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{04}/04_images/IPM.png}
+	\caption{\label{fig:L04_IPM} Interaction of photons with matter.}
+\end{figure}
+
+We can characterize a certain material by defining the \textbf{attenuation length} \( \lambda \), namely the length for which the beam of photons inside the material is attenuated by a factor \( \frac{1}{e} \), and it is linked to the radiation length by \( \lambda = \frac{9}{7} X_0 \).
+
+
+
+
+
+\section{Gaseous, scintillator and solid state detectors}
+Particles can be identified as point-like objects with a certain mass and some other properties that characterize them. The only way to detect them is to make them interact inside a medium. With this technique we can measure their charge, medium lifetime, velocity, momentum and energy and from these we can retrieve their mass and a lot of other interesting properties. So, let's start a discussion on the many types of detectors that can be employed for a particle experiment.
+
+
+
+\subsection{Gas detectors}
+These detectors are based on the interaction of the particles with a gaseous medium. The interaction causes the ionization of the atoms in the medium, the charge is collected and from its total amount we can reconstruct the properties of the interacting particles.
+
+In particular, we focus now on the ionization process. When the particle enters in the medium, a first ionization takes place and it is called \textbf{primary ionization}. For example, it can be schematized as follows:
+\begin{equation}
+    \text{Particle} + X \longrightarrow X^+ + e^- + \text{Particle}
+    \label{eq:L04_PIP}
+\end{equation}
+The charges produced in the primary ionization interacts as well with the medium and they create a \textbf{secondary ionization}, as follows:
+\begin{equation}
+    X + e^- \longrightarrow X^+ + e^- + e^-
+    \label{eq:L04_SIP}
+\end{equation}
+
+Experimentally speaking, it is important to evaluate the number of particles produced in the interaction and the relevant parameters to estimate this quantity are the ionization energy \( E_i \), the average energy/ion pair \( W_i \) and the average number of ion pairs (per cm) \( n_T \). By putting all together, we get:
+\begin{equation}
+    \left\langle n_T \right\rangle
+    =
+    \frac{L \left\langle \dv{E}{x} \right\rangle}{W_i}
+    \label{eq:L04_INOP}
+\end{equation}
+with \( L \) the thickness of the material. Typical values for \( E_i \) and \( n_T \) are:
+\begin{align*}
+	E_i &\sim 30 \ \si{eV}	\\
+	n_T &\sim 100 \ \si{\frac{pairs}{3 \ KeV}}
+\end{align*}
+
+Another important effect to discuss in gas detectors is the \textbf{diffusion} in presence of electric and/or magnetic fields. These fields affect the trajectory of the particles transversally and longitudinally. In particular, by measuring the bending of the particle in presence of a magnetic field with a component orthogonal to the velocity vector, we are able to infer the momentum of the particle itself. The electric field influences only the longitudinal diffusion and not the transverse diffusion.
+
+\medskip
+Lastly, another phenomenon that can happen in gas detectors is the \textbf{multiplication}. The electrons can undergo to a multiplication process called \textbf{Townsend avalanche}. Given the number of electrons at the position \( x \), \( n(x) = n_0 e^{\alpha x} \), we have the gain:
+\begin{equation}
+    G
+    =
+    \frac{n(x)}{n_0}
+    =
+    e^{\alpha x}
+    \label{eq:L04_MPG}
+\end{equation}
+where the parameter \( \alpha \) can depend on \( x \).
+
+Depending on the gain factor \( G \) of the multiplication, four regions of work of the detector can be exploited:
+\begin{itemize}
+    \item \textbf{Ionization mode}\\
+		The intesity of the electrical field \( E \) is low and the electric current at the electrodes of the detector is proportional to the charge produced in primary ionization.
+	\item \textbf{Proportional mode}\\
+		It's the region of use for most of detectors and in this case \( E \) is sufficiently intense to generate a secondary ionization, so that the initial charge can be multiplied by a certain factor. It's also possible to measure the loss of energy of the original particle, proportional to the collected charge.
+	\item \textbf{Limited proportional mode}\\
+		The amplification of ionization charge is now a process that can't be controlled since the electric field is too strong.
+	\item \textbf{Geiger mode}\\
+		The electric field is so intense to generate an avalanche of electrons without control, that reaches the electrodes. It is not possible to measure the energy loss in this case, but we can only detect a logic signal that that tells us if a particle has crossed the detector or not.
+\end{itemize}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\textwidth]{\figpath{04}/04_images/4WR.png}
+	\caption{\label{fig:L04_4WR} Regions of work of ionization detector with a plot  giving numeric and practical examples.}
+\end{figure}
+
+
+
+\subsection{Multiwire proportional chambers}
+They are proportional chambers with multiple wires added to reconstruct the trajectory of the particle. The cathode is the external shell, while the anodes are the internal wires, which generate an electrical field in first order approximation inversely proportional to the distance from the wire.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{\figpath{04}/04_images/MPC.png}
+	\caption{\label{fig:L04_MPC} Description of multiwire proportional chamber structure and principle of work.}
+\end{figure}
+
+The principle of work is quite simple. The passage of a certain particle produces ionization charges, in particular electrons, which are collected by the nearest wire. Knowing which are all the anodes that collected ionization charge, we can understand the path followed by the crossing particle.
+
+
+
+\subsection{Drift chambers}
+Drift chambers are very similar to multiwire proportional chambers, however in this case we can have two dimensional informations through time measurments, namely \textbf{drift time} measurements.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{\figpath{04}/04_images/DC.png}
+	\caption{\label{fig:L04_DC} Scheme of a drift chamber.}
+\end{figure}
+
+They exploit an external detector such as a scintillator counter, near the chamber, to determine the time \( t_0 \) in which the particle arrives. The scintillator detects it and sends a signal to start a sort of chronometer. Then the particle cross the chamber and the electrons from the ionization drift to the nearest anode, captured by the electrical field. At the arrival of the electrons at the anode, a singals is sent to stop the time measurement. Now we have all the informations to extrapolate the drift time \( t_D \), from which we can compute the spatial informations:
+\begin{equation}
+    x
+    =
+    \int_{0}^{t_D} v_D \d{t}
+    \label{eq:L04_DCSI}
+\end{equation}
+What is important to remember is that the detector is built with a studied geometry in order to get a known drift velocity.
+
+
+
+\subsection{Semiconductor detectors}
+Semiconductor detectors have the following characteristics:
+\begin{itemize}
+    \item High density (respect to gas detectors), so large energy loss in a shorter distance.
+    \item A small diffusion effect, so their position resolution can be less than \( 10 \ \si{\mu m} \).
+    \item Low ionization energy, so it is easier to produce charged particles when they are crossed.
+\end{itemize}
+
+The materials employed for their construction can vary depending on the purpose of the detector itself. The possibilities are:
+\begin{itemize}
+    \item Germanium, which needs to be operated at a very low temperature (\( 77 \ \si{K} \)) due to small band gap in its microscopic structure.
+    \item Silicon, which can operate at room temperature.
+    \item Diamond, resistent to very hard radiations, with low noise signal. Its employment is still limited by a high cost of natural diamonds, however there exist some techniques through which the artificial production of diamond is a reality. So, diamond detectors are in development up to now.
+\end{itemize}
+
+Silicon detectors are the most common and they are based on a p-n junction with reverse bias applied to enlarge the depletion region. The potential barrier becomes higher so that the diffusion current across the junction is suppressed and the current across the junction is very small (``leakage current'').
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{04}/04_images/PNJ.png}
+	\caption{\label{fig:L04_PNJ} A p-n junction with reverse bias applied.}
+\end{figure}
+
+Such a detector can be built in strips. By segmenting the implant we can reconstruct the position of the traversing particle in one dimension. We have a higher field close to the collecting electrodes where most of the signal is induced. Strips can be read with dedicated electronics to minimize the noise.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{\figpath{04}/04_images/SMD.png}
+	\caption{\label{fig:L04_SMD} Silicon microstrip detector section with representation of ionization charges, generated by a traversing particle.}
+\end{figure}
+
+To have 2-dimensional measurements, double sided silicon detector are used. Moreover, a type of silicon detector still in development is the pixel detector (for 3-dimensional measurements).
+
+Noise contributions can be leakage current and electronics readout. Insted, position resolution is the spread of the reconstructed position minus the true position. For example:
+\begin{align}
+	\sigma &= \frac{\text{pitch length}}{\sqrt{12}}       & \text{One strip cluster}&&&& \\
+	\sigma &= \frac{\text{pitch length}}{1.5 \frac{S}{N}} & \text{Two strip cluster}&&&&
+\end{align}
+
+
+
+
+
+\section{Track reconstruction}
+Track reconstruction is used to determine momentum of charged particles by measuring the bending of a particle trajectory in a magnetic field. The starting point is the expression of the Lorentz force to which a particle is subjected when moving inside a magnetic field:
+\begin{equation}
+	\va{F}
+	=
+	q \va{v} \times \va{B}
+	\label{eq:L04_LF}
+\end{equation}
+from which we get:
+\begin{equation}
+	m \frac{v^2}{r}
+	=
+	q v B
+	\Longrightarrow
+	p
+	=
+	r q B
+	\label{eq:L04_LF_2}
+\end{equation}
+In fixed target experiments, Eq. \ref{eq:L04_LF_2} can be rewritten to:
+\begin{equation}
+	p
+	=
+	q B \frac{L}{\theta}
+	\label{eq:L04_LF_3}
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{\figpath{04}/04_images/TR.png}
+	\caption{\label{fig:L04_TR} Tracking reconstruction example.}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,16 @@
++ Arguments:
+    ++ Introduction and informations on the course
+    ++ Basic recap of Klein-Gordon and Dirac equations, natual units, symmetries
+
++ Labels:
+    ++ Equations (eq:):
+        L01_KGE     =   Klein Gordon Equation
+        L01_DE      =   Dirac Equation
+        L01_NU      =   Natural Units
+        L01_FSC     =   Fine Structure Constant
+        L01_PDS     =   Parity Discrete Symmetry
+        L01_TRDS    =   Time Reversal Discrete Symmetry
+        L01_CCDS    =   Charge Conjugation Discrete Symmetry
+
+    ++ Figures (fig:):
+        L01_SMP     =   Standard Model Particles

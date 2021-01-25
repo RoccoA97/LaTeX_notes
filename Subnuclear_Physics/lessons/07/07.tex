@@ -1,0 +1,180 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{31}{03}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 7.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\section{Hadron production: \( e^+e^- \rightarrow \text{hadrons} \)}
+With the QED process \( e^+e^- \longrightarrow \mu^+\mu^- \) as a reference point, we can now discuss the process of \( e^+e^- \) annihilation to hadrons. The main products of this reaction are observed to be \( \pi \) and \( K \) mesons. We will consider the ultrarelativistic regime, so we will consider this process at multi-GeV center of mass energies.
+
+Before beginning with the discussion, we have to remember that hadrons are formed by quarks. Imagine that we are at center of mass energies at which we can ignore the quark masses. Then, since quarks are spin-\( \frac{1}{2} \) particles, the structure of the QED cross section for quark pair production is exactly the same as that in the process of muon pair production that we have just analyzed. By stopping here, we are ignoring the effects of the strong interaction, which play an essential role in forming the mesons that appear in the final state. However, this model can be useful as an estimate of the order of magnitude of the cross section or as a reference value.
+
+The changes in the calculations are the following three corrections:
+\begin{itemize}
+	\item First, \( \sigma \) depends on \( E_\mathrm{CM} \), so we must sum over the relevant quark species produced at the given energy. Remember that we can ignore the masses, at the energy we consider, with a good approximation.
+	\item Second, we need to change the	value of the electric charge of the produced particles, from \( -1 \) for the muon to \( Q_f = + \frac{2}{3} \) for \( u \), \( c \), and \( Q_f = - \frac{1}{3} \) for \( d \), \( s \), \( b \). The matrix element \( \mathcal{M} \) contains one power of the final electric charge, so the cross section is proportional to \( Q^2_f \).
+	\item Finally, quarks carry a hidden quantum number called color, which can take three values. We need to sum over the final color states in computing the total cross section.
+\end{itemize}
+Thus,\marginpar{Differential cross section} these corrections lead to the same angular distribution as before for the muon pair production:
+\begin{equation}
+	\dv{\sigma}{\cos \theta} (e^+e^- \longrightarrow \text{hadrons})
+	\sim
+	\qty(1 + \cos^2 \theta)
+	\label{eq:L07_HPDCS}
+\end{equation}
+while\marginpar{Cross section} the total cross section is modified to:
+\begin{equation}
+	\sigma(e^+e^- \longrightarrow \text{hadrons})
+	=
+	\sum_{f} 3 Q_f^2 \frac{4\pi}{3} \frac{\alpha^2}{E^2_\mathrm{CM}}
+	\qquad
+	\text{with} \ f = u, d, s, c, b
+	\label{eq:L07_HPCS}
+\end{equation}
+Note that the quark top \( t \) is not included in the sum since its mass is very large and the approximation made before doesn't hold if we include it.
+
+Another\marginpar{Branching Ratio} quantity that we can analyze is the ratio:
+\begin{equation}
+	R
+	=
+	\frac{\sigma(e^+e^- \longrightarrow \text{hadrons})}{\sigma(e^+e^- \longrightarrow \mu^+\mu^-)}
+	=
+	\sum_{f} 3 Q^2_f
+	=
+	\begin{cases}
+		2					&	\text{for} \ u,d,s		\\
+		3 \cdot \frac{1}{3}	&	\text{for} \ u,d,s,c	\\
+		3 \cdot \frac{2}{3}	&	\text{for} \ u,d,s,c,b
+	\end{cases}
+	\label{eq:L07_HPR}
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{07}/07_images/HMR.png}
+	\caption{\label{fig:L07_HPR} Measurements of the total cross section for \( e^+e^- \) annihilation to hadrons as a function of energy. The lower figure shows the ratio \( R \). The green dotted curve is the prediction we have found in Eq. \ref{eq:L07_HPR}. The vertical lines are the \( \mu \) resonances, which are very narrow compared to the hadronic ones.}
+\end{figure}
+
+The prediction for the angular distributions can also be tested experimentally. Before considering any method of detailed comparison, we need to ask what \( e^+e^- \longrightarrow \text{hadrons} \) events actually look like at high energies. Figure \ref{fig:L07_SLDE} shows a typical event at \( E_\mathrm{CM} = 91 \ \si{GeV} \). The tracks are mostly charged pions and kaons. The tracks clearly form two bundles, with \( \pi \) and \( K \) mesons moving in opposite directions. We call such a bundle of hadronic tracks a \textbf{jet}\marginpar{Definition of jets}. The final states of \( e^+e^- \) annihilation to hadrons at high energy typically consist of two back-to-back jets.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{07}/07_images/SLDE.png}
+	\caption{\label{fig:L07_SLDE} Event display from the SLD experiment showing a typical \( e^+e^- \) annihilation to hadrons event at a center of mass energy of \( 91 \ \si{GeV} \).}
+\end{figure}
+
+Note that quarks are not observed in isolation, but only as constituents of hadrons. However, it is not hard to imagine that a high-energy quark might induce the creation of more quark-antiquark pairs and that all of these might reform into pions and other hadrons. In this understanding, the central axes of the jets would be proxies for the original directions of the quarks. To add some experiment data concerning jet axes, Figure \ref{fig:L07_JAD} shows the orientation of jet axes in \( e^+e^- \) annihilation to hadrons at \( E_\mathrm{CM} = 91 \ \si{GeV} \) as a function of \( \abs{\cos \theta} \) (and not just \( \cos \theta \) since it is difficult to distinguish quark jets from antiquark jets). The functional form is very close to \( (1 + \cos^2 \theta) \). The question we'll try to answer is: how is it possible that the strong interactions can be strong and yet these predictions for hadronic processes can be so accurate by neglecting them?
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{07}/07_images/JAD.png}
+	\caption{\label{fig:L07_JAD} Distribution of the orientations of jet axes in \( e^+e^- \) annihilation to hadrons as a function of \( \abs{\cos \theta} \).}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\chapter{Deep Inelastic Electron Scattering}
+The discovery that quarks can be described by spin-\( \frac{1}{2} \) particles with simple electromagnetic interactions was actually made, not with this process, but in an earlier experiment studying a reaction in which this conclusion was even more surprising. It is the scattering \( e^-p \longrightarrow e^-p \).
+
+What we observe in this process is that as the transfered momentum of electron to proton increases, elastic collisions become infrequent. Most scattering events break the proton open and produce a large number of hadrons. When the total mass of the hadrons is much larger than the original proton mass, the reaction is refered to as \textbf{deep inelastic electron-proton scattering}. Now we will see that this regime is well described using a picture in which electrons scatter from free quarks inside the proton. What is surprising is that we can ignore the strong interaction to a first approximation in the scattering of the electrons from quarks inside protons.
+
+
+
+
+
+\section{The SLAC-MIT experiment}
+Deep inelastic scattering was first studied in the 1960's at the SLAC linear electron accelerator. The purpose of the experiment was to study the structure of the proton through elestic scattering at high energies. The process can be schematized as follow:
+\begin{equation}
+	e^-p
+	\longrightarrow
+	e^-X
+	\label{eq:L07_DISEP}
+\end{equation}
+where \( X \) can be anything. The electron in the final state goes through a spectrometer in order to recontruct its 4-momentum. The hadronic final state was ignored.
+
+A Feynamn diagram\marginpar{Feynamn diagram of the process} of this process is given in Figure \ref{fig:L07_EPDISFD}:
+
+%https://wiki.physik.uzh.ch/cms/latex:feynman
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{07}/07_images/EPDISFD.pdf}
+	\caption{\label{fig:L07_EPDISFD} Feynamn diagram of electron-proton deep inelastic scattering. Source code taken from \cite{feynmp}.}
+\end{figure}
+
+The electron interacts with a current matrix element:
+\begin{equation}
+	\bra{e^-(k')} j^\mu \ket{e^-(k)}
+	\label{eq:L07_EPDISCM}
+\end{equation}
+The current couples to a virtual photon, which then couples to another current acting on the proton. However, the current matrix element between the proton and the particular hadronic states is not sufficiently simple to exploit for our calculations.
+
+Let's consider \( k \) the initial electron momentum and \( k' \) the final electron momentum. In the experiment, we prepare \( k \) and measure \( k' \), so the momentum of the virtual photon in \( q = (k - k') \). Then, the mass \( W \) of the final hadronic system\marginpar{Mass of the final hadronic system} is given by:
+\begin{equation}
+	W^2
+	=
+	(P+q)^2
+	=
+	m^2_p + 2P \cdot q + q^2
+	\label{eq:L07_EPDISIM}
+\end{equation}
+Remember that the energy transfer is much larger than the mass of the proton, so we can ignore both the electron and proton mass. Moreover, \( q \) is spacelike, so there exists a frame where the energy transfer is zero and only momentum is transfered. So it is convenient to write \( q^2 = - Q^2 \).
+
+The cross sections as a function of \( W \)\marginpar{Cross section as a function of \( W \)} for increasing values of \( Q^2 = - q^2 \) are showed in Figure \ref{fig:L07_EPDISCS}. As \( W \) increases from left to right in each plot, we see the \( \Delta \), \( N^* \), etc., baryon resonances. However, at large \( Q^2 \), the resonances become less visible over a smooth continuum rising with \( W \). This fact shows how complex the data collected were and the challenge of their interpretation.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{07}/07_images/EPDISCS.png}
+	\caption{\label{fig:L07_EPDISCS} Cross section for deep inelastic \( ep \) scattering as a function of the final hadronic mass \( W \), measured by the SLAC-MIT experiment, at low, medium, and high values of \( Q^2 \).}
+\end{figure}
+
+
+
+
+
+\section{The parton model}
+To understand the meaning of deep inelastic scattering observed data, Feynamn proposed a simple picture based on free quarks and antiquarks that he called \textbf{parton model}. Feynamn modeled the proton as a collection of costituents called \textbf{partons}\marginpar{Definition of partons}. Some of these might be quarks, which we already expect as costituents of the proton. At very high energy, all partons are moving approximately in the direction of the proton, so all partons have a large component of momentum along the direction of the proton, while their transverse momenta remain of the order of the momenta within the proton bound state. So the momentum vector of a parton can be written as:
+\begin{equation}
+	p^\mu
+	=
+	\xi P^\mu
+	\label{eq:L07_PMF}
+\end{equation}
+where \( P \) is the total energy momentum of the proton and \( \xi \) is the fraction of this energy-momentum carried by that parton. \( \xi \) runs over the values 0 and 1.
+
+Let \( f_i(\xi)\d{\xi} \) be the probability of finding a parton of type \( i \) carrying the momentum fraction \( \xi \). The whole set of partons carry the total energy-momentum of the proton. This implies the sum rule:
+\begin{equation}
+	\int_{0}^{1} \d{\xi} \sum_{i} f_i(\xi) \cdot \xi
+	=
+	1
+	\label{eq:L07_PMSR}
+\end{equation}
+
+In the parton model, deep inelastic scattering is described by the Feynman diagram\marginpar{Portrait of deep inelastic scattering with a parton} in Figure \ref{fig:L07_PMFD}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{07}/07_images/PMFD.pdf}
+	\caption{\label{fig:L07_PMFD} Feynman diagram of deep inelastic scattering with a parton.}
+\end{figure}
+
+We take each quark or antiquark in the proton and consider it to scatter from the electron as a pointlike spin-\( \frac{1}{2} \) particle. The outgoing quark cannot be seen in isolation since it's not possible to have a quark singlet. Rather, it must turn into a jet of hadrons through processes that involve the strong interactions in a non-trivial way. Here again, the effects of the strong interactions are ignored when computing the cross section\marginpar{Cross section for deep inelastic scattering according to parton model}, which will be interpreted as the sum of the cross sections for all possible hadronic final states. So, the parton model cross section reads:
+\begin{equation}
+	\sigma(e^-p \rightarrow e^-X)
+	=
+	\int \d{\xi} \sum_{f} \qty[f_f(\xi) + f_{\bar{f}}(\xi)] \sigma(e^-q(\xi p) \rightarrow e^-q)
+	\label{eq:L07_PMCS}
+\end{equation}
+
+\end{document}

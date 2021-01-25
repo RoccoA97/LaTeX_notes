@@ -1,0 +1,35 @@
++ Arguments:
+    ++
+
++ Labels:
+    ++ Equations (eq:):
+		L03_PST		=	Probability of Survival at Time
+		L03_TW		=	Total Width
+		L03_TDR		=	Total Decay Rate
+		L03_BR		=	Branching Ratio
+		L03_R1B		=	Rate for 1 Beam
+		L03_L		=	Luminosity
+		L03_R2B		=	Rate for 2 Beams
+		L03_BGD		=	Bunches Gaussian Distribution
+		L03_RB		=	Rate with Bunches
+		L03_TEO		=	Time Evolution Operator
+		L03_MED		=	Matrix Element Dimension
+		L03_PSI		=	Phase Space Integral
+		L03_ISN		=	Initial State Normalization
+		L03_FGR		=	Fermi Golden Rule
+		L03_FGRCS	=	Fermi Golden Rule for Cross Section
+		L03_2PPSE	=	2 Particles Phase Space Example
+		L03_2PPSD	=	2 Particles Phase Space Dinamics
+		L03_2PPSI	=	2 Particles Phase Space Integral
+		L03_3PPSI	=	3 Particles Phase Space Integral
+		L03_BWF		=	Breit-Wigner Formula
+		L03_BWFFT	=	Breit-Wigner Formula Fourier Transformed
+		L03_BWFPD	=	Breit-Wigner Formula Probability Decay
+		L03_BWFL	=	Breit-Wigner Formula Lifetime
+		L03_PPRCS	=	Pion Pion Rho Cross Section
+		L03_PPRPPCS	=	Pion Pion Rho Pion Pion Cross Section
+		L03_RPW		=	Rho Partial Width
+
+    ++ Figures (fig:):
+		L03_PVM		=	Pseudoscalar - Vector Mesons (Tikz)
+		L03_PPRPPD	=	Pion Pion Rho Pion Pion Diagram (Tikz)

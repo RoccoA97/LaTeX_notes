@@ -1,0 +1,118 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{08}{04}{2020}
+
+
+\begin{document}
+
+\chapter{Strong interactions}
+
+\marginpar{ \textbf{Lecture 10.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\section{The gluon}
+
+\subsection{Measurement of parton distribution functions}
+Let's begin by returning on the final discussion in the previous chapter. We want to know the probability density functions (PDFs) at high energies. In order to understand their utility, we take the example of the proton, composed of three quarks, in particular \( uud \). However in its \( F_2^p(x) \) factor we can have contributions from other quarks and not only by \( u \) and \( d \). \marginpar{Flavor sum rules for PDFs}However, there are certain rules that should be satisfied:
+\begin{align}
+	\int_{0}^{1} \d{x} \qty[f_u(x) - f_{\bar{u}}(x)] &= 2	\\
+	\int_{0}^{1} \d{x} \qty[f_d(x) - f_{\bar{d}}(x)] &= 1	\\
+	\int_{0}^{1} \d{x} \qty[f_q(x) - f_{\bar{q}}(x)] &= 0	\qquad q = s, c, b, t
+\end{align}
+These PDFs have to be measured experimentally, in our case the reaction \( e^-p \longrightarrow e^-X \) gives us one combination of these distributions. But there are other reactions that give us access to other, orthogonal, combinations.
+
+Another important source of information is deep inelastic scattering by neutrinos. Neutrinos interact with protons through the weak interaction, and so we will need to understand the structure of that interaction to interpret this data in detail. We will see later that neutrinos also interact through a form of the current-current interaction, and that, at the level of the parton model, neutrino and antineutrino deep inelastic scattering is also described by a formula similar to the one we found. The four most important parton-level processes are:
+\begin{align}
+	\nu + d 			&\longrightarrow u 		 + \mu^-	\\
+	\nu + \bar{u}		&\longrightarrow \bar{d} + \mu^-	\\
+	\bar{\nu} + u		&\longrightarrow d  	 + \mu^+	\\
+	\bar{\nu} + \bar{d} &\longrightarrow \bar{u} + \mu^+
+\end{align}
+To measure the cross section of electron-proton interaction, we can measure something similar with muons. So we are looking to processes with a muon in the final state. By measuring the sign of
+the final muon each event and the distribution of events in \( y \), we can separately measure \( u \) and \( d \) quark and antiquark distributions. By looking for strange or charmed particles in the final states of deep inelastic electron and neutrino scattering, we can also estimate the heavy quark distributions. Note that the sum rules imply that the total numbers of heavy quarks and antiquarks in the proton are equal, but they do not imply that \( f_f(x) = f_{\bar{f}}(x) \). In fact, some processes that add quark-antiquark pairs lead to different distributions.
+
+Using data from all of these reactions, it is possible to assemble a quantitative model of the full set of pdfs. In setting up such a model, we typically divide the \( u \) and \( d \) pdfs into \textbf{valence} and \textbf{sea components}. The valence component contains exactly two \( u \) quarks and one \( d \) quark, at values of \( x \) of order 1. These distributions will have the general form in Figure \ref{fig:L10_UUDDVC}. These valence quarks are accompanied by a sea of quarks and antiquarks. The sea distributions are largest at much smaller values of \( x \). They are found to be divergent as \( x \) approaches to 0, so that the proton contains a very large number of quark-antiquark pairs carrying very small fractions of the total proton momentum. This can be seen in Figure \ref{fig:L10_UUDDSC}.
+
+\begin{figure}[!h]
+    \begin{minipage}[t]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{\figpath{10}/10_images/UUDDVC.pdf}
+		\caption{\label{fig:L10_UUDDVC} The pdfs of the proton: valence components.}
+    \end{minipage}
+    \hspace{0.03\linewidth}
+    \begin{minipage}[t]{0.45\linewidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{\figpath{10}/10_images/UUDDSC.pdf}
+        \caption{\label{fig:L10_UUDDSC} The pdfs of the proton: sea components.}
+    \end{minipage}
+\end{figure}
+
+The divergences of the quark and antiquark pdfs must match so that the integrals in the sum rules can be finite. Feynman called the partons at very small \( x \) the \textbf{wee partons}.
+
+These ideas can be incorporated in a quantitative model of the pdfs whose parameters are then fit to the relevant data. The fit gives explicit forms for the valence and sea pdf functions. Figure \ref{fig:L10_PDF} shows the functions extracted by the NNPDF collaboration.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{\figpath{10}/10_images/PDF.png}
+	\caption{\label{fig:L10_PDF} Parton distribution functions \( xf_i(x) \) at \( Q = 3.1 \ \si{GeV} \) and at \( Q = 100 \ \si{GeV} \), according to the fit of the NNPDF collaboration.}
+\end{figure}
+
+Now, since each parton carries a fraction \( x \) of the proton’s energy-momentum:
+\begin{equation}
+	\int \d{x} \ x \sum_{i} f_i(x)
+	=
+	1
+	\label{eq:L10_MSRFPDF}
+\end{equation}
+The fraction of the total energy-momentum of the proton carried by quarks is given by the integral:
+\begin{equation}
+	\frac{P_{q+\bar{q}}}{P}
+	=
+	\int_{0}^{1} \d{x} \ x \sum_{f} \qty[f_f(x) + f_{\bar{f}}(x)]
+	\approx
+	0.5
+	\label{eq:L10_TEMF}
+\end{equation}
+
+With the extra factor of \( x \), this integral easily converges as \( x \) approaches 0. So, something is still missing since we expect \( \frac{P_{q+\bar{q}}}{P} \approx 0.5 \). We need additional partons of another type and it shouldn't participate in deep inelastic scattering. Presumably, the proton must also contain the particle responsible for the binding of quarks into hadron bound states. This particle is called \textbf{gluon}. If gluons lead to the strong interaction, then, also, there should be a field equation for the gluon field, and there should be physical gluon particles. These particles should appear in the proton wavefunction and should carry some fraction of its momentum. The gluon should be radiated from the outgoing quarks and antiquarks.
+
+If there is a gluon that interacts with quarks, it should be produced in the reaction \( e^+e^- \longrightarrow \text{hadrons} \). We have seen that typical events for this process at high energies are 2-jet events, due to quarks and antiquarks. If a gluon also appears as a jet, we should also see 3-jet events, in which one jet is the product of a gluon. And this is what was observed experimentally.
+
+
+
+\subsection{Photon emission in \( e^+e^- \longrightarrow q\bar{q} \)}
+Let's start by formulating a hypothesis. The simplest one is
+that gluons are spin 1 particles like photons, and that they couple to the conserved quark current in the same manner as the photon. The theory of photon emission from relativistic charged particles is rather straight-forward.
+
+We focus now on the process of \( e^+e^- \) annihilation into hadrons. The final state of two collinear particles has a momentum very close to that of the original particle, so only a small momentum transfer is required. This process is called \textbf{collinear splitting}. In particle detectors, splitting is induced by the interaction of the electron or photon with an atomic nucleus. However, when a relativistic particle is produced in a hard-scattering reaction, that reaction can give the small amount of extra momentum needed to allow splitting.
+
+Consider, then, Feynman diagram with \( e^+e^- \longrightarrow q\bar{q} \) followed by photon:
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{\figpath{10}/10_images/EPQAPFD.pdf}
+	\caption{\label{fig:L10_EPQAPFD} Feynman diagram of \( e^+e^- \longrightarrow q\bar{q} \) followed by photon.}
+\end{figure}
+
+In the full process \( e^+e^- \longrightarrow q\bar{q} + \gamma \), photons can also be emitted from the initial-state electron and positron, and all of these emissions must be accounted to compare with data. However, it turns out that the dominant contribution to the cross section consists of separate contributions from each of the initial and final legs, so it makes sense to study these separately.
+
+We can study the gluon emission in \( e^+e^- \) interaction:
+\begin{itemize}
+	\item \( e^+e^- \longrightarrow q\bar{q}g \longrightarrow \text{3 jets} \)
+	\item \( e^+e^- \longrightarrow q\bar{q}  \longrightarrow q\bar{q}g \)
+\end{itemize}
+
+%TODO
+
+
+
+\subsection{Gluon effects on PDFs}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{\figpath{10}/10_images/GEPDF.png}
+	\caption{\label{fig:L10_GEPDF} Evolution of the \( u \) quark pdf \( xf_u(x) \) from \( Q = 2 \ \si{GeV} \) to \( Q = 1250 \ \si{GeV} \), showing the flow of valence quark energy-momentum into gluons.}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass[border=20pt]{standalone}
+%\usepackage{feynmf-auto}
+\usepackage{feynmp-auto}
+\usepackage{scalerel}
+\newcommand{\mybrace}{\vspace{0.1pt}\scaleleftright[\dimexpr5pt+40\dimexpr0.06pt]{.}{\rule[\dimexpr2pt-40\dimexpr0.5pt]{-4pt}{40pt}}{\rbrace}\hspace{4pt}}
+\begin{document}
+\begin{fmffile}{feyngraph}
+  \begin{fmfgraph*}(160,100)
+    \fmfleft{ip,il}
+    \fmfright{x1,x2,x3,o1,o2,o3,o4,ol}
+    \fmfset{arrow_len}{10}
+    % lepton
+    \fmflabel{$\text{e}^-$}{il}
+    \fmflabel{$\text{e}^-$}{ol}
+    \fmf{fermion,label=$k$, label.side=left}{il,vl}
+    \fmf{fermion,label=$k'$,label.side=left}{vl,ol}
+    \fmf{phantom,tension=0.6}{vl,vp}
+    % proton
+    \fmfv{l=$\text{p}^+$,l.a=-160}{ip} % l.a = label.angle
+    \fmf{phantom,tension=1}{ip,vp,x1}
+    \fmffreeze
+    \fmfi{fermion}{vpath (__ip,__vp) scaled 1.01}
+    \fmfi{fermion,label=$p$,label.side=left}
+                  {vpath (__ip,__vp) scaled 1.01 shifted (-1.4, 6)}
+    \fmfi{fermion}{vpath (__ip,__vp) scaled 1.01 shifted ( 1.4,-6)}
+    \fmfblob{25}{vp}
+    % X
+    \fmfv{l=\mybrace $X$,l.a=10}{x2}
+    \fmf{fermion}{vp,x1}
+    \fmf{phantom}{vp,x2} % to help \fmfi
+    \fmf{phantom}{vp,x3} % to help \fmfi
+    \fmfi{fermion}{vpath (__vp,__x2) scaled 0.98 shifted (0,2.2)}
+    \fmfi{fermion}{vpath (__vp,__x3) scaled 0.92 shifted (0,4.5)}
+    \fmffreeze
+    % photon
+    \fmf{photon,label=\vspace{-4pt}\hspace{5pt}{$q$},label.side=left}{vl,v}
+    % parton
+    \fmf{fermion,label=$xp$,label.side=left}{vp,v}
+    \fmf{fermion}{v,o2}
+  \end{fmfgraph*}
+\end{fmffile}
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass[border=20pt]{standalone}
+%\usepackage{feynmf-auto}
+\usepackage{feynmp-auto}
+
+\begin{document}
+\begin{fmffile}{feyngraph}
+  \begin{fmfgraph*}(160,100)
+    \fmfleft{i2,i1}
+    \fmfright{o2,m,o1}
+    \fmfshift{30 right}{m1,m2}
+    \fmf{fermion}{i1,v1,i2}
+    \fmf{phantom}{o2,v2,o1}
+    \fmf{boson,label=$\gamma$,label.side=right}{v1,v2}
+    \fmffreeze
+    \fmf{fermion}{o2,v2,z,o1}
+    \fmffreeze
+    \fmf{boson,label=$\gamma$,label.side=left}{z,m}
+	\fmf{fermion,tension=1.4}{m}
+    \fmf{phantom,tension=0.6}{i2,m}
+    \fmflabel{$q$}{o1}
+    \fmflabel{$\bar{q}$}{o2}
+    \fmflabel{$e^-$}{i1}
+    \fmflabel{$e^+$}{i2}
+  \end{fmfgraph*}
+\end{fmffile}
+\end{document}

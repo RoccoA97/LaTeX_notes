@@ -1,0 +1,51 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+
+
+% Done in L10
+\begin{document}
+
+\chapter{Exercises}
+
+\begin{exercise}{Electromagnetic shower in calorimeters}{}
+	\textbf{Calculate the average number of particles in an electromagnetic shower initiated by a 50 GeV photon, after 10, 13 and 20 cm of crossed iron.\\Hint: search for the radiation length of the iron on the PDG.}
+
+	\medskip
+	Searching on Particle Data Group\footnote{\url{http://pdg.lbl.gov/2010/AtomicNuclearProperties/HTML_PAGES/026.html}}, we find for \( e^- \):
+	\begin{align}
+		X_0^{\text{Fe}}	&=	1.757 \ \si{cm}	\\
+		E_C^{\text{Fe}}	&=	21.68 \ \si{MeV}
+		\label{eq:E01_1_1}
+	\end{align}
+
+	So, until the energy of the product particles is lower than the critical energy \( E_C \), we have:
+	\begin{equation}
+		N(x) = 2^{\frac{x}{X_0^{\text{Fe}}}}
+		\label{eq:E01_1_2}
+	\end{equation}
+	We find these values:
+	\begin{align}
+		N(x = 10 \ \si{cm}) &\approx 52		\\
+		N(x = 13 \ \si{cm}) &\approx 169	\\
+		N(x = 20 \ \si{cm}) &\approx N(x \approx 19.6 \ \si{cm}) \approx 2306
+	\end{align}
+	We note that for \( x = 20 \ \si{cm} \), the critical energy has already been reached at \( x \approx 19.6 \ \si{cm} \), so the number of product particles has to be computed at this distance with Eq. \ref{eq:E01_1_2}.
+\end{exercise}
+
+
+
+
+
+\bigskip
+\begin{exercise}{Energy loss of muons}{}
+	\textbf{A muon of 100 GeV energy crosses without being absorbed a detector whose mass is mainly due to the hadronic calorimeter and to the muon detector. The thickness of the crossed material can be considered as a layer of 3 m of iron. Determine:}
+	\begin{itemize}
+		\item \textbf{What is the dominant energy loss process.}
+		\item \textbf{The average loss of the muon inside the detector.}
+	\end{itemize}
+	\textbf{Hint: look at the energy loss picture of muons.}
+\end{exercise}
+
+\end{document}

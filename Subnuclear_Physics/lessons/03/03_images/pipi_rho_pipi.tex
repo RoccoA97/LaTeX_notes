@@ -1,0 +1,14 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage{siunitx}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\begin{document}
+\feynmandiagram [vertical'=a to b] {
+	i1 [particle=\(\pi^{-}\)]
+	-- a [blob]
+	-- f1 [particle=\(\pi^{+}\)],
+	a -- [edge label=\(\rho^{0}\)] b [blob],
+	i2 [particle=\(\pi^{+}\)]
+	-- b
+	-- f2 [particle=\(\pi^{-}\)],
+};
+\end{document}

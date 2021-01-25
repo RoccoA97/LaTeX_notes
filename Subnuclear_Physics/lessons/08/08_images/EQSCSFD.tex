@@ -1,0 +1,17 @@
+\documentclass[border=15pt]{standalone}
+\usepackage{feynmp-auto}
+\begin{document}
+\begin{fmffile}{feyngraph}
+  \begin{fmfgraph*}(110,60)
+    \fmfleft{i2,i1}
+    \fmfright{o2,o1}
+    \fmf{fermion}{i1,v1,i2}
+    \fmf{fermion}{o2,v2,o1}
+    \fmf{photon,label=$\gamma$,label.side=right,label.dist=10}{v2,v1}
+    \fmflabel{$e^-$}{i1}
+    \fmflabel{$e^+$}{i2}
+    \fmflabel{$\overline{q}$}{o2}
+    \fmflabel{$q$}{o1}
+  \end{fmfgraph*}
+\end{fmffile}
+\end{document}

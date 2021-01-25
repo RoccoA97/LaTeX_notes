@@ -1,0 +1,25 @@
++ Arguments:
+	++
+
++ Labels:
+	++ Equations (eq:):
+		L12_BD		=	Beta Decay
+		L12_BDL		=	Beta Decay Lifetime
+		L12_VATME	=	V-A Theory Matrix Element
+		L12_JML+	=	J Mu L +
+		L12_JML-	=	J Mu L -
+		L12_VATMD	=	V-A Theory Muon Decay
+		L12_VATMDME	=	V-A Theory Muon Decay Matrix Element
+		L12_VATMDES	=	V-A Theory Muon Decay Energy Spectrum
+		L12_VATMDG	=	V-A Theory Muon Decay Gamma
+		L12_VATMDED	=	V-A Theory Muon Decay Electron Distribution
+		L12_VATPDBR	=	V-A Theory Pion Decay Branching Ratio
+
+
+	++ Figures (fig:):
+		L12_BDFD	=	Beta Decay Fermi Description
+		L12_MDFD	=	Muon Decay Feynman Diagram (Tikz)
+		L12_VATMDC	=	V-A Theory Muon Decay Configuration (Tikz)
+
+
+	++ Tables (tab:):

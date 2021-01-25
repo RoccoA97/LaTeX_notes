@@ -1,0 +1,863 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+
+
+\begin{document}
+
+\newdate{date}{05}{11}{2020}
+\marginpar{ \textbf{Lecture 12.} \\  \displaydate{date}.}
+
+\section{Discrete Fourier Transform}
+We have discussed the DTFT for a discrete-time function given by:
+\begin{equation}
+    X(e^{j\omega})
+    =
+    \sum_{n=-\infty}^{\infty} x[n]e^{-j\omega n}
+    \label{eq:L12_S03_1}
+\end{equation}
+and the inverse DTFT:
+\begin{equation}
+    x[n]
+    =
+    \frac{1}{2\pi} \int_{-\pi}^{\pi} X(e^{j\omega}) e^{j\omega n} \d{\omega}
+    \label{eq:L12_S03_2}
+\end{equation}
+\marginpar{Drawbacks of DTFT}The pair and their properties and applications have some limitations. The input signal is usually aperiodic and may be finite in length.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{\figpath{12}/12_images/S04_1.pdf}
+    \caption{\label{fig:L12_S04_1} In order from top to bottom, a finite-length signal, its magnitude spectrum, its phase spectrum.}
+\end{figure}
+
+Moreover, we often do not have an infinite amount of data which is required by DTFT. For example in a computer we cannot calculate uncountable infinite (continuum) of frequencies as required by DTFT.
+\marginpar{Discrete Fourier transform as solution}
+Thus, we use DTF to look at finite segment of data. We only observe the data through a window:
+\begin{align}
+    x_{0}[n] &= x[n]w_{R}[n]    \\
+    w_{R}[n] &=
+    \begin{cases}
+        1   &   n=0,1,\dots,N-1 \\
+        0   &   \text{otherwise}
+    \end{cases}
+\end{align}
+In this case, the \( x_{0}[n] \) is just a sampled data between \( n=0 \), \( n=N-1 \) (so, \( N \) points).
+
+The solution to our problems is given by the Discrete Fourier Transform (DFT).
+
+\marginpar{Definition of discrete Fourier transform}
+\begin{definition}{Discrete Fourier Transform (DFT)}{}
+    The simplest relation between a length-\( N \) sequence \( x[n] \), defined for \( 0 \le n \le N-1 \), and its DTFT \( X(e^{j\omega}) \) is obtained by uniformly sampling on the \( \omega \)-axis between \( 0 \le \omega \le 2\pi \) at \( \omega_{k} = \frac{2\pi k}{N} \), for \( 0 \le k \le N-1 \). From the definition of the DTFT we thus have:
+    \begin{equation}
+        X[k]
+        =
+        \qty[X(e^{j\omega})]_{\omega=\frac{2\pi k}{N}}
+        =
+        \sum_{n=0}^{N-1} x[n]e^{-j 2\pi k \frac{n}{N}}
+        \label{eq:L12_S06_1}
+    \end{equation}
+    Note that \( X[k] \) is also a length-\( N \) sequence in the frequency domain and it is called the \textbf{Discrete Fourier Transform (DFT)} of the sequence \( x[n] \). Using the notation \( W_{N} = e^{-j \frac{2\pi}{N}} \), the DFT is usually expressed as:
+    \begin{equation}
+        X[k]
+        =
+        \sum_{n=0}^{N-1} x[n] W_{N}^{kn},
+        \qquad
+        0 \le k \le N-1
+        \label{eq:L12_S07_1}
+    \end{equation}
+\end{definition}
+
+\marginpar{Definition of inverse discrete Fourier transform}
+\begin{definition}{Inverse Discrete Fourier Transform (IDFT)}{}
+    The \textbf{Inverse Discrete Fourier Transform (IDFT)} is given by:
+    \begin{equation}
+        x[n]
+        =
+        \frac{1}{N} \sum_{k=0}^{N-1} X[k] W_{N}^{-kn},
+        \qquad
+        0 \le n \le N-1
+        \label{eq:L12_S08_1}
+    \end{equation}
+\end{definition}
+\marginpar{Validation of the DFT definition}
+To verify the above expression, we multiply both sides of the above equation by \( W_{N}^{\ell n} \) and sum the result from \( n=0 \) to \( n=N-1 \), resulting in:
+\begin{align}
+    \sum_{n=0}^{N-1} x[n] W_{N}^{\ell n}
+    &=
+        \sum_{n=0}^{N-1} \qty(\frac{1}{N} \sum_{k=0}^{N-1} X[k] W_{N}^{-kn}) W_{N}^{\ell n} \nonumber   \\
+    &=
+        \frac{1}{N} \sum_{n=0}^{N-1} \sum_{k=0}^{N-1} X[k] W_{N}^{-(k-\ell)n}   \nonumber   \\
+    &=
+        \frac{1}{N} \sum_{k=0}^{N-1} \sum_{n=0}^{N-1} X[k] W_{N}^{-(k-\ell)n}
+\end{align}
+Making use of the identity:
+\begin{equation}
+    \sum_{n=0}^{N-1} W_{N}^{-(k-\ell)n}
+    =
+    \begin{cases}
+        N   &   k-\ell = rN, \ r \in \mathbb{Z} \\
+        0   &   \text{otherwise}
+    \end{cases}
+    \label{eq:L12_S10_1}
+\end{equation}
+we observe that the RHS of the last equation is equal to \( X[\ell] \). Hence:
+\begin{equation}
+    \sum_{n=0}^{N-1} x[n] W_{N}^{\ell n}
+    =
+    X[\ell]
+    \label{eq:L12_S10_2}
+\end{equation}
+
+Now, we focus on some examples to understand the practical way to compute the DFT.
+
+\marginpar{Examples of discrete Fourier transform calculation}
+\begin{example}{Discrete Fourier Transform}{}
+    Consider the length-\( N \) sequence:
+    \begin{equation}
+        x[n]
+        =
+        \begin{cases}
+            1   &   n=0 \\
+            0   &   1 \le n \le N-1
+        \end{cases}
+        \label{eq:L12_S11_1}
+    \end{equation}
+    Its \( N \)-point DFT is given by:
+    \begin{equation}
+        X[k]
+        =
+        \sum_{n=0}^{N-1} x[n] W_{N}^{kn}
+        =
+        x[0] W_{N}^{0}
+        =
+        1
+        \label{eq:L12_S11_2}
+    \end{equation}
+    with \( 0 \le k \le N-1 \).
+\end{example}
+
+\begin{example}{Discrete Fourier Transform}{}
+    Consider the length-\( N \) sequence:
+    \begin{equation}
+        y[n]
+        =
+        \begin{cases}
+            1   &   n=m \\
+            0   &   0 \le n \le m-1, \ m+1 \le n \le N-1
+        \end{cases}
+        \label{eq:L12_S12_1}
+    \end{equation}
+    Its \( N \)-point DFT is given by:
+    \begin{equation}
+        Y[k]
+        =
+        \sum_{n=0}^{N-1} y[n] W_{N}^{kn}
+        =
+        y[m] W_{N}^{km}
+        =
+        W_{N}^{km}
+        \label{eq:L12_S12_2}
+    \end{equation}
+    with \( 0 \le k \le N-1 \).
+\end{example}
+
+\begin{example}{Discrete Fourier Transform}{}
+    Consider the length-\( N \) sequence defined for \( 0 \le n \le N-1 \):
+    \begin{equation}
+        g[n]
+        =
+        \cos\qty(\frac{2\pi rn}{N}),
+        \qquad
+        0 \le r \le N-1
+        \label{eq:L12_S13_1}
+    \end{equation}
+    Using trigonometic identities, we can rewrite:
+    \begin{equation}
+        g[n]
+        =
+        \frac{1}{2} \qty(e^{j2\pi r \frac{n}{M}} + e^{-j2\pi r \frac{n}{N}})
+        =
+        \frac{1}{2} \qty(W_{N}^{-rn} + W_{N}^{rn})
+        \label{eq:L12_S13_2}
+    \end{equation}
+    The \( N \)-point DFT of \( g[n] \) is thus given by:
+    \begin{equation}
+        G[k]
+        =
+        \sum_{n=0}^{N-1} g[n] W_{N}^{kn}
+        =
+        \frac{1}{2} \qty(\sum_{n=0}^{N-1} W_{N}^{-(r-k)n} + \sum_{n=0}^{N-1} W_{N}^{(r+k)n} )
+        \label{eq:L12_S14_1}
+    \end{equation}
+    with \( 0 \le k \le N-1 \). Making use of the identity:
+    \begin{equation}
+        \sum_{n=0}^{N-1} W_{N}^{-(k-\ell)n}
+        =
+        \begin{cases}
+            N   &   k-\ell = rN, \ r \in \mathbb{Z} \\
+            0   &   \text{otherwise}
+        \end{cases}
+        \label{eq:L12_S15_1}
+    \end{equation}
+    we get:
+    \begin{equation}
+        G[k]
+        =
+        \begin{cases}
+            \frac{N}{2} &   k=r \\
+            \frac{N}{2} &   k=N-r   \\
+            0   &   \text{otherwise}
+        \end{cases}
+        \label{eq:L12_S15_2}
+    \end{equation}
+    with \( 0 \le k \le N-1 \).
+\end{example}
+
+
+
+\subsection{Matrix relations}
+\marginpar{DFT matrix form}
+The DFT analysis and synthesis formulas can now be easily expressed in a familiar matrix notation. More precisely, the DFT samples previously defined in Eq. \ref{eq:L12_S07_1} can be expressed in matrix form as:
+\begin{equation}
+    \mathbf{X}
+    =
+    \mathbf{D}_{N} \mathbf{x}
+    \label{eq:L12_S16_2}
+\end{equation}
+where:
+\begin{equation}
+    \mathbf{X}
+    =
+        \begin{bmatrix}
+            X[0]    \\
+            X[1]    \\
+            \vdots  \\
+            X[N-1]
+        \end{bmatrix},
+    \qquad
+    \mathbf{x}
+    =
+        \begin{bmatrix}
+            x[0]    \\
+            x[1]    \\
+            \vdots  \\
+            x[N-1]
+        \end{bmatrix}
+\end{equation}
+\marginpar{DFT matrix}and \( \mathbf{D}_{N} \) is the \( N \times N \) \textbf{DFT matrix} given by:
+\begin{equation}
+    \mathbf{D}_{N}
+    =
+    \begin{bmatrix}
+        1   &   1   &   1   &   \cdots & 1   \\
+        1   &   W_{N}^{1}   &   W_{N}^{2}   &   \cdots & W_{N}^{(N-1)}   \\
+        1   &   W_{N}^{2}   &   W_{N}^{4}   &   \cdots & W_{N}^{2(N-1)}   \\
+        \vdots  &   \vdots  &   \vdots  &   \ddots  &   \vdots  \\
+        1   &   W_{N}^{(N-1)}   &   W_{N}^{2(N-1)}   &   \cdots & W_{N}^{(N-1)^2}   \\
+    \end{bmatrix}
+    \label{eq:L12_S17_1}
+\end{equation}
+Likewise, the IDFT relation given by:
+\begin{equation}
+    x[n]
+    =
+    \frac{1}{N} \sum_{k=0}^{N-1} X[k] W_{N}^{-kn},
+    \qquad
+    0 \le n \le N-1
+    \label{eq:L12_S18_1}
+\end{equation}
+can be expressed in matrix form as:
+\begin{equation}
+    \mathbf{x}
+    =
+    \mathbf{D}_{N}^{-1} \mathbf{X}
+    \label{eq:L12_S18_2}
+\end{equation}
+where \( \mathbf{D}_{N}^{-1} \) is the \( N \times N \) \textbf{inverse DFT matrix}, given by:
+\marginpar{Inverse DFT matrix}
+\begin{equation}
+    \mathbf{D}_{N}^{-1}
+    =
+    \begin{bmatrix}
+        1   &   1   &   1   &   \cdots & 1   \\
+        1   &   W_{N}^{-1}   &   W_{N}^{-2}   &   \cdots & W_{N}^{-(N-1)}   \\
+        1   &   W_{N}^{-2}   &   W_{N}^{-4}   &   \cdots & W_{N}^{-2(N-1)}   \\
+        \vdots  &   \vdots  &   \vdots  &   \ddots  &   \vdots  \\
+        1   &   W_{N}^{-(N-1)}   &   W_{N}^{-2(N-1)}   &   \cdots & W_{N}^{-(N-1)^2}   \\
+    \end{bmatrix}
+    =
+    \frac{1}{N} \mathbf{D}_{N}^{*}
+    \label{eq:L12_S19_1}
+\end{equation}
+
+
+
+\subsection{DTFT from DFT by interpolation and sampling of DTFT}
+\marginpar{DTFT from DFT interpolation}
+The \( N \)-point DFT \( X[k] \) of a length-\( N \) sequence \( x[n] \) is simply the frequency samples of its DTFT \( X(e^{j\omega}) \) evaluated at \( N \) uniformly spaced frequency points:
+\begin{equation}
+    \omega
+    =
+    \omega_{k}
+    =
+    \frac{2\pi k}{N},
+    \qquad
+    0 \le k \le N-1
+    \label{eq:L12_S20_1}
+\end{equation}
+Given the \( N \)-point DFT \( X[k] \) of a length-\( N \) sequence \( x[n] \), its DTFT \( X(e^{j\omega}) \) can be uniquely determined from \( X[k] \). Thus:
+\begin{align}
+    X(e^{j\omega})
+    &=
+        \sum_{n=0}^{N-1} x[n] e^{-j\omega n}    \nonumber   \\
+    &=
+        \sum_{n=0}^{N-1} \qty[\frac{1}{N} \sum_{k=0}^{N-1} X[k]W_{N}^{-kn}] e^{-j\omega n}  \nonumber   \\
+    &=
+        \frac{1}{N} \sum_{k=0}^{N-1} X[k] \underbrace{\sum_{n=0}^{N-1} e^{-j\qty(\omega - \frac{2\pi k}{N})n}}_{S}
+\end{align}
+
+To develop a compact expression for the sum \( S \), let \( r = e^{-j\qty(\omega - \frac{2\pi k}{N})} \). Then, we can rewrite the sum as:
+\begin{equation}
+    S
+    =
+    \sum_{n=0}^{N-1} r^{n}
+    \label{eq:L12_S22_1}
+\end{equation}
+From Eq. \ref{eq:L12_S22_1}:
+\begin{align}
+    rS
+    &=
+        \sum_{n=1}^{N} r^{n} = 1 + \sum_{n=1}^{N-1} r^{n} r^{N} - 1 \nonumber   \\
+    &=
+        \sum_{n=0}^{N-1} r^{n} + r^{N} - 1 = S + r^{N} - 1
+\end{align}
+or, equivalently:
+\begin{equation}
+    S - rS
+    =
+    (1-r)S
+    =
+    1 - r^{N}
+    \label{eq:L12_S23_1}
+\end{equation}
+Hence:
+\begin{equation}
+    S
+    =
+    \frac{1-r^{N}}{1-r}
+    =
+    \frac{1-e^{-j\qty(\omega n - 2\pi k)}}{1-e^{-j\qty(\omega - \frac{2\pi k}{N})}}
+    =
+    \frac{\displaystyle\sin\qty(\frac{\omega N  2\pi k}{2})}{\displaystyle\sin\qty(\frac{\omega N - 2\pi k}{2N})} e^{-j \qty(\frac{\omega - 2\pi k}{N}) \qty(\frac{N-1}{2})}
+\end{equation}
+Therefore:
+\begin{equation}
+    X(e^{j\omega})
+    =
+    \frac{1}{N} \sum_{k=0}^{N-1} X[k]
+    \frac{\displaystyle\sin\qty(\frac{\omega N  2\pi k}{2})}{\displaystyle\sin\qty(\frac{\omega N - 2\pi k}{2N})}
+    e^{-j \qty(\frac{\omega - 2\pi k}{N}) \qty(\frac{N-1}{2})}
+    \label{eq:L12_S24_1}
+\end{equation}
+
+
+\medskip
+\marginpar{Sampling the DTFT}
+Now, we study the inverse operation. We consider a sequence \( x[n] \) with a DTFT \( X(e^{j\omega}) \). We sample \( X(e^{j\omega}) \) at \( N \) equally spaced points \( \omega_{k} = \frac{2\pi k}{N} \), \( 0 \le k \le N-1 \), developing the \( N \) frequency samples \( \qty{X(e^{j\omega_{k}})} \).
+These \( N \) frequency samples can be considered as an \( N \)-point DFT \( Y[k] \) whose \( N \)-point inverse DFT is a length-\( N \) sequence \( y[n] \). Now:
+\begin{equation}
+    X(e^{j\omega})
+    =
+    \sum_{\ell=-\infty}^{\infty} x[\ell] e^{-j\omega \ell}
+    \label{eq:L12_S26_1}
+\end{equation}
+Thus:
+\begin{equation}
+    Y[k]
+    =
+    X(e^{j\omega_{k}})
+    =
+    X(e^{j\frac{2\pi k}{N}})
+    =
+    \sum_{\ell=-\infty}^{\infty} x[\ell] e^{-j 2\pi k \frac{\ell}{N}}
+    =
+    \sum_{\ell=-\infty}^{\infty} x[\ell] W_{N}^{k\ell}
+    \label{eq:L12_S26_2}
+\end{equation}
+The inverse DFT of \( Y[k] \) yields:
+\begin{align}
+    y[n]
+    &=
+        \frac{1}{N} \sum_{k=0}^{N-1} Y[k] W_{N}^{-kn}   \nonumber   \\
+    &=
+        \frac{1}{N} \sum_{k=0}^{N-1} \sum_{\ell=-\infty}^{\infty} x[\ell] W_{N}^{k\ell} W_{N}^{-kn} \nonumber   \\
+    &=
+        \sum_{\ell=-\infty}^{\infty} x[\ell] \qty[\sum_{k=0}^{N-1} W_{N}^{-k(n-\ell)}]  \nonumber   \\
+    &=
+        \sum_{m=-\infty}^{\infty} x[n+mN]
+\end{align}
+with \( 0 \le n \le N-1 \), where in the last passage the identity in Eq. \ref{eq:L12_S15_1} is employed. Thus, \( y[n] \) is obtained from \( x[n] \) by adding an infinite number of shifted replicas of \( x[n] \), with each replica shifted by an integer multiple of \( N \) sampling instants, and observing the sum only for the interval \( 0 \le n \le N-1 \).
+
+To apply the last result to finite-length sequences, we assume that the samples outside the specified range are zeros. Thus, if \( x[n] \) is a length-\( M \) sequence with \( M \le N \), then \( y[n] = x[n] \) for \( 0 \le n \le N-1 \).
+If \( M > N \), there is a time-domain aliasing of samples of \( x[n] \) in generating \( y[n] \), and \( x[n] \) cannot be recovered from \( y[n] \).
+
+\begin{example}{Aliasing}{}
+    Let \( x[n] = \qty{0,1,2,3,4,5} \).
+    \marginnote{\flushleft\textsl{\small Aliasing}}
+    By sampling its DTFT \( X(e^{j\omega}) \) at \( \omega_{k} = \frac{2\pi k}{4} \), with \( 0 \le k \le 3 \), and then applying a 4-point IDFT to these samples, we arrive at the sequence \( y[n] \) given by:
+    \begin{equation}
+        y[n]
+        =
+        x[n] + x[n+4] + x[n-4],
+        \qquad
+        0 \le n \le 3
+        \label{eq:L12_S30_2}
+    \end{equation}
+    We get \( y[n] = \qty{4,6,2,3} \). However, \( x[n] \) cannot be recovered from \( y[n] \).
+\end{example}
+
+
+
+\subsection{DFT properties}
+\marginpar{DFT properties}
+Like the DTFT, the DFT also satisfies a number of properties that are useful in signal processing applications. Some of these properties are essentially identical to those of the DTFT, while some others are somewhat different. A summary of the DFT properties are given in Figures \ref{fig:L12_S32_1}, \ref{fig:L12_S33_1} and \ref{fig:L12_S34_1}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{\figpath{12}/12_images/S32_1.pdf}
+    \caption{\label{fig:L12_S32_1} Symmetry relations of DFT for a complex sequence \( x[n] \).}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{\figpath{12}/12_images/S33_1.pdf}
+    \caption{\label{fig:L12_S33_1} Symmetry relations of DFT for a real sequence \( x[n] \).}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{\figpath{12}/12_images/S34_1.pdf}
+    \caption{\label{fig:L12_S34_1} General properties of DFT.}
+\end{figure}
+
+
+
+\subsection{Circular shift and convolution of a sequence}
+After having listed some of the most common and useful properties of DFT, we focus on the operations of circular shift and circular convolution. Let us start from the former.
+
+\medskip
+\marginpar{Circular shift of a sequence}
+This property is analogous to the time-shifting property of the DTFT but with a difference. We inspect it by considering length-\( N \) sequences defined for \( 0 \le n \le N-1 \).
+The sample values of such sequences are equal to zero for values of \( n < 0 \) and \( n \ge N \).
+If \( x[n] \) is such a sequence, then for any arbitrary integer \( n_{0} \) the shifted sequence \( x_{1}[n] = x[n-n_{0}] \) is no longer defined for the range \( 0 \le n \le N-1 \). We thus need to define another type of shift that will always keep the shifted sequence in the range \( 0 \le n \le N-1 \).
+\marginpar{Circular shift and modulo operation}
+The desired shift, called the \textbf{circular shift}, is defined using a \textbf{modulo operation}:
+\begin{equation}
+    x_{c}[n]
+    =
+    x[\expval{n-n_{0}}_{N}]
+    \label{eq:L12_S37_1}
+\end{equation}
+For \( n_{0} > 0 \) (\textbf{right circular shift}), the above equation implies:
+\begin{equation}
+    x_{c}[n]
+    =
+    \begin{cases}
+        x[n-n_{0}]  &   n_{0} \le n \le N-1 \\
+        x[N-n_{0}+n]&   0 \le n \le n_{0}
+    \end{cases}
+    \label{eq:L12_S37_2}
+\end{equation}
+
+An illustration of the concept of circular shift is showed in Figure \ref{fig:L12_S38_1}. As it is possible to observe, a right circular shift by \( n_{0} \) is equivalent to a left circular shift by \( N - n_{0} \) sample periods. A circular shift by an integer number \( n_{0} \) greater than \( N \) is equivalent to a circular shift by \( \expval{n_{0}}_{N} \).
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{\figpath{12}/12_images/S38_1.pdf}
+    \caption{\label{fig:L12_S38_1} Illustration of circular shift.}
+\end{figure}
+
+
+
+\medskip
+\marginpar{Circular convolution of a sequence}
+Now, we pass to the circular convolution. This operation is analogous to the linear convolution, but with a difference. Consider two length-\( N \) sequences, \( g[n] \) and \( h[n] \), respectively. Their linear convolution results in a length-\( (2N-1) \) sequence \( y_{L}[n] \) given by:
+\begin{equation}
+    y_{L}[n]
+    =
+    \sum_{m=0}^{N-1} g[m]h[n-m],
+    \qquad
+    0 \le n \le 2N-2
+    \label{eq:L12_S40_1}
+\end{equation}
+In computing \( y_{L}[n] \), we have assumed that both length-\( N \) sequences have been zero-padded to extend their lengths to \( 2N - 1 \).
+The longer form of \( y_{L}[n] \) results from the time-reversal of the sequence \( h[n] \) and its linear shift to the right.
+The first nonzero value of \( y_{L}[n] \) is \( y_{L}[0] = g[0]h[0] \) and the last nonzero value is \( y_{L}[2N-2] = g[N-1]h[N-1] \).
+
+To develop a convolution-like operation resulting in a length-\( N \) sequence \( y_{C}[n] \), we need to define a \textbf{circular time-reversal}, and then apply a \textbf{circular time-shift}.
+\marginpar{Circular time-reversal and time-shift for circular convolution}
+Resulting operation, called a \textbf{circular convolution}, is defined by:
+\begin{equation}
+    y_{C}[n]
+    =
+    \sum_{m=0}^{N-1} g[m]h[\expval{n-m}_{N}],
+    \qquad
+    0 \le n \le N-1
+    \label{eq:L12_S42_1}
+\end{equation}
+Since the operation defined involves two length-\( N \) sequences, it is often referred to as an \textbf{\( N \)-point circular convolution}, denoted as:
+\begin{equation}
+    y[n]
+    =
+    g[n] \circled{N} h[n]
+    \label{eq:L12_S43_1}
+\end{equation}
+We remark that the circular convolution is commitative, namely:
+\begin{equation}
+    g[n] \circled{N} h[n]
+    =
+    h[n] \circled{N} g[n]
+    \label{eq:L12_S43_2}
+\end{equation}
+Now, we study an example to understand how this operation works.
+
+\begin{example}{Circular convolution}{}
+    Here, we compute the 4-point circular convolution of the two length-\( 4 \) sequences:
+    \begin{align}
+        g[n] &= \qty{{\color{red}1}, 2, 0, 1}   \\
+        h[n] &= \qty{{\color{red}2}, 2, 1, 1}
+    \end{align}
+    as sketched in the figure below.
+
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{\figpath{12}/12_images/S44_1.pdf}
+    \end{center}
+
+    The result is a length-\( 4 \) sequence \( y_{C}[n] \) given by:
+    \begin{equation}
+        y_{C}[n]
+        =
+        g[n] \circled{4} h[n]
+        =
+        \sum_{m=0}^{3} g[m] h[\expval{n-m}_{4}],
+        \qquad
+        0 \le n \le 3
+        \label{eq:L12_S45_1}
+    \end{equation}
+    We can observe that:
+    \begin{align}
+        y_{C}[0]
+        &=
+            \sum_{m=0}^{3} g[m] h[\expval{-m}_{4}]  \nonumber   \\
+        &=
+            g[0]h[0] + g[1]h[3] + g[2]h[2] + g[3]h[1]   \nonumber   \\
+        &=
+            (1 \cdot 2) + (2 \cdot 1) + (0 \cdot 1) + (1 \cdot 2) = 6
+    \end{align}
+    \begin{align}
+        y_{C}[1]
+        &=
+            \sum_{m=0}^{3} g[m] h[\expval{1-m}_{4}]  \nonumber   \\
+        &=
+            g[0]h[1] + g[1]h[0] + g[2]h[3] + g[3]h[2]   \nonumber   \\
+        &=
+            (1 \cdot 2) + (2 \cdot 2) + (0 \cdot 1) + (1 \cdot 1) = 7
+    \end{align}
+    \begin{align}
+        y_{C}[2]
+        &=
+            \sum_{m=0}^{3} g[m] h[\expval{2-m}_{4}]  \nonumber   \\
+        &=
+            g[0]h[2] + g[1]h[1] + g[2]h[0] + g[3]h[3]   \nonumber   \\
+        &=
+            (1 \cdot 1) + (2 \cdot 2) + (0 \cdot 2) + (1 \cdot 1) = 6
+    \end{align}
+    \begin{align}
+        y_{C}[3]
+        &=
+            \sum_{m=0}^{3} g[m] h[\expval{3-m}_{4}]  \nonumber   \\
+        &=
+            g[0]h[3] + g[1]h[2] + g[2]h[1] + g[3]h[0]   \nonumber   \\
+        &=
+            (1 \cdot 1) + (2 \cdot 1) + (0 \cdot 2) + (1 \cdot 2) = 5
+    \end{align}
+
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{\figpath{12}/12_images/S47_1.pdf}
+    \end{center}
+\end{example}
+
+\begin{example}{Circular convolution}{}
+    Here, we compute the 4-point circular convolution of the two length-\( 4 \) sequences in the figure below:
+
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{\figpath{12}/12_images/S48_1.pdf}
+    \end{center}
+
+    The \( 4 \)-point DFT \( G[k] \) of \( g[n] \) is given by:
+    \begin{align}
+        G[k]
+        &=
+            g[0] + g[1]e^{-j\frac{2\pi k}{4}} + g[2]e^{-j\frac{4\pi k}{4}} + g[3]e^{-j\frac{6\pi k}{4}} \nonumber   \\
+        &=
+            1 + 2e^{-j \frac{\pi k}{2}} + e^{-j \frac{3\pi k}{2}},
+            \qquad\qquad\qquad\qquad\qquad\qquad
+            0 \le k \le 3
+    \end{align}
+    Therefore:
+    \begin{align}
+        G[0] &= 1 + 2 + 1 = 4   \\
+        G[1] &= 1 -j2 + j = 1 - j   \\
+        G[2] &= 1 - 2 - 1 = -2  \\
+        G[3] &= 1 +j2 - j = 1 + j
+    \end{align}
+    Likewise:
+    \begin{align}
+        H[k]
+        &=
+            h[0] + h[1]e^{-j\frac{2\pi k}{4}} + h[2]e^{-j\frac{4\pi k}{4}} + h[3]e^{-j\frac{6\pi k}{4}} \nonumber   \\
+        &=
+            2 + 2e^{-j \frac{\pi k}{2}} + e^{-j \pi k} + e^{-j \frac{3\pi k}{2}},
+            \qquad\qquad\qquad\qquad
+            0 \le k \le 3
+    \end{align}
+    Hence, we get:
+    \begin{align}
+        H[0] &= 2 + 2 + 1 + 1 = 6   \\
+        H[1] &= 2 -j2 - 1 + j = 1 - j   \\
+        H[2] &= 2 - 2 + 1 - 1 = 0   \\
+        H[3] &= 2 +j2 - 1 - j = 1 + j
+    \end{align}
+    The two \( 4 \)-pont DFTs can also be computed using the matrix relations:
+    \begin{align}
+        \begin{bmatrix}
+            G[0]    \\
+            G[1]    \\
+            G[2]    \\
+            G[3]
+        \end{bmatrix}
+        &=
+            \mathbf{D}_{4}
+            \begin{bmatrix}
+                g[0]    \\
+                g[1]    \\
+                g[2]    \\
+                g[3]
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                1   &   1   &   1   &   1   \\
+                1   &   -j  &   -1  &   j   \\
+                1   &   -1  &   1   &   -1  \\
+                1   &   j   &   -1  &   -j
+            \end{bmatrix}
+            \begin{bmatrix}
+                1   \\
+                2   \\
+                0   \\
+                1
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                4   \\
+                1-j \\
+                -2  \\
+                1+j
+            \end{bmatrix}   \\
+        \begin{bmatrix}
+            H[0]    \\
+            H[1]    \\
+            H[2]    \\
+            H[3]
+        \end{bmatrix}
+        &=
+            \mathbf{D}_{4}
+            \begin{bmatrix}
+                h[0]    \\
+                h[1]    \\
+                h[2]    \\
+                h[3]
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                1   &   1   &   1   &   1   \\
+                1   &   -j  &   -1  &   j   \\
+                1   &   -1  &   1   &   -1  \\
+                1   &   j   &   -1  &   -j
+            \end{bmatrix}
+            \begin{bmatrix}
+                2   \\
+                2   \\
+                1   \\
+                1
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                6   \\
+                1-j \\
+                0   \\
+                1+j
+            \end{bmatrix}
+    \end{align}
+    where \( \mathbf{D}_{4} \) is the \( 4 \)-point DFT matrix. If \( Y_{C}[k] \) denotes the \( 4 \)-point DFT of \( y_{C}[n] \), we observe \( Y_{C}[k] = G[k]H[k] \) for \( 0 \le k \le 3 \), so:
+    \begin{equation}
+        \begin{bmatrix}
+            Y_{C}[0]    \\
+            Y_{C}[1]    \\
+            Y_{C}[2]    \\
+            Y_{C}[3]
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            G[0]H[0]    \\
+            G[1]H[1]    \\
+            G[2]H[2]    \\
+            G[3]H[3]
+        \end{bmatrix}
+        \begin{bmatrix}
+            2   \\
+            2   \\
+            1   \\
+            1
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            24  \\
+            -j2 \\
+            0   \\
+            j2
+        \end{bmatrix}
+        \label{eq:L12_S52_1}
+    \end{equation}
+    and the \( 4 \)-point inverse DFT of \( Y_{C}[k] \) yields:
+    \begin{equation}
+        \begin{bmatrix}
+            y_{C}[0]    \\
+            y_{C}[1]    \\
+            y_{C}[2]    \\
+            y_{C}[3]
+        \end{bmatrix}
+        =
+        \frac{1}{4} \mathbf{D}^{*}_{4}
+        \begin{bmatrix}
+            Y_{C}[0]    \\
+            Y_{C}[1]    \\
+            Y_{C}[2]    \\
+            Y_{C}[3]
+        \end{bmatrix}
+        =
+        \frac{1}{4}
+        \begin{bmatrix}
+            1   &   1   &   1   &   1   \\
+            1   &   j   &   -1  &   -j  \\
+            1   &   -1  &   1   &   -1  \\
+            1   &   -j  &   -1  &   j
+        \end{bmatrix}
+        \begin{bmatrix}
+            24  \\
+            -j  \\
+            0   \\
+            j2
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            6   \\
+            7   \\
+            6   \\
+            5
+        \end{bmatrix}
+        \label{eq:L12_S53_1}
+    \end{equation}
+\end{example}
+
+\begin{example}{Circular convolution}{}
+    Now, let us extend the two length-\( 4 \) sequences to length-\( 7 \) by appending each with three zero-valued samples, namely:
+    \begin{align}
+        g_{e}[n]
+        &=
+            \begin{cases}
+                g[n]    &   0 \le n \le 3   \\
+                0       &   4 \le n \le 6
+            \end{cases} \\
+        h_{e}[n]
+        &=
+            \begin{cases}
+                h[n]    &   0 \le n \le 3   \\
+                0       &   4 \le n \le 6
+            \end{cases}
+    \end{align}
+    We next determine the \( 7 \)-point circular convolution of \( g_{e}[n] \) and \( h_{e}[n] \):
+    \begin{equation}
+        y[n]
+        =
+        \sum_{m=0}^{6} g_{e}[n] h_{e}[\expval{n-m}_{7}],
+        \qquad
+        0 \le n \le 6
+        \label{eq:L12_S55_1}
+    \end{equation}
+    Therefore:
+    \begin{align}
+        y[0]
+        &=
+            g_{e}[0]h_{e}[0] +
+            g_{e}[1]h_{e}[6] +
+            g_{e}[3]h_{e}[4] +
+            g_{e}[4]h_{e}[3] +
+            g_{e}[5]h_{e}[2] +
+            g_{e}[6]h_{e}[1]    \nonumber   \\
+        &=
+            g[0]h[0]
+            =
+            1 \cdot 2
+            =
+            2
+    \end{align}
+    Continuing the process, we arrive at:
+    \begin{align}
+        y[1] &= g_{e}[0]h_{e}[1] + g_{e}[1]h_{e}[0] = 6 \\
+        y[2] &= g_{e}[0]h_{e}[2] + g_{e}[1]h_{e}[1] + g_{e}[2]h_{e}[0] = 5  \\
+        y[3] &= g_{e}[0]h_{e}[3] + g_{e}[1]h_{e}[2] + g_{e}[2]h_{e}[1] + g_{e}[3]h_{e}[0] = 5   \\
+        y[4] &= g_{e}[1]h_{e}[3] + g_{e}[2]h_{e}[2] + g_{e}[3]h_{e}[1] = 4   \\
+        y[5] &= g_{e}[2]h_{e}[3] + g_{e}[3]h_{e}[2] = 1 \\
+        y[6] &= g_{e}[3]h_{e}[3] = 1
+    \end{align}
+    So, \( y[n] \) is precisely the sequence \( y_{L}[n] \) obtained by a linear convolution of \( g[n] \) and \( h[n] \).
+
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{\figpath{12}/12_images/S57_1.pdf}
+    \end{center}
+\end{example}
+
+\medskip
+\marginpar{Matrix form of circular convolution and circulant matrix}
+In general, the \( N \)-point circular convolution can be written in matrix form as:
+\begin{equation}
+    \begin{bmatrix}
+        y_{C}[0]    \\
+        y_{C}[1]    \\
+        y_{C}[2]    \\
+        \vdots      \\
+        y_{C}[N-1]
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        h[0]    &   h[n-1]  &   \cdots  &   h[1]    \\
+        h[1]    &   [0]     &   \cdots  &   h[2]    \\
+        h[2]    &   h[1]    &   \cdots  &   h[3]    \\
+        \vdots  &   \vdots  &   \ddots  &   \vdots  \\
+        1       &   h[n-2]  &   \cdots  &   h[0]
+    \end{bmatrix}
+    \begin{bmatrix}
+        g[0]    \\
+        g[1]    \\
+        g[2]    \\
+        \vdots  \\
+        g[N-1]
+    \end{bmatrix}
+    \label{eq:L12_S58_1}
+\end{equation}
+Note that the elements of each diagonal of the \( N \times N \) matrix are equal. We call such a matrix a \textbf{circulant matrix}.
+
+\end{document}

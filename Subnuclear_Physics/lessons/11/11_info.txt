@@ -1,0 +1,27 @@
++ Arguments:
+	++
+
++ Labels:
+	++ Equations (eq:):
+		L11_QEDLD	=	QED Lagrangian Density
+		L11_RGE		=	Renormalization Group Equation
+		L11_RGEB	=	Renormalization Group Equation Beta
+		L11_EESVPSI	=	Electron Electron Scattering Vacuum Polarization Strong Interactions
+		L11_SDCS	=	Scale Dependent Coupling Solution
+		L11_SDCSB0	=	Scale Dependent Coupling Solution B0
+
+
+	++ Figures (fig:):
+		L11_EESLC	=	Electron Electron Scattering Leading Contribution (Tikz)
+		L11_EESCC	=	Electron Electron Scattering Correction Contribution (Tikz)
+		L11_AQP		=	Alpha Q Plot
+		L11_DCSVP	=	Differential Cross Section Vacuum Polarization
+		L11_EESVPSI	=	Electron Electron Scattering Vacuum Polarization Strong Interactions (Tikz)
+		L11_ASQP	=	Alpha Strong Q Plot
+		L11_HS		=	Hadron Structure
+		L11_JS		=	Jet Structure
+		L11_TQPFD	=	Top Quark Production Feynman Diagram (Tikz)
+		L11_TQPCS	=	Top Quark Production Cross Section
+
+
+	++ Tables (tab:):

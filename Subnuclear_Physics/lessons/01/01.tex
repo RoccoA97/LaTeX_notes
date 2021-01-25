@@ -1,0 +1,207 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{10}{03}{2020}
+
+
+\begin{document}
+
+\chapter*{Course structure and program}
+\marginpar{ \textbf{Lecture 1.} \\  \displaydate{date}. \\ Compiled:  \today. \\ Prof. Lucchesi}
+
+
+\section*{Informations}
+Suggested books:
+\begin{itemize}
+    \item \emph{Concepts of Elementary Particle Physics}, Michael E. Peskin.\\
+        It has a very good experimental approach, with theoretical concepts explained as well.
+    \item Any other book where the same topics are presented is fine. For example, the book of Alessandro Bettini.
+\end{itemize}
+
+Exam modalities: the exam is splitted into three parts. These are:
+\begin{itemize}
+	\item \textbf{Written exercises}.\\
+		Given on moodle before the exam. We have to solve some of them and present the solutions at the exam.
+	\item \textbf{Paper presentation}.\\
+		We have to choose a paper on a measurement or a discovery linked to the contents of the course. Then, we have to prepare a presentation of about 15 minutes (with slides).
+	\item \textbf{Oral discussion}.\\
+		After the previous parts, some questions on the course topics can be asked.
+\end{itemize}
+The final evaluation will be a weighted mean of the three parts.
+
+Remeber to subscribe to the Facebook group \emph{Subnuclear Physics at DFA} for further informations and for infos on seminars of particle physics.
+
+
+
+
+
+\section*{Course Program}
+\begin{itemize}
+    \item \textbf{Introduction and recap}
+
+    \item \textbf{Tools for calculation}.\\
+        In order to understand all the following topics, we need some mathematical tools (that we already have but the way we are going to use them is different from the use we did in theoretical physics course). They are needed to evaluate the physical phenomena we are going to discuss.
+
+    \item \textbf{Detectors for particle physics experiments}.\\
+        They are needed to perform measurements, so it is important to acquire a certain knowledge on them. For example, in order to choose why a detector is better than another one for a certain task and to set up a particle physics experiment. This part is not well described in the reference book, so we will use other books for this purpose.
+
+    \item \textbf{Cross section of \( e^+ e^- \longrightarrow \mu^+ \mu^- \) and \( e^+ e^- \longrightarrow hh \)}.\\
+        The former is a very simple process and it is important for the study of many other processes. The ladder will be important to understand the basis of QCD.
+
+    \item \textbf{Strong interactions}:
+    \begin{itemize}
+        \item[\(\triangleright\)] \textbf{Deep inelastic scattering}
+        \item[\(\triangleright\)] \textbf{Gluon}
+        \item[\(\triangleright\)] \textbf{QCD}
+        \item[\(\triangleright\)] \textbf{Partons and jets}
+    \end{itemize}
+
+    \item \textbf{Electroweak interactions} (This part and the part on strong interactions sum up into the discussion on Standard Model):
+    \begin{itemize}
+        \item[\(\triangleright\)] \textbf{V-A Weak theory}.\\
+            It is the theory at the base of electroweak interaction, which we will build up.
+        \item[\(\triangleright\)] \textbf{Gauge theory and symmetry breaking}.\\
+            This part will be discussed not so deeply since it was treated during the course of \emph{Theoretical Physics of Fundamental Interactions}.
+        \item[\(\triangleright\)] \textbf{\( W \) and \( Z^0 \) bosons}.\\
+            The most important items and measurements will be presented.
+        \item[\(\triangleright\)] \textbf{Cabibbo theory and CKM}.\\
+            This part is needed in order to put the hadrons, in particular the quarks, into the electroweak theory. However, it will not be discussed deeply since it was presented during the bachelor course \emph{Introduction to Nuclear and Subnuclear Physics}.
+        \item[\(\triangleright\)] \textbf{CP violation, the B meson system}.\\
+            It will be a more experimental discussion.
+    \end{itemize}
+
+    \item \textbf{New Physics} (we will try to give an answer to how we can go beyond the description given by Standard Model, in fact there are phenomena that are still not explained by this theory):
+    \begin{itemize}
+        \item[\(\triangleright\)] \textbf{Neutrino and Standard Model}
+        \item[\(\triangleright\)] \textbf{Higgs properties}
+    \end{itemize}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+\chapter{Introduction and Recap}
+
+\section{Basic knowledge}
+
+\subsection*{Relativistic wave equations}
+Relativistic quantum field theory is necessary to describe quantitatively elementary particle interactions. Its description is not part of this course, so we will use it in simple cases and only when necessary.
+
+It is assumed the following knowledge:
+\begin{itemize}
+    \item Klein-Gordon equation (for boson fields):
+        \begin{equation}
+            \left( \pdv[2]{}{t} - \grad^2 + m^2 \right) \psi (t, \va{x} ) = 0
+            \label{eq:L01_KGE}
+        \end{equation}
+
+    \item Dirac equation (Klein-Gordon can't give a description for fermion fields):
+        \begin{equation}
+            \left( i \gamma_{\mu} \pdv{}{x_{\mu}} - m \right) \psi (t, \va{x} ) = 0
+            \label{eq:L01_DE}
+        \end{equation}
+        with \( \psi = (\psi_1, \psi_2, \psi_3, \psi_4) \)
+
+    \item Basic concepts of fields and particles
+    \item Basic concepts of Feynman diagrams
+\end{itemize}
+
+
+
+
+
+\subsection*{Natural Units}
+During the course we will use the natural units, therefore:
+\begin{equation}
+    \hbar = c = 1
+    \label{eq:L01_NU}
+\end{equation}
+Considering that:
+\begin{align*}
+    1 \ \si{eV} &= 1.6 \cdot 10^{-19} \ \si{J} \\
+    c &= 3 \cdot 10^8 \ \si{m/s}
+\end{align*}
+we have:
+\begin{equation*}
+    1 \ \frac{\si{eV}}{c^2} = 1.78 \cdot 10^{-36} \ \si{Kg}
+\end{equation*}
+Since \( E^2 = p^2 c^2 + m^2 c^4 \), it is convenient to measure \( p \) in \( \si{GeV/c} \) and \( m \) in \( \si{GeV/c^2} \). For example the electron mass \( m_e = 0.91 \cdot 10^{-27} \ \si{g} \) corresponds to \( m_e = 0.51 \ \si{MeV/c^2} \). It is also useful to remember that \( \hbar c = 197 \ \si{MeV fm} \).
+
+An interesting quantity to consider in natural units is the strength of the electric charge of the electron or proton. By taking into account the potential \( V(r) = \frac{e^2}{4 \pi \varepsilon_0 r} \), the radius \( r \) in natural units has a dimension of \( \si{Energy^{-1}} \). By this way it forces the following relation:
+\begin{equation}
+    \alpha
+    \equiv
+    \frac{e^2}{4\pi \varepsilon_0 \hbar c}
+    =
+    \frac{1}{137.036}
+    \label{eq:L01_FSC}
+\end{equation}
+namely, the \textbf{fine structure constant}.
+
+
+
+\subsection*{Symmetries}
+They are the corner stones of particle physics. The most important ones for our studies are the \textbf{space-time symmetries}, which can be classified into:
+\begin{itemize}
+    \item Continuous symmetries:
+    \begin{itemize}
+        \item[\(\triangleright\)] Translation in time. The generator of the group of time translations is the operator \( H \), namely the Hamiltonian, which is linked to the energy quantity.
+        \item[\(\triangleright\)] Translation in space. The generator of the group of space translations is the operator \( \va{p} \), namely the momentum.
+        \item[\(\triangleright\)] Rotations. In this case, the generator of the group of this kind of transformations is the angular momentum \( \va{L} \).
+    \end{itemize}
+    If a system is invariant under one of these transformations, the corresponding generator, so \( H, \ \va{p} \) or \( \va{L} \), is conserved.
+
+    \item Discrete symmetries:
+    \begin{itemize}
+        \item[\(\triangleright\)] Parity \( P \):
+            \begin{equation}
+                x^{\mu} = (x^0, \va{x}) \overset{P}{\longrightarrow} (x^0, - \va{x})
+                \label{eq:L01_PDS}
+            \end{equation}
+            Fermions have half-integer spin and angular momentum conservation requires their production in pairs. We can define therefore just relative parity. By convention, the proton \( p \) has parity equal to \( +1 \). The parity of the other fermions is given in relation to the parity of the proton.
+
+            Parity of bosons can be defined without ambiguity since they are not necessarily producted in pairs.
+
+            Parity of a fermion and its antiparticle (i.e. an antifermion) are opposite, while parity of a boson and its anti-boson are equal.
+
+            Moreover, the parity of the positron is equal to \( -1 \). Quarks have parity equal to \( +1 \), leptons have parity equal to \( +1 \). Their antiparticles have parity equal to \( -1 \).
+
+            Lastly, parity of a photon is equal to \( -1 \).
+
+        \item[\(\triangleright\)] Time Reversal \( T \):
+            \begin{equation}
+                x^{\mu} = (x^0, \va{x}) \overset{T}{\longrightarrow} (- x^0, \va{x})
+                \label{eq:L01_TRDS}
+            \end{equation}
+
+        \item[\(\triangleright\)] Charge Conjugation \( C \):
+            \begin{equation}
+                \text{Particle} \overset{C}{\longleftrightarrow} \text{Antiparticle}
+                \label{eq:L01_CCDS}
+            \end{equation}
+            It is needed in order to restore a complete symmetry under the exchange of a particle with its antiparticle. A photon has \( -1 \) eigenvalue under \( C \), which means: \( C \ket{\gamma} = - \ket{\gamma} \).
+
+            Fermion-antifermion have opposite intrinsic parity and for non elementary particles the total angular momentum has to be considered, in fact the \( C \) parity goes like \( (-1)^{\ell} \) or \( (-1)^{\ell + 1} \) (depending on the intrinsic parity).
+    \end{itemize}
+\end{itemize}
+
+
+
+
+
+\subsection*{Fundamental constituents of the matter}
+% TODO
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{\figpath{01}/01_images/SM_particles.pdf}
+    \caption{\label{fig:L01_SMP} Standard Model particles.}
+\end{figure}
+
+\end{document}

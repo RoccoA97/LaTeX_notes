@@ -1,0 +1,123 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{22}{04}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 13.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\subsection{Experimental tests: neutrino scattering}
+It is possible to create a neutrino beam using a proton beam from a high-energy accelerator. The method is to shoot the proton beam into a target, produce pions, allow the pions to pass through an empty volume in which they can decay (\( \pi^{\pm} \rightarrow \mu^{\pm}\nu_{\mu} \), \( \pi^{\pm} \rightarrow e^{\pm}\nu_{e} \)), and then absorb all of the decay products except for the neutrinos, which interact only through the weak interactions and are thus highly penetrating. For example, at Fermilab the pion beam was shot horizontally underground, so the ground had the role of the absorber (of charged particles and other ones not in study).
+
+What we can do with the neutrino beam is to study interactions with other particles. The V-A theory predicts neutrino and antineutrino reactions with quarks and antiquarks:
+\begin{align}
+	\nu_L d_L \longrightarrow \mu^-_L u_L	\\
+	\bar{\nu}_R u_L \longrightarrow \mu^+_R d_L	\\
+	\nu_L \bar{u}_R \longrightarrow \mu^-_L \bar{d}_R	\\
+	\bar{\nu}_R \bar{d}_R \longrightarrow \mu^+_R \bar{u}_R
+\end{align}
+and similar reactions on the \( s \) and \( c \) quarks and antiquarks in the parton sea. These reactions should be seen as events with hadronic energy deposition and an outgoing muon, called \textbf{charged-current events}. The neutrino experiments also observe \textbf{neutral-current events}, with a neutrino in the final state. An example is showed in Figure \ref{fig:L13_NUTEV}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{\figpath{13}/13_images/NUTEV_1.png}
+	\includegraphics[width=0.75\textwidth]{\figpath{13}/13_images/NUTEV_2.png}
+	\caption{\label{fig:L13_NUTEV} Event displays of charged-current (top) and neutral-current (bottom) neutrino deep inelastic scattering events recorded by the NuTeV experiment at Fermilab.}
+\end{figure}
+
+To predict the cross section for deep-inelastic neutrino scattering, we can look at the calculations done for deep-inelastic electron scattering and do something similar. We got for the electron-quark scattering:
+\begin{equation}
+	\dv{\sigma}{\cos \theta}
+	=
+	\frac{\pi Q_f^2 \alpha^2}{s} \frac{s^2 + u^2}{t^2}
+	\label{eq:L13_VATNSCS}
+\end{equation}
+and we derived the matrix elements:
+\begin{align}
+	\abs{\mathcal{M}(e^-_L q_L \rightarrow e^-_L q_L)}^2
+	&=
+	4 Q^2_f e^4 \frac{s^2}{t^2}	\\
+	\abs{\mathcal{M}(e^-_L q_R \rightarrow e^-_L q_R)}^2
+	&=
+	4 Q^2_f e^4 \frac{u^2}{t^2}
+\end{align}
+In neutrino scattering, the V-A interaction fixes the helicity to be left-handed for neutrinos and quarks and right-handed for antineutrinos and antiquarks. Changing the prefactors appropriately, the cross sections for neutrino and antineutrino scattering on \( u \) and \( d \) quarks are:
+\begin{align}
+	\dv{\sigma}{\cos \theta} (\nu_L d_L \rightarrow \mu^-_L u_L)
+	&=
+	\frac{G^2_F}{2\pi s} \cdot s^2	\\
+	\dv{\sigma}{\cos \theta} (\bar{\nu}_R d_L \rightarrow \mu^+_R u_L)
+	&=
+	\frac{G^2_F}{2\pi s} \cdot u^2
+\end{align}
+
+To derive the formulae for deep inelastic scattering, we integrate with the pdfs and average over the initial quark spins. We don't average over the neutrino or antineutrino spins since the neutrinos are produced completely polarized from \( \pi \) decay. So we get for neutrino scattering and antineutrino scattering:
+\begin{align}
+	\frac{\d{^2 \sigma}}{\d{x} \d{y}}(\nu p \rightarrow \mu^- X)
+	&=
+	\frac{G_F s}{\pi} \qty[x f_d(x) + x f_{\bar{u}}(x)(1-y^2)]	\\
+	\frac{\d{^2 \sigma}}{\d{x} \d{y}}(\bar{\nu} p \rightarrow \mu^+ X)
+	&=
+	\frac{G_F s}{\pi} \qty[x f_u(x)(1-y^2) + x f_{\bar{d}}(x)]
+\end{align}
+plus small contributions from heavier sea quarks and antiquarks. If we concentrate only on the contribution of valence quarks in the proton, we expect the distributions:
+\begin{align}
+	\dv{\sigma}{y}(\nu p) &\sim 1 && \hspace{-3.0cm} \text{for neutrinos} \hspace{3.0cm}	\\
+	\dv{\sigma}{y}(\nu p) &\sim (1-y)^2 && \hspace{-3.0cm} \text{for antineutrinos} \hspace{3.0cm}
+\end{align}
+For neutrino scattering from nuclear targets with approximately equal numbers of protons and neutrons, the same regularities should hold.
+
+The prediction is verified in a quite striking way, though there are small deviations from the ideal result due to the effects of antiquarks. It is possible to see this in Figure \ref{fig:L13_CDHS}. The V-A theory is thus dramatically successful at describing the weak interactions of quarks and leptons.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{13}/13_images/CDHS.png}
+	\caption{\label{fig:L13_CDHS} Distribution of neutrino and antineutrino deep inelastic scattering events in \( y \), as measured by the CDHS experiment at CERN.}
+\end{figure}
+
+
+
+
+
+\section{Electroweak interaction}
+We saw that weak interaction is based on V-A theory and that neutrino interaction implies the existence of charged current (CC) and neutral current (NC). So, the theory suggest that weak interaction is generated by a spin 1 boson, which will be called \( W^- \). It must have an antiparticle, namely the \( W^+ \), and it must be massive.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{\figpath{13}/13_images/MDFD.pdf}
+	\caption{\label{fig:L13_MDFD} Feynman diagram of weak interaction in muon decay.}
+\end{figure}
+
+In the diagram in Figure \ref{fig:L13_MDFD}, \( W^- \) appears as a resonance, with the Breit-Wigner denominator:
+\begin{equation}
+	\frac{1}{q^2 - m^2_W}
+	\label{eq:L13_MDBWD}
+\end{equation}
+But there was no sign of the \( q^2 \)-dependence in the experimental data. This implies that the \( W^- \) boson is heavier than about \( 30 \ \si{GeV} \), in fact its mass is about \( 80 \ \si{GeV} \).
+
+Our need for a massive spin 1 boson forces us to face a problem that we have avoided up to now: What is the wave equation for the associated massive spin 1 field? There is only one way known to solve this problem. That is to mix the two concepts of gauge invariance and spontaneous symmetry breaking.
+
+The starting point is a gauge theory with complex fields and symmetry group \( U(1) \):
+\begin{equation}
+	\mathcal{L}
+	=
+	-\frac{1}{4} (F_{\mu\nu})^2 + \abs{D_{\mu}\varphi}^2 - V(\varphi)
+	\label{eq:L13_CFGTU1}
+\end{equation}
+with:
+\begin{equation}
+	D_{\mu}\varphi
+	=
+	(\partial_{\mu} - ieQA_{\mu}) \varphi
+	\label{eq:L13_CFGTCD}
+\end{equation}
+where \( Q \) is the charge of the field.
+
+The next step is a gauge theory based on \( SO(3) \) adding, with scalar field \( \varphi \). Three bosons of \( SO(3) \) are modified in 2 massive and 1 massless bosons. From this exercise we understand that we can unify the weak and the electromagnetic interactions. However, there is a problem. Particles are wrongly classified into triplets \( (E^+, \nu, e^-) \).
+
+The problem was solved by the Glashow-Salam-Weinberg theory, based on a symmetry group \( SU(2) \times U(1) \). This theory contains 4 bosons, all of them massless. This is still not correct and the solution is to add a scalar field.
+
+\end{document}

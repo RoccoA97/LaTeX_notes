@@ -1,0 +1,33 @@
++ Arguments:
+	++
+
++ Labels:
+	++ Equations (eq:):
+		L08_EQSME	=	Electron Quark Scattering Matrix Element
+		L08_CSEME	=	Crossing Symmetry Equal Matrix Elements
+		L08_MI		=	Mandelstam Invariants
+		L08_MIC		=	Mandelstam Invariants Constraint
+		L08_4M		=	4 Momenta
+		L08_SMI		=	S Mandelstam Invariant
+		L08_TMI		=	T Mandelstam Invariant
+		L08_UMI		=	U Mandelstam Invariant
+		L08_SCP		=	S Channel Process
+		L08_TCP		=	T Channel Process
+		L08_UCP		=	U Channel Process
+		L08_CSMI	=	Crossing Symmetry Momenta Interchange
+		L08_CSEQME	=	Crossing Symmetry Electron Quark Matrix Element
+		L08_CSEQME	=	Crossing Symmetry Electron Quark Matrix Element
+		L08_EQSCSFR	=	Electron Quark Scattering Cross Section Final Result
+		L08_DCSFR	=	Differential Cross Section Final Result
+		L08_IDCSFR	=	Invariant Differential Cross Section Final Result
+		L08_DISCSPP	=	Deep Inelastic Scattering Cross Section Parton Prediction
+
+
+	++ Figures (fig:):
+		L08_EQSFD	=	Electron Quark Scattering Feynman Diagram (Tikz)
+		L08_EQSCSFD	=	Electron Quark Scattering Crossing Symmetry Feynman Diagram (Tikz)
+		L08_CSFD	=	Crossing Symmetry Feynman Diagram (Tikz)
+		L08_CSFD2	=	Crossing Symmetry Feynman Diagram 2 (Tikz)
+
+
+	++ Tables (tab:):

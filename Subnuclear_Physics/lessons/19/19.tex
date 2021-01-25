@@ -1,0 +1,190 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{13}{05}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 19.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+%p.306
+A useful way to visualize the phase of the CKM matrix is to plot the complex parameter \( (\rho + i\eta) \) and use it to define a triangle, called the \textbf{unitarity triangle}, represented in Figure \ref{fig:L19_CKMUT}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{\figpath{19}/19_images/CKMUT.png}
+	\caption{\label{fig:L19_CKMUT} Unitarity triangle from CKM matrix.}
+\end{figure}
+
+The internal angles of the triangle are called \( (\alpha, \beta, \gamma) \) or, alternatively, \( (\varphi_2, \varphi_1, \varphi_3) \). The angle \( \gamma \) is the phase of \( (\rho + i\eta) \). The angle \( \beta \) is defined in \( A\lambda^3 (1 - \rho - i\eta) = \mathcal{C} e^{-i\beta} \). There is \( CP \) violation as long as \( \beta \) and \( \gamma \) are nonzero and the triangle does not collapse to a line (degenerate triangle).
+
+The following relations for CKM matrix elements hold:
+\begin{align}
+	\sum_{i,j} V_{ij}V_{ik}^* &= \delta_{jk}	\\
+	\sum_{i,j} V_{ij}V_{kj}^* &= \delta_{ik}
+\end{align}
+The left and right sides of this triangle can be expresses more generally as:
+\begin{align}
+	(\rho + i\eta) &= - \frac{V_{ud} V_{ub}^*}{V_{cd} V_{cb}^*}	\\
+	(\rho + i\eta - 1) &= \frac{V_{td} V_{tb}^*}{V_{cd} V_{cb}^*}
+\end{align}
+It should be noted that these ratios of \( V_{\mathrm{CKM}} \) matrix elements are invariant to changes of phase of the quark fields. The closure of the triangle:
+\begin{equation}
+	1 - (\rho + i\eta) - (1 - \rho - i\eta)
+	=
+	0
+	\label{eq:}
+\end{equation}
+is equivalent to the relation:
+\begin{equation}
+	V_{ud}V_{ub}^* +
+	V_{cd}V_{cb}^* +
+	V_{td}V_{tb}^*
+	=
+	0
+	\label{eq:}
+\end{equation}
+which expresses the orthogonality of the first and third columns of the CKM matrix.
+
+
+
+\subsection{Experimental determination of \( V_{ud} \), \( V_{cs} \), \( V_{us} \) and \( V_{cd} \)}
+%http://www.scholarpedia.org/article/Experimental_determination_of_the_CKM_matrix#Measurement_of_.5C.28V_.7Bud.7D.2C_V_.7Bcs.7D.2C_V_.7Bus.7D.5C.29_and_.5C.28V_.7Bcd.7D_.5C.29
+These terms describe the transitions between the quarks of the two lightest families and form the original \( 2 \times 2 \) Cabibbo matrix. In the complete \( 3 \times 3 \) CKM matrix, a \( CP \) violating phase appears, which can contribute also to these terms. Experimentally, it is however observed that \( CP \) violation is very small in these CKM matrix elements compared to the \( CP \)-conserving part.
+Leptonic and semileptonic transitions between hadrons containing \( u \), \( d \), \( s \) and/or \( c \) quarks are exploited to measure these elements. The amplitudes for the corresponding branching ratios are generally expressed as the product of a CKM matrix element with a hadronic parameter describing the hadronisation of the initial and final quarks into hadrons (decay constants and form factors for leptonic and semi-leptonic decays, respectively). The latter are generally obtained from lattice QCD simulations. Additional electromagnetic corrections are added, when known (mostly for leptonic decays of light mesons).
+
+
+\subsubsection*{\( V_{ud} \) measurement}
+The most precise measurements of \( V_{ud} \) are obtained from the decay rates of nuclei experiencing superallowed \( \beta \) decays. In these favoured nuclear transitions, the wave function of the entire nucleus is left unchanged since these decays involve no change in angular momentum nor parity. These processes provide thus clean theoretical predictions, can be evaluated by precise calculations that do not require strong assumptions or approximations, allowing for a very precise determination of \( V_{ud} \). To date, the half-lives of 14 superallowed \( \beta \) decays have been measured and the average value of \( V_{ud} \) is found to be:
+\begin{equation}
+	\abs{V_{ud}}
+	=
+	0.97420 \pm 0.00021
+	\label{eq:}
+\end{equation}
+where the error is dominated by theoretical uncertainties from nuclear Coulomb distortions and radiative corrections.
+
+This CKM matrix element is also accessible from the measurement of the neutron lifetime, although this determination is limited by the knowledge of the ratio of the axial vector and vector (both states with spin 1 but even and odd parity, respectively) couplings and exhibits inconsistent values from different experiments.
+The analogous transition to \( \beta \) decays in the pion sector, known as the pion \( \beta \) decay (\( \pi^+ \rightarrow \pi^0e^+\nu_e \), is free of nuclear-structure corrections and provides a stringent test of weak decays. The PIBETA experiment used this transition to extract a measurement of \( V_{ud} \) with a precision of 0.3\%.
+
+
+\subsubsection*{\( V_{us} \) measurement}
+Semileptonic and leptonic kaon decays are used to measure \( V_{us} \), including charged and neutral \( K \rightarrow \pi \ell \nu_{\ell} \) decays and the leptonic \( K^+ \rightarrow \mu^+\nu_{\mu} \) decay, with the main limitation arising from the knowledge on the form factors and decay constant, respectively. Including the latest results from the KLOE experiment, the average from these measurements provides:
+\begin{equation}
+	\abs{V_{us}}
+	=
+	0.2243 \pm 0.0005
+	\label{eq:}
+\end{equation}
+This element can be also extracted from hyperon decays and hadronic \( \tau \) decays like \( \tau^- \rightarrow K^- \nu_{\tau} \) measured at LEP as well as by the Belle and BaBar collaborations, but with a larger uncertainty. In all the cases theoretical input on the relevant hadronic quantities (decay constants or form factors) is needed and generally taken from lattice QCD simulations to extract \( V_{us} \).
+
+
+\subsubsection*{\( V_{cd} \) measurement}
+Analogously, the determination of \( V_{cd} \), is currently based on leptonic and semileptonic charm decays, namely \( D \rightarrow \pi e^- \bar{\nu}_e \) and \( D^+ \rightarrow \mu^+ \nu_{\mu} \), explored by the CLEO-c, Belle, BaBar and BESIII collaborations, and the relevant lattice QCD form factors. Earlier measurements were obtained from neutrino scattering data, from the difference in the ratio of double-muon production (\( \nu_{\mu} + N \rightarrow \mu + c \rightarrow \mu^+\mu^- + X \)), which proceeds through charm production, and single-muon production (\( \nu_{\mu} + N \rightarrow \mu + X \)) in neutrino and anti-neutrino beams, at the CDSHS, CCFR and CHARM II experiments. The current world average gives:
+\begin{equation}
+	\abs{V_{cd}}
+	=
+	0.218 \pm 0.004
+	\label{eq:}
+\end{equation}
+dominated by the measurements from semileptonic decays, whose precision is limited by the theoretical uncertainty of the form factors.
+
+
+\subsubsection*{\( V_{cs} \) measurement}
+Also \( V_{cs} \) can be obtained from semileptonic \( D \) decays like \( D \rightarrow K \ell \nu_{\ell} \) and leptonic \( D^+_s \) decays like \( D^+_s \rightarrow \mu^+ \nu_{\mu} \) or \( D^+_s \rightarrow \tau^+ \nu_{\tau} \) and lattice QCD form factors or decay constants. The Belle, CLEO-c, BaBar and BESIII experiments have measured these decays with precision, leading to the average:
+\begin{equation}
+	\abs{V_{cs}}
+	=
+	0.997 \pm 0.017
+	\label{eq:}
+\end{equation}
+where the uncertainty is dominated by the experimental precision for leptonic decays and by the theoretical knowledge of the form factors for semileptonic decays. The tagged measurement of \( W^+ \rightarrow c\bar{s} \) from the DELPHI experiment gives also a direct determination of \( V_{cs} \), far less precise than leptonic and semileptonic decays of charm hadrons.
+
+
+
+\subsection{Experimental determination of \( V_{ub} \), \( V_{cb} \) and \( V_{tb} \)}
+Similarly to the matrix elements of the first two generations, the moduli of \( V_{cb} \) and \( V_{ub} \) can be accessed through the semileptonic \( b \rightarrow (u,c) \ell \nu_{\ell} \) decays (\( \ell = e, \mu \)). A long-standing discrepancy exists between the determinations obtained from exclusive decays and from inclusive modes, which are treated with different approaches.
+
+
+\subsubsection*{\( V_{cb} \) measurement}
+In the case of \( V_{cb} \), one can first use the inclusive decay \( B \rightarrow X_c \ell \nu_{\ell} \) (\( X_c \) denoting all final states with a charm quark). Using the tool of Operator Product Expansion (OPE), one can express the decay rate as the product of \( \abs{V_{cb}} \) by a series in \( 1/m_b \) and \( 1/m_c \), with coefficients that can be determined experimentally. This is obtained by considering moments of the differential branching ratio of \( B \rightarrow X_c \ell \nu_{\ell} \) with respect to the leptonic or the hadronic invariant mass. These coefficients can be determined together with \( \abs{V_{cb}} \) through a global fit to experimental measurements, yielding the so-called inclusive value of \( \abs{V_{cb}} \).
+
+One can also consider exclusive decays. There are determinations of the \( B \rightarrow D \ell \nu \) form factors based on lattice QCD that provide the normalisation at momentum transfer \( q^2=0 \) (where the momentum transfer \( q = p_B - p_D \) is the diffrence of the \( B \) and \( D \) 4-momenta). This normalisation is needed to analyse the experimental measurements which yield the product of the vector form factor at \( q^2 = 0 \) by \( \abs{V_{cb}} \).
+The situation is less satisfying for \( B \rightarrow D^* \ell \nu_{\ell} \). On the experimental side, one of the main issues comes from the existence of a background \( B \rightarrow D^{**} \ell \nu_{\ell} \) of wide charm resonances which is not very well understood currently. On the theoretical side, due to the lack of a complete lattice QCD determination of the form factors involved, heavy-quark effective theory (HQET) is used to simplify the expression of the form factors and to constrain their dependence on the lepton energy. The HQET approach starts from the limit where both the \( b \) and the \( c \) quarks are considered as very heavy and expands the form factors in powers of \( 1/m_b \) and \( 1/m_c \). The resulting parametrisation (called CLN parametrisation) of the form factors depends only on a few coefficients that can be estimated using dedicated theoretical methods (e.g. sum rules).
+The values of \( \abs{V_{cb}} \) extracted from data from \( B \) factories using the CLN parametrisation tend to disagree with the inclusive determination described above. The accuracy of the CLN parametrisation has been questioned recently: it is possible to resort to a more general parametrisation of the form factors (called BGL parametrisation) and fit this expression to the decay rate obtained from \( B \)-factories. However, the fits of Babar and Belle data on exclusive decays to CLN and BGL parametrisations turn out to provide similar values for \( \abs{V_{cb}} \). The agreement between the various extractions remain thus still under debate, with the current world averages:
+\begin{align}
+	\abs{V_{cb}} &= (42.2 \pm 0.8) \cdot 10^{-3} \ \text{(inclusive)}	\\
+	\abs{V_{cb}} &= (41.9 \pm 2.0) \cdot 10^{-3} \ \text{(exclusive)}
+\end{align}
+
+
+\subsubsection*{\( V_{ub} \) measurement}
+In the case of \( V_{ub} \), one can also use either exclusive or inclusive measurements to extract the CKM matrix element. The exclusive determination benefits from lattice QCD computations for the vector form factor of the decay \( B \rightarrow \pi \ell \nu \), which can be combined with measurements of the differential decay rate.
+
+The inclusive determination is more challenging. The full decay rate cannot be accessed, because a cut in the lepton energy must be performed to eliminate the huge \( b \rightarrow c \ell \nu_{\bar{\ell}} \) background. The OPE expansion in \( 1/m_b \) must be modified, introducing poorly known shape functions describing the \( b \) quark dynamics in the \( B \) meson. They can be constrained partly from \( B \rightarrow X_s \gamma \), with some questions concerning the convergence rate of the series in \( 1/m_b \). The current world averages are:
+\begin{align}
+	\abs{V_{ub}} &= (4.49 \pm 0.15^{+0.16}_{-0.17} \pm 0.17) \cdot 10^{-3} \ \text{(inclusive)}	\\
+	\abs{V_{ub}} &= (3.70 \pm 0.10 \pm 0.12) \cdot 10^{-3} \ \text{(exclusive)}
+\end{align}
+The element \( \abs{V_{ub}} \) can also be determined from the leptonic decay \( B \rightarrow \tau^- \nu_{\bar{\tau}} \) which has been studied at factories, favouring values in agreement with the average of inclusive and exclusive determinations. The measurement of this leptonic decay is rather challenging, as it requires a very good understanding of \( \tau \) decays for their reconstruction and the elimination of a large set of significant backgrounds.
+
+These determinations, which are essentially dominated by systematic uncertainties related to hadronic inputs, have thus led to a long-standing discrepancy between inclusive and exclusive determinations for \( \abs{V_{ub}} \) and \( \abs{V_{cb}} \). Currently, global fits use averages of both kinds of determination as inputs, and their outcome favours exclusive measurements for \( \abs{V_{ub}} \) and inclusive measurements for \( \abs{V_{cb}} \).
+
+
+\subsubsection*{\( V_{tb} \) measurement}
+Finally, the CKM element \( V_{tb} \) can be obtained from the cross section for single top quark production. The combination of Tevatron and LHC data yields:
+\begin{equation}
+	\abs{V_{tb}}
+	=
+	1.029 \pm 0.025
+	\label{eq:}
+\end{equation}
+which is not competitive with the very accurate determination of this element within the SM based on the rest of the constraints on the CKM parameters combined with the unitarity of the CKM matrix. Less stringent constraints on \( \abs{V_{tb}} \) can be obtained from the ratio of branching ratios:
+\begin{equation}
+	\frac{\text{Br}(t \rightarrow W b)}{\text{Br}(t \rightarrow W q)}
+	\label{eq:}
+\end{equation}
+and from LEP electroweak precision measurements.
+
+
+
+\subsection{Experimental determination of \( V_{td} \) and \( V_{ts} \)}
+In the Standard Model, neutral mesons with a given flavour content can mix with their antiparticles through \( \Delta F = 2 \) box diagrams, where \( F \) is the flavour of the heavier quark, with two \( W \) bosons being exchanged, involving therefore products of the CKM matrix (see Figure \ref{fig:L19_BDBBM} for an example in the case of \( B^0 \) and \( B^0_s \)). It turns out that the mixing of charmed meson \( D^0 \) (\( c\bar{u} \)) into its antiparticle cannot be exploited to set constraints on the CKM matrix due to large and poorly known effects from the strong interaction at low energy for example, but other neutral mesons can provide interesting constraints.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\textwidth]{\figpath{19}/19_images/BDBBM.png}
+	\caption{\label{fig:L19_BDBBM} Box diagrams describing \( B_q \)-\( \bar{B}_q \) mixing, where \( q \) can be a \( d \) or an \( s \) quark.}
+\end{figure}
+
+Concerning the neutral kaon system, indirect \( CP \) violation was observed in the decay of particles to a pair of pions. The \( \pi\pi \) final state system has a \( CP=+1 \), therefore it was shown that this transition is possible because the meson (which decays to the \( CP=-1 \) final state \( \pi\pi\pi \) in the majority of the cases) contains also a \( CP=+1 \) component. The complex observable \( \varepsilon_K \) defined as the ratio of decay amplitudes:
+\begin{equation}
+	\varepsilon_K
+	=
+	\frac{\Gamma(K_L \rightarrow \pi\pi)_{I=0}}{\Gamma(K_S \rightarrow \pi\pi)_{I=0}}
+	\label{eq:}
+\end{equation}
+where the final states have a null value of isospin, encodes the neutral kaon mixing. It is possible to relate \( \varepsilon_K \) with the parameters from the formalism which describes the \( K^0 \)-\( \bar{K}^0 \) oscillations where \( K^0 \) is (\( \bar{s}d \)) and \( \bar{K}^0 \) is (\( \bar{d}s \)).
+
+Experimentally, the kaon mixing observables were measured in dedicated fixed-target experiments such as NA48 at CERN and KTeV at Fermilab. The current experimental values which are derived from the measurements of the decay amplitudes for \( K \rightarrow \pi^+\pi^- \) and \( K \rightarrow \pi^0\pi^0 \) are the modulus and phase of \( \varepsilon_K \):
+\begin{align}
+	\abs{\varepsilon_K} &= 2.228(11) \cdot 10^{-3}	\\
+	\varphi_{\varepsilon_K} &= 42.52(5) \ \si{°}
+\end{align}
+leading to a combined constraint on \( V_{td}V^{*}_{ts} \) and \( V_{cd}V^{*}_{cs} \).
+
+We turn now to the mixing of neutral \( b \)-mesons. Because top quarks decay very quickly into jets that cannot be tagged easily according to their content in light quarks, the only way of measuring is through the measurement of the mixing of \( B^0 \)-\( \bar{B}^0 \) and \( B^0_s \)-\( \bar{B}^0_s \) mesons (as these processes are dominated by top-quark boxes in the SM as shown in Figure \ref{fig:L19_BDBBM}). For each of these mesons, the two mass eigenstates resulting from mixing have different masses, and their difference of masses \( \Delta m_d \) and \( \Delta m_s \) (related to and respectively) can be accessed by looking at the time evolution of mesons, using their decays in order to determine the frequency with which they evolve into their antiparticles. The current world averages for them are:
+\begin{align}
+	\Delta m_d &= (0.5064 \pm 0.0019) \ \si{ps^-1}	\\
+	\Delta m_s &= (17.757 \pm 0.021)  \ \si{ps^-1}
+\end{align}
+It is interesting to notice that even though the mesons differ only in the flavour of their spectator quark, because of the different factors from the CKM matrix, the frequency of the mixing is significantly higher than the one. Once the frequencies are measured and using lattice QCD input for the so called bag factors describing the hadronisation of the quark-level box diagrams into the oscillation between \( B \)-mesons, the CKM parameters can be extracted:
+\begin{align}
+	\abs{V_{td}} &= ( 8.1 \pm 0.5) \cdot 10^{-3}	\\
+	\abs{V_{ts}} &= (39.4 \pm 2.3) \cdot 10^{-3}
+\end{align}
+The current accuracy of these values is limited by theoretical uncertainties on hadronic effects (encoded in bag parameters), which cancel largely in the following ratio thanks to \( SU(3) \) flavour symmetry.
+
+\end{document}

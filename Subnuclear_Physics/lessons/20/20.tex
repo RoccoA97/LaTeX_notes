@@ -1,0 +1,388 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{19}{05}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 20.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+
+
+
+
+\section{\( CP \) violation}
+In this section, we will discuss the evidence for \( CP \) violation in hadronic weak decays. We will see that \( CP \) violation, though it has a very small effect, is clearly observed in specific weak interaction processes. These observations are well explained by the CKM phase in the mixing matrix for charge-changing weak interactions.
+
+\( CP \) violation is difficult to observe directly if we use the standard observables discussed so far. Typically, it leads to only very small asymmetries in the rates of weak interaction decays between particles and antiparticles. The most compelling evidence for \( CP \) violation comes from a different kind of experiment in which we observe the time-dependent evolution of a particle that decays through the weak interaction. In such a system, \( CP \) violation can be observed as a nonzero phase in the quantum interference of two components of the wavefunction of the decaying state. In some cases, this quantum interference plays out over macroscopic distances, of the order of meters.
+
+
+
+\subsection{\( CP \) violation in the \( K^0 \)-\( \bar{K}^0 \) system}
+There is a very small amplitude that mixes the \( K^0 \) and \( \bar{K}^0 \) states. This observation leads to some unexpected phenomena in \( K^0 \) decays even in the case where \( CP \) is conserved.
+
+The neutral \( K \) meson is a 2-state quantum system that evolves according to:
+\begin{equation}
+	e^{-i \mathbf{M} \tau}
+	\label{eq:}
+\end{equation}
+where \( \tau \) is the time measured in the rest frame (proper time) and \( \mathbf{M} \) is a mass matrix for the two-state system. If \( CP \) is conserved, \( \mathbf{M} \) has the form:
+\begin{equation}
+	\mathbf{M}
+	=
+	\begin{pmatrix}
+		\bar{m} - i \frac{\bar{\Gamma}}{2}	&	\delta m - i \frac{\delta \Gamma}{2}	\\
+		\delta m - i \frac{\delta \Gamma}{2}	&	\bar{m} - i \frac{\bar{\Gamma}}{2}
+	\end{pmatrix}
+	\label{eq:}
+\end{equation}
+symmetrical between particles and antiparticles. The parameters \( \bar{m} \) and \( \delta m \) contribute to the masses of the eigenstate particles. The parameters \( \bar{\Gamma} \) and \( \delta \Gamma \) contribute to their decay rates. The factor \( (-i) \) turns the system evolution into an exponential decay. \( CPT \) theorem requires that the diagonal elements of this matrix are equal. So, \( C \) and \( P \) act on \( \ket{K^0} \) and \( \bar{K}^0 \) as:
+\begin{align}
+	P \ket{K^0}			&= - \ket{K^0}			\\
+	P \ket{\bar{K}^0}	&= - \ket{\bar{K}^0}	\\
+	C \ket{K^0}			&= + \ket{\bar{K}^0}	\\
+	C \ket{\bar{K}^0}	&= + \ket{K^0}
+\end{align}
+Thus, \( CP \) symmetry implies that the off-diagonal elements of the matrix \( \mathbf{M} \) are equal. The eigenstates of this mass matrix are \( CP \) eigenstates:
+\begin{align}
+	\ket{K^0_S}	&= \frac{1}{\sqrt{2}} ( \ket{K^0} - \ket{\bar{K}^0} )	\qquad CP=+1	\\
+	\ket{K^0_L}	&= \frac{1}{\sqrt{2}} ( \ket{K^0} + \ket{\bar{K}^0} )	\qquad CP=-1
+\end{align}
+The corresponding mass and decay rate eigenvalues are:
+\begin{align}
+	M_S	&= \bar{m} - \delta m - i \frac{\bar{\Gamma} - \delta \Gamma}{2}	\\
+	M_L	&= \bar{m} + \delta m - i \frac{\bar{\Gamma} + \delta \Gamma}{2}
+\end{align}
+A particle produced as a \( K^0 \) will propagate as a linear combination of \( K^0_S \) and \( K^0_L \). The two components of the wavefunction will have different decay rates and will oscillate with different frequencies.
+
+The \( K^0 \) and \( \bar{K}^0 \) are stable with respect to the strong interactions, but can decay by the weak interaction. There are several possibilities:
+\begin{align}
+	s	&\longrightarrow	u e^- \bar{\nu}_e	\\
+	s	&\longrightarrow	u \mu^- \bar{\nu}_{\mu}	\\
+	s	&\longrightarrow	u d \bar{u}
+\end{align}
+QCD corrections gives a large enhancement for the purely hadronic decay modes. In particular:
+\begin{equation}
+	K^0, \bar{K}^0 \longrightarrow \pi \pi
+	\label{eq:}
+\end{equation}
+is enhanced by about a factor of \( 100 \) relative to other modes. The decay:
+\begin{equation}
+	K^0, \bar{K}^0 \longrightarrow \pi \pi \pi
+	\label{eq:}
+\end{equation}
+also has QCD enhancement, but at the same time it is suppressed by the large denominator in the forula for 3-body phase space and by the fact that \( (m_K - 3m_{\pi}) \) is small. For pions in an S-wave, the dominant
+final states are:
+\begin{align}
+	CP \ket{\pi\pi} &= + \ket{\pi\pi}	\\
+	CP \ket{\pi\pi\pi} &= - \ket{\pi\pi\pi}
+\end{align}
+Then, the state \( K^0_S \) is allowed to decay to \( \pi \pi \), but the state \( K^0_L \) can not decay in the same way since \( CP \) conservation forbids it. This has the outcome that the two mass eigenstates of the \( K^0 \)-\( \bar{K}^0 \) system gave two very different lifetimes:
+\begin{align}
+	\tau_S	&=	0.895 \cdot 10^{-10} \ \si{s}	&\Longrightarrow&&	c\tau_S &= 2.68 \ \si{cm}	&&&&&	\\
+	\tau_L	&=	5.116 \cdot 10^{-8}  \ \si{s}	&\Longrightarrow&&	c\tau_L &= 15.34 \ \si{m}	&&&&&
+\end{align}
+The two states are appropriately called ``\( K \)-short'' and ``\( K \)-long''. It is an interesting accident that the \( K^0_L \)-\( K^0_S \) mass difference:
+\begin{equation}
+	m_L - m_S
+	=
+	3.48 \cdot 10^{-15} \ \si{GeV}
+	\Longrightarrow
+	\frac{\hbar}{2(m_L - m_S)}
+	=
+	0.95 \cdot 10^{-10} \ \si{s}
+	\label{eq:}
+\end{equation}
+corresponds to a time very close to the lifetime if the \( K^0_S \).
+
+So far, we have analyzed the \( K^0 \)-\( \bar{K}^0 \) system under the assumption that \( CP \) is conserved. However, in 1964, the picture was made more complicated. In an experiment at the Brookhaven National Laboratory, Christenson, Cronin, Fitch, and Turlay (1964) carefully observed \( K^0_L \) decays in a meters-long decay region filled with helium. They discovered that there is a small component of decays to \( \pi^+\pi^- \) with the time dependence of the \( K^0_L \) lifetime. This decay:
+\begin{equation}
+	\ket{K^0_L}
+	\longrightarrow
+	\ket{\pi\pi}
+	\label{eq:}
+\end{equation}
+cannot proceed unless \( CP \) is violated. The branching ratio is:
+\begin{equation}
+	\text{BR}(K^0_L \rightarrow \pi\pi)
+	=
+	2.8 \cdot 10^{-3}
+	\label{eq:}
+\end{equation}
+so the effect is doubly small, a small effect in comparison to the already small \( K^0_L \) decay rate.
+
+There is a place for this \( CP \) violating effect within the Standard Model. The \( t \) quark can appear as an intermediate state in the \( K^0 \)-\( \bar{K}^0 \) mixing amplitude, and diagrams with the \( t \) quark can carry a phase, like in the diagram in Figure \ref{fig:L20_CPVEKK}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{\figpath{20}/20_images/CPVEKK.pdf}
+	\caption{\label{fig:} Box diagram of \( K^0 \)-\( \bar{K}^0 \) mixing, with a \( t \) quark as intermediate state.}
+\end{figure}
+
+The effect on the \( K^0 \)-\( \bar{K}^0 \) mass matrix is to change \( \mathbf{M} \) in the following way:
+\begin{equation}
+	\mathbf{M}
+	=
+	\begin{pmatrix}
+		\bar{m} - i \frac{\bar{\Gamma}}{2}	&	\delta m(1 + i\zeta) - i \frac{\delta \Gamma}{2}	\\
+		\delta m(1 - i\zeta) - i \frac{\delta \Gamma}{2}	&	\bar{m} - i \frac{\bar{\Gamma}}{2}
+	\end{pmatrix}
+	\label{eq:}
+\end{equation}
+The eigenstates of this matrix are (to first order in \( \zeta \)):
+\begin{align}
+	\ket{K^0_S} &= \frac{1}{\sqrt{2}} \qty[(1 + \varepsilon)\ket{K^0} - (1 - \varepsilon)\ket{\bar{K}^0}]	\\
+	 \ket{K^0_L} &= \frac{1}{\sqrt{2}} \qty[(1 + \varepsilon)\ket{K^0} + (1 - \varepsilon)\ket{\bar{K}^0}]
+\end{align}
+where:
+\begin{equation}
+	\varepsilon
+	=
+	\frac{i\zeta}{\delta m - i \frac{\delta \Gamma}{2}}
+	\label{eq:}
+\end{equation}
+The states \( \ket{K^0_S} \) and \( \ket{K^0_L} \) are not orthogonal, but this is permitted because the modified mass matrix is not Hermitian.
+
+The parameter \( \delta m \) is half of the \( K^0_L - K^0_S \) mass difference. The \( K^0_S \) and \( K^0_L \) decay rates are:
+\begin{align}
+	\Gamma_S &= \bar{\Gamma} - \delta \Gamma \\
+	\Gamma_L &= \bar{\Gamma} + \delta \Gamma
+\end{align}
+which implies:
+\begin{equation}
+	\delta \Gamma
+	\approx
+	- \frac{1}{2} \Gamma_S
+	\label{eq:}
+\end{equation}
+Using these relations, we find:
+\begin{equation}
+	\varepsilon
+	=
+	\frac{2i\zeta}{m_L - m_S + i \frac{\Gamma_S}{2}}
+	\label{eq:}
+\end{equation}
+The real and imaginary parts of the denominator are almost equal. This predicts the phase of \( \varepsilon \):
+\begin{equation}
+	\varepsilon
+	=
+	\abs{\varepsilon} e^{i \varphi}
+	\qquad
+	\text{with}
+	\qquad
+	\varphi = 44^{\circ}
+	\label{eq:}
+\end{equation}
+
+To describe the effects of this change in the mass matrix, it is useful to write the eigenstates of \( \mathbf{M} \) in terms of the \( CP \) eigenstates, denoted by \( \ket{K^0_+}  \) and \( \ket{K^0_-} \). We find:
+\begin{align}
+	\ket{K^0_S} &= \ket{K^0_+} + \varepsilon \ket{K^0_-} \\
+	\ket{K^0_L} &= \ket{K^0_-} + \varepsilon \ket{K^0_+}
+\end{align}
+It follows from this formula that:
+\begin{equation}
+	\frac{\Gamma(K^0_L \rightarrow \pi\pi)}{\Gamma(K^0_S \rightarrow \pi\pi)}
+	=
+	\abs{\varepsilon}^2
+	\label{eq:}
+\end{equation}
+Evaluating this formula, we find:
+\begin{equation}
+	\abs{\varepsilon}
+	=
+	2.23 \cdot 10^{-3}
+	\label{eq:}
+\end{equation}
+
+Each of the states \( K^0_S \), \( K^0_L \) evolves, in its rest frame, according to:
+\begin{equation}
+	e^{-im\tau} e^{-\Gamma \frac{\tau}{2}}
+	\label{eq:}
+\end{equation}
+where \( \tau \) is proper time. For a moving \( K^0 \) state, the oscillation plays out as function of position along its path. A coherent state of \( K^0_S \) and \( K^0_L \) then displays an interference pattern. Since both states can decay to \( \pi^+\pi^- \), we can see this interference in the decay rate to \( \pi^+\pi^- \). For a \( K \) meson state behind a regenerator, with the wavefunction:
+\begin{equation}
+	a \ket{K^0} + b \ket{\bar{K}^0}
+	=
+	\alpha \ket{K^0_L} + \beta \ket{K^0_S}
+	\label{eq:}
+\end{equation}
+the decay rate is proportional to:
+\begin{align}
+	\Gamma(K^0 \rightarrow \pi\pi)
+		&\sim
+		\abs{\varepsilon \alpha e^{-im_L \tau - \Gamma_L \frac{\tau}{2}} + \beta e^{-im_S \tau - \Gamma_S \frac{\tau}{2}}}^2 \nonumber \\
+		&\sim
+		\abs{\beta}^2 \abs{e^{- \Gamma_S \frac{\tau}{2}} + \frac{\varepsilon \alpha}{\beta} e^{-i (m_L - m_S)\tau - \Gamma_L \frac{\tau}{2}}}^2
+\end{align}
+This function has the form of an oscillation superposed on an exponential
+decay. This is quantum interference over a macroscopic length scale. Some examples of such interference patterns seen in real experiments are showed in Figure \ref{fig:L20_KPPD}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{20}/20_images/KPPD.png}
+	\caption{\label{fig:L20_KPPD} Distribution of \( K^0 \rightarrow \pi^+\pi^- \) decays behind a regenerator as a function of proper time.}
+\end{figure}
+
+
+
+\subsection{\( CP \) violation in \( B \)-meson system}
+In the Standard Model, \( CP \) violation is expected to come from an order-1 phase associated with heavy quarks. If this is true, there must be a heavy quark weak interaction process with order-1 \( CP \) violation. Bigi, Carter, and Sanda suggested that one could see order-1 effects of the CKM phase in the time-dependence of decays of \( B \) mesons to exclusive final states with definite \( CP \). The simplest example is:
+\begin{equation}
+	B^0, \bar{B}^0
+	\longrightarrow
+	J/\psi K^0_S
+	\label{eq:}
+\end{equation}
+If we consider the decay of \( \bar{B}^0 (b\bar{d}) \), the \( \bar{B}^0 \) can reach the \( J/\psi K^0_S \) final state in two ways. First, it can decay directly, through the weak interaction process \( b \rightarrow c\bar{c}s \), as represented in Figure \ref{fig:L20_AB0D1}.
+
+%TODO feynman diagram (19.44) p.301
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.2\textwidth]{\figpath{20}/20_images/AB0D1.png}
+	\caption{\label{fig:L20_AB0D1} Weak interaction process \( b \rightarrow c\bar{c}s \). The diagram represents a term proportional to \( V_{cb}V^*_{cs} \).}
+\end{figure}
+
+But also, it can decay through \( B^0 \)-\( \bar{B}^0 \) mixing, followed by the process \( \bar{b} \rightarrow \bar{c}c\bar{s} \). The \( K^0 \)-\( \bar{K}^0 \) mixing matrix must also be used to cause the final states to interfere. This is represented in Figure \ref{fig:L20_AB0D2}
+
+%TODO feynman diagram (19.45) p.301
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.2\textwidth]{\figpath{20}/20_images/AB0D2.png}
+	\caption{\label{fig:L20_AB0D2} Decay through \( B^0 \)-\( \bar{B}^0 \) mixing, followed by the process \( \bar{b} \rightarrow \bar{c}c\bar{s} \). The diagram represents a term proportional to \( V^*_{cb}V_{cs} \).}
+\end{figure}
+
+The \( B^0 \)-\( \bar{B}^0 \) mixing amplitude is dominated by the process in Figure \ref{fig:L20_BAB0MA}.
+
+%TODO feynman diagram (19.46) p.301
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.2\textwidth]{\figpath{20}/20_images/BAB0MA.png}
+	\caption{\label{fig:L20_BAB0MA} The diagram represents a term proportional to \( V_{tb}V^*_{td}V^*_{td}V_{tb} \).}
+\end{figure}
+
+The \( K^0 \)-\( \bar{K}^0 \) mixing amplitude is dominated by the process in Figure \ref{fig:L20_KAK0MA}.
+
+%TODO feynman diagram (19.47) p.302
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.2\textwidth]{\figpath{20}/20_images/KAK0MA.png}
+	\caption{\label{fig:L20_KAK0MA} The diagram represents a term proportional to \( V^*_{cs}V_{cd}V_{cd}V^*_{cs} \).}
+\end{figure}
+
+The two paths differ by a relative factor proportional to:
+\begin{equation}
+	- \qty[V^*_{cb} V_{cs} V_{tb} V^*_{td} V^*_{cs} V_{cd}]^2
+	\label{eq:}
+\end{equation}
+where the extra minus sign is that in the \( K^0_S \) wavefunction. In the Wolfenstein parametrization of the CKM matrix, the only factor in this formula is that has a phase is \( V_{td} \), which can be represented as:
+\begin{equation}
+	V_{td}
+	=
+	A \lambda^3 (1 - \rho i \eta)
+	=
+	\mathcal{C} e^{-i \beta}
+	\label{eq:}
+\end{equation}
+Therefore, the relative phase between the two paths is \( - e^{2 i \beta} \). Any phases arising from the strong interaction matrix elements are identical along the two paths and factor out of the decay amplitude.
+
+The \( B^0 \)-\( \bar{B}^0 \) system is somewhat simpler than the \( K^0 \)-\( \bar{K}^0 \) system, in that the hadronic decays of the \( B \) meson are decays to complex multiparticle final states with both possible values of \( CP \). Hence, the decay rates of the two mass eigenstates are nearly equal, so that \( 4 \delta \Gamma \) can be neglected. The \( B^0 \)-\( \bar{B}^0 \) mass matrix is then well approximated by:
+\begin{equation}
+	\mathbf{M}
+	=
+	\begin{pmatrix}
+		\bar{m} - i \frac{\Gamma}{2}	&	- e^{2 i \beta} \delta m	\\
+		- e^{2 i \beta} \delta m	&	\bar{m} - i \frac{\Gamma}{2}
+	\end{pmatrix}
+	\label{eq:}
+\end{equation}
+The parameter \( \delta m \) is real-valued and it turns out to be positive. The lifetime of the \( B^0 \) mesons is:
+\begin{equation}
+	\tau
+	=
+	1.52 \cdot 10^{-12} \ \si{s}
+	\label{eq:}
+\end{equation}
+corresponding to a decay rate:
+\begin{equation}
+	\Gamma
+	=
+	4.3 \cdot 10^{-13} \ \si{GeV}
+	\label{eq:}
+\end{equation}
+The eigenstates of the matrix \( \mathbf{M} \) are:
+\begin{align}
+	\ket{B^0_L}	&= \frac{1}{\sqrt{2}} ( \ket{B^0} + e^{-2i\beta} \ket{\bar{B}^0} )	\\
+	\ket{B^0_H}	&= \frac{1}{\sqrt{2}} ( \ket{B^0} - e^{-2i\beta} \ket{\bar{B}^0} )
+\end{align}
+with eigenvalues:
+\begin{align}
+	\bar{m} - \frac{\delta m}{2} - i \frac{\Gamma}{2}	\\
+	\bar{m} + \frac{\delta m}{2} - i \frac{\Gamma}{2}
+\end{align}
+for \( B^0_L \) and \( B^0_H \) respectively. The mass difference of the two states is:
+\begin{equation}
+	m_H - m_L
+	=
+	\delta m
+	=
+	3.3 \cdot 10^{-13} \ \si{GeV}
+	\label{eq:}
+\end{equation}
+The value of \( (m_H - m_L) \) is accidentally quite close to the decay rate \( \Gamma \). This means that the time-dependent interference terms in \( B^0 \) decay might be observable.
+
+The states \( \ket{B^0_L} \) and \( B^0_H \) have simple time-dependence, for example:
+\begin{equation}
+	\ket{B^0_L(\tau)}
+	=
+	e^{-i(\bar{m} - \frac{\delta m}{2} - i \frac{\Gamma}{2})\tau} \ket{B^0_L}
+	\label{eq:}
+\end{equation}
+Then, we can use the eigenstates of the matrix \( \mathbf{M} \) to compute the time-dependence of the \( B^0 \) and \( \bar{B}^0 \) states. For \( \ket{B}^0  \):
+\begin{align}
+	\ket{B^0(\tau)}
+		&=
+			\frac{1}{\sqrt{2}} \qty[\ket{B^0_L(\tau)} + \ket{B^0_H(\tau)}]	\nonumber	\\
+		&=
+			e^{-i\bar{m}\tau - \Gamma\frac{\tau}{2}}
+			\qty[\ket{B^0} \cos\qty(\frac{\delta m \tau}{2}) + i \ket{\bar{B}^0} e^{-2i\beta}\sin\qty(\frac{\delta m \tau}{2})]
+\end{align}
+Similarly, for \( \ket{\bar{B}^0} \):
+\begin{align}
+	\ket{\bar{B}^0(\tau)}
+		&=
+			e^{-i\bar{m}\tau - \Gamma\frac{\tau}{2}}
+			\qty[\ket{\bar{B}^0} \cos\qty(\frac{\delta m \tau}{2}) + i \ket{B^0} e^{+2i\beta}\sin\qty(\frac{\delta m \tau}{2})]
+\end{align}
+We have now dealt with the \( B^0 \)-\( \bar{B}^0 \) mixing, so all that remains is to the decay of the \( B^0 \) and \( \bar{B}^0 \) states directly to \( J/\psi K^0_S \). Recalling again that there is a minus sign between the \( s\bar{d} \) and \( d\bar{s} \) components of the \( K^0_S \), the matrix elements for the full process of time evolution and decay have the form:
+\begin{align}
+	\mathcal{M}(B^0(\tau) \rightarrow J/\psi K^0_S)
+		&=
+		e^{-i\bar{m}\tau - \Gamma\frac{\tau}{2}} \mathcal{A}
+		\qty[\ket{B^0} \cos\qty(\frac{\delta m \tau}{2}) - i \ket{\bar{B}^0} e^{-2i\beta}\sin\qty(\frac{\delta m \tau}{2})]	\\
+	\mathcal{M}(\bar{B}^0(\tau) \rightarrow J/\psi K^0_S)
+		&=
+		e^{-i\bar{m}\tau - \Gamma\frac{\tau}{2}} \mathcal{A}
+		\qty[\ket{\bar{B}^0} \cos\qty(\frac{\delta m \tau}{2}) - i \ket{B^0} e^{+2i\beta}\sin\qty(\frac{\delta m \tau}{2})]
+\end{align}
+The decay amplitude \( \mathcal{A} \) can be complex, with a phase due to the strong interaction, but this factor is the same for \( B^0 \) and \( \bar{B}^0 \) decays due to the \( CP \) invariance of the strong interaction. Squaring the amplitudes in the previous formulae, we find the time-dependence of the decay rates:
+\begin{align}
+	\Gamma(B^0(\tau) \rightarrow J/\psi K^0_S)
+		&=
+		e^{-\Gamma \tau}
+		\qty[1 - \sin(\delta m \tau) \sin(2\beta)]	\\
+	\Gamma(\bar{B}^0(\tau) \rightarrow J/\psi K^0_S)
+		&=
+		e^{-\Gamma \tau}
+		\qty[1 + \sin(\delta m \tau) \sin(2\beta)]
+\end{align}
+The asymmetry in the rates is:
+\begin{equation}
+	\frac{\Gamma(\bar{B}^0 \rightarrow J/\psi K^0_S) - \Gamma(B^0 \rightarrow J/\psi K^0_S)}{\Gamma(\bar{B}^0 \rightarrow J/\psi K^0_S) + \Gamma(B^0 \rightarrow J/\psi K^0_S)}
+	=
+	+ \sin \qty(\delta m \tau) \sin \qty(2 \beta)
+	\label{eq:}
+\end{equation}
+
+\end{document}

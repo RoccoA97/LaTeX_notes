@@ -1,0 +1,72 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{01}{06}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 24.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+So, there are two small neutrino mass differences of rather different scale. The large ratio between the two \( \Delta m^2 \) values justifies the use of two-neutrino mixing formula to parametrize each oscillation. The values of \( \Delta m^2 \) imply that all of the neutrino masses must be within about \( 0.1 \ \si{eV} \) of one another. However, these results do not give the absolute scale of neutrino masses. They also do not give the ordering of the levels. There are two possibilities, called the \textbf{normal} and \textbf{inverted hierarchy}, represented in Figure \ref{fig:L24_NINMH}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{24}/24_images/NINMH.png}
+	\caption{\label{fig:L24_NINMH} Normal and inverted neutrino mass hierarchy.}
+\end{figure}
+
+In each case, the isolated mass eigenstate is an almost pure combination of \( \nu_{\mu} \) and \( \nu_{\tau} \), while the two closely spaced states mix \( \nu_e \) with the orthogonal linear combination of \( \nu_{\mu} \) and \( \nu_{\tau} \).
+
+It is possible in principle to distinguish these possibilities by observing the effect on neutrino mixing of neutrino interactions with matter as the neutrinos pass through the Earth over hundreds of \( \si{km} \). So far, the issue has not been resolved.
+
+The next question we might address is that of whether \( \nu_3 \) contains some admixture of \( \nu_e \). This mixing is controlled by the third mixing angle in the PMNS matrix. It can be detected by looking for an oscillation of reactor neutrinos at the oscillation \( \Delta m^2 \) of the atmospheric neutrino oscillation, which corresponds to a \( \si{km} \) wavelength for neutrinos of MeV energy. This was finally observed in 2012 by the reactor experiments Daya Bay, in China, and RENO, in Korea.
+These experiments constructed closely matched pairs of detectors and contrasted the rate observed in a ``far'' detector with that predicted from the rate observed in a ``near'' detector. Figure \ref{fig:L24_DBE} shows the comparison of near and far detector fluxes at Daya Bay.
+
+\begin{figure}[!h]
+	\begin{minipage}[c]{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{\figpath{24}/24_images/DBE1.png}
+	\end{minipage}
+	\begin{minipage}[]{0.5\linewidth}
+		\centering
+		\includegraphics[width=1\textwidth]{\figpath{24}/24_images/DBE2.png}
+	\end{minipage}
+	\caption{\label{fig:L24_DBE} (Right) Probability of \( \nu_e \rightarrow \nu_e \) for neutrinos from nuclear reactors as a function of distance from the reactor, as measured by the Daya Bay experiment (Left).}
+\end{figure}
+
+The value of the third neutrino mixing angle is:
+\begin{equation}
+	\sin^2 \theta_{13}
+	=
+	0.0241 \pm 0.0025
+	\label{eq:}
+\end{equation}
+
+The question remains of whether the possible phase in the PMNS matrix is nonzero. There is room for this \( CP \)-violating term in the neutrino mass matrix. Still, it is a fundamental question whether the couplings of the neutrinos violate \( CP \) and \( T \). In principle, \( CP \) violation in the neutrino system can be measured by observing asymmetries such as:
+\begin{equation}
+	\text{Prob}(\nu_{\mu} \rightarrow \nu_{e})
+	\neq
+	\text{Prob}(\bar{\nu}_{\mu} \rightarrow \bar{\nu}_{e})
+	\label{eq:}
+\end{equation}
+
+
+\subsection{Summary of experimental results}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\textwidth]{\figpath{24}/24_images/PDGS1.pdf}
+	\caption{\label{fig:L24_PDGS1} Experiments contributing to the present determination of the oscillation parameters. Taken from \cite{PDG_neutrino_mixing}.}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\textwidth]{\figpath{24}/24_images/PDGS2.pdf}
+	\caption{\label{fig:L24_PDGS2} \( 3\nu \) oscillation parameters (not everything is up to date) obtained from different global analysis of neutrino data. In all cases the numbers labeled as NO (IO) are obtained assuming NO (IO), i.e., relative to the respective local minimum. SK-ATM makes reference to the tabulated \( \chi^2 \) map from the Super-Kamiokande analysis of their data. Taken from \cite{PDG_neutrino_mixing}.}
+\end{figure}
+
+
+
+\end{document}

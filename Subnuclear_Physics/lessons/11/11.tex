@@ -1,0 +1,200 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{15}{04}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 11.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\section{QCD}
+We have now accumulated enough clues to guess at the underlying theory of the strong interaction. This theory should be a theory of massless spin 1 bosons: the gluons. The basic equations of the theory should be some generalization of Maxwell’s equations. It would be good if this theory accounted for two of the odd properties of hadrons. First, there is the 3-valued quantum number color, which still needs a physical interpretation. Second, there is a mystery that, although the strong interactions are strong enough to bind quarks permanently into hadrons, we can ignore the strong interactions to first order in analyzing the dynamics of quarks in \( e^+e^- \) annihilation and deep inelastic scattering.
+
+It turns out that these clues suggest a unique proposal for the fundamental theory that describes the strong interaction. This theory is called Quantum Chromodynamics (QCD).
+
+
+
+\subsection{Lagrangian dynamics and gauge invariance}
+Starting from the Lagrangian for QED:
+\begin{equation}
+	\mathcal{L}
+	=
+	- \frac{1}{4} F^{\mu\nu} F_{\mu\nu} + \bar{\Psi}(i\gamma^{\mu}D_{\mu} - m)\bar{\Psi}
+	\label{eq:L11_QEDLD}
+\end{equation}
+we want to extend this theory to strong interactions. This Lagrange density is manifestly Lorentz invariant. It is also invariant under the symmetries \( P \), \( C \), and \( T \). In addition to the space-time symmetries the Lagrangian is invariant with respect to a phase rotation of the Dirac field:
+\begin{align}
+	\Psi(x) 		&\longrightarrow e^{i\alpha} \Psi(x)	\\
+	\bar{\Psi(x)} 	&\longrightarrow e^{-i\alpha} \bar{\Psi(x)}
+\end{align}
+This symmetry is known as global gauge invariance. In addition, it is possible to show that QED Lagrangian has also local gauge invariance property.
+
+Local gauge invariance is a powerful constraint on the properties of the quantum theory of electromagnetism. Even at the classical level, it requires the field equations to take the form of Maxwell’s equations. It is also the principle that allows the 4-vector \( A_{\mu} \) to contain only two polarization states.
+
+In searching for a theory of the gluon, a massless spin 1 particle with only the two transverse polarizations, it is natural to build on the idea of local gauge invariance. But, the strong interaction is not simply a slightly modified version of QED. QED, even with a stronger coupling constant, does not have 3-fermion bound states. Also, if the QED coupling were strong enough to bind quarks, it would not be possible to ignore the effects of the QED interactions as we did in our discussions of \( e^+e^- \) annihilation and deep inelastic scattering. We need a different generalization that can change these properties.
+
+In QED, the local symmetry is based on the group \( U(1) \) of phase
+rotations. In principle, we can find larger theories that generalize QED by enlarging the local symmetry to a larger Lie group. It turns out that the change from an Abelian to a non-Abelian local symmetry group changes the theory profoundly. It will be interesting, then, to develop the theory of spin 1 particles with non-Abelian local symmetry.
+
+
+
+\subsection{Vacuum polarization}
+To understand the uniqueness of non-Abelian gauge theories, we first need to discuss a property of the quantum corrections to QED. The leading contribution to electron-electron scattering is associated with the Feynman diagram in Figure \ref{fig:L11_EESLC}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.25\textwidth]{\figpath{11}/11_images/EESLC.pdf}
+	\caption{\label{fig:L11_EESLC} Feynman diagram of leading contribution of electron-electron scattering.}
+\end{figure}
+
+Quantum corrections to this process include the diagram in Figure \ref{fig:L11_EESCC}, in which the virtual photon converts to an electron-positron pair, which then reforms the photon.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.25\textwidth]{\figpath{11}/11_images/EESCC.pdf}
+	\caption{\label{fig:L11_EESCC} Feynman diagram of correction contribution of electron-electron scattering.}
+\end{figure}
+
+This effect is called \textbf{vacuum polarization}. Any electromagnetic disturbance can create a virtual electron-positron pair, that is, a quantum state with an \( e^+e^- \) pair that contributes to the complete wavefunction of the state. This effect causes the vacuum state of QED to become a mixture of quantum states, most of which contain one or more \( e^+e^- \) pairs. Through the influence of these states, the vacuum in QED has properties of a dielectric medium. The virtual \( e^+e^- \) pairs can screen electric charge, so that apparent strength of electric charge is smaller than the original strength of the charge found in the Lagrangian.
+
+The largest separation of a virtual electron-positron pair is the electron Compton wavelength \( \frac{\hbar}{m_e c} \). Pairs can be produced at all size scales smaller than this. At distances short compared to \( \frac{1}{m_e} \), the screening influence of virtual electron-positron pairs is scale-invariant; charges are screened by the same factor at each length scale. Then, the apparent charge of the electron increases when the electron is probed at shorter distances or scattered with larger momentum transfer. This effect is described by the equation:
+\begin{equation}
+	\dv{}{\log Q} e(Q)
+	=
+	\beta(e(Q))
+	\label{eq:L11_RGE}
+\end{equation}
+where \( Q \) is the momentum transfer in the process under study and \( \beta(e) \) is a positive function that depends on \( e \) but not directly on \( Q \). Assuming \( Q \gg m_e \), we find:
+\begin{equation}
+	\beta(e)
+	=
+	+ \frac{e^3}{12\pi^2}
+	\label{eq:L11_RGEB}
+\end{equation}
+By solving the differential equation, we get these equivalent results:
+\begin{align}
+	e^2(Q) &= \frac{e^2_0}{\displaystyle 1 - \frac{e^2_0}{6\pi^2}\log\qty(\frac{Q}{Q_0}) }	\\
+	\alpha(Q) &= \frac{\alpha_0}{\displaystyle 1 - \frac{2\alpha_0}{3\pi}\log\qty(\frac{Q}{Q_0}) }
+\end{align}
+The value of \( \alpha(Q) \) changes on a logarithmic scale when \( Q > m_e \). At distances larger than \( \frac{1}{m_e} \), \( \alpha = \frac{1}{137} \), but at shorter distances, \( \alpha(Q) \) is stronger.
+
+In Figure \ref{fig:L11_AQP} there is a more detailed look at the evolution of \( \alpha \). We expect according to the previous results that \( \alpha^{-1} \) should be a linear function of \( \log Q \). However, at \( m_{\mu} \), states with virtual \( \mu^+\mu^- \) pairs also come into play and so the slope of the linear function is doubled. As \( Q \) goes above the values of quark masses, the quarks provide additional contributions to vacuum polarization. This effect is observed experimentally.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{11}/11_images/AQP.png}
+	\caption{\label{fig:L11_AQP} Dependence of \( \alpha^{-1}(Q) \) on the momentum transfer \( Q \) predicted by the vacuum polarization effect. The effect of each particle \( f \) turns on for \( Q > 2m_f \).}
+\end{figure}
+
+Another example of the effects of vacuum polarization is showed in Figure \ref{fig:L11_DCSVP}, which is the cross section plot for Bhabha scattering \( e^+e^- \longrightarrow e^+e^- \) at \( E_{\mathrm{CM}} = 29 \ \si{GeV} \). The specific effect of vacuum polarization raises the predicted cross section by about 10\%, giving good agreement with the data.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{11}/11_images/DCSVP.png}
+	\caption{\label{fig:L11_DCSVP} Differential cross section for \( e^+e^- \longrightarrow e^+e^- \) measured by the HRS experiment, showing the effect of vacuum polarization.}
+\end{figure}
+
+
+
+\subsection{Running Coupling strong Constant}
+We return now to strong interactions. Non-Abelian gauge theories also have a vacuum polarization effect, corresponding to the Feynman diagram in Figure \ref{fig:L11_EESVPSI}. The combination of effects is easiest to see if one considers
+the scattering of heavy particles, for which the exchanged gluon creates
+a Coulomb potential
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{\figpath{11}/11_images/EESVPSI.pdf}
+	\caption{\label{fig:L11_EESVPSI} Feynman diagram representing vacuum polarization for strong interactions as a sum of two independent contributes.}
+\end{figure}
+
+However, this diagram actually contains two separable and distinct physical effects:
+\begin{itemize}
+	\item The first effect is the first addend in Figure \ref{fig:L11_EESVPSI}, where we have the creation of a virtual gluon pair by the Coulomb potential, using the nonlinear interaction of the non-Abelian theory. This effect contributes:
+	\begin{equation}
+		\dv{g_s}{\log Q}
+		=
+		+ \frac{1}{3} \frac{g_s^3}{16\pi^2} C(G)
+		\label{eq:L11_EESVPSI_1}
+	\end{equation}
+
+	\item The other contribution is the second addend in Figure \ref{fig:L11_EESVPSI}, where the Coulomb potential creates a virtual gluon, which then changes the color transferred by the Coulomb exchange. By explicit computation, the effect of this diagram is to confuse what colors the potential is carrying. The precise size of the effect is:
+	\begin{equation}
+		\dv{g_s}{\log Q}
+		=
+		- \frac{12}{3} \frac{g_s^3}{16\pi^2} C(G)
+		\label{eq:L11_EESVPSI_1}
+	\end{equation}
+	In the non-Abelian case, this effect completely dominates the effect of vacuum polarization.
+\end{itemize}
+
+The solution for the scale-dependent coupling is:
+\begin{equation}
+	\alpha_s(Q)
+	=
+	\frac{\alpha_s(Q_0)}{\displaystyle 1 - \qty(\frac{b_0 \alpha_s(Q_0)}{2\pi}) \log \qty(\frac{Q}{Q_0})}
+	=
+	\frac{\displaystyle \frac{2\pi}{b_0}}{\displaystyle \log\qty(\frac{Q}{\Lambda})}
+	\label{eq:L11_SDCS}
+\end{equation}
+with:
+\begin{equation}
+	b_0
+	=
+	11 - \frac{2}{3} n_f
+	\label{eq:L11_SDCSB0}
+\end{equation}
+
+The new dynamics of the non-Abelian gauge theory causes \( \alpha_s(Q) \) to decrease and actually tend to zero as \( Q \) increases. On the other hand, for small \( Q \) or large distances, the coupling \( \alpha_s \) increases, apparently without bound.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{\figpath{11}/11_images/ASQP.png}
+	\caption{\label{fig:L11_ASQP} Measured values of \( \alpha_s \) from a variety of experiments.}
+\end{figure}
+
+
+
+\subsection{Structure of hadrons}
+It is possible to compute the spectrum of QCD in an expansion for large values of the coupling constant \( g_s \). In this expansion, the gauge fields emerging from each colored particle form a tube of fixed cross section. An isolated particle with color would then carry an infinite flux tube and would have infinite energy. The only finite-energy states are those with zero total color, in other words, states that are singlets of color \( SU(3) \).
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{11}/11_images/HS.png}
+	\caption{\label{fig:L11_HS} Singlets of color \( SU(3) \).}
+\end{figure}
+
+This principle gives the mesons and baryons as the bound states of quarks and antiquarks.
+
+
+\subsection{Structure of jets}
+The physics of quark and gluon splitting gives us a picture of the evolution from quarks and antiquarks produced as primary particles in \( e^+e^- \longrightarrow \text{hadrons} \) to the pions, kaons, etc. that form the hadronic final states. Begin from the initial \( q\bar{q} \) pair. The quark will radiate a gluon, with the highest probability of radiation in the collinear region, \( q_{1\perp} \ll \sqrt{s} \). This gluon, and also the recoiling quark, emits additional gluons, with \( q_{2\perp} \ll q_{1\perp} \). Occasionally, a gluon splits to a quark-antiquark pair. So, we obtain a shower of gluons, quarks, and antiquarks. At each stage, the momentum transfer decreases. So, the quarks and gluons in the shower are all roughly collinear. Eventually, the \( q_{\perp} \) in the splittings falls below 1 GeV, the value of \( \alpha_s(q_{\perp}) \) becomes large, and the strong interaction effects of QCD take over, combining quarks and antiquarks into mesons and baryons. This gives a jet of hadrons, similar to those we have seen in \( e^+e^- \) event displays.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{11}/11_images/JS.png}
+	\caption{\label{fig:L11_JS} Jet of hadrons.}
+\end{figure}
+
+
+
+% p.210
+\subsection{Production of top quark}
+Let's consider an example. A top quark pair can be produced from quark antiquark annihilation or from gluon-gluon annihilation. The possibilities are represented in Figure \ref{fig:L11_TQPFD}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{\figpath{11}/11_images/TQPFD.pdf}
+	\caption{\label{fig:L11_TQPFD} Possibilities of top quark-antiquark pair production.}
+\end{figure}
+
+Figure \ref{fig:L11_TQPCS} shows measurements of the top quark pair production cross section at the LHC at 7, 8 and 13 \( \si{TeV} \) and the average of measurements at the Tevatron at 1.96 \( 1.96 \ \si{TeV} \). The blue and green curves are the QCD theory predictions for \( p\bar{p} \) and \( pp \) collisions as a function of energy.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{\figpath{11}/11_images/TQPCS.png}
+	\caption{\label{fig:L11_TQPCS} Measurements of the cross section for production of a pair of top quarks in \( p\bar{p} \) and \( pp \) collisions at the Tevatron collider and the LHC, as a function of energy, compared to predictions from QCD, from the LHC Top Quark Working Group.}
+\end{figure}
+
+\end{document}

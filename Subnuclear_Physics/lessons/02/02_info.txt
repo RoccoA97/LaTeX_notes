@@ -1,0 +1,26 @@
++ Arguments:
+    ++
+
++ Labels:
+    ++ Equations (eq:):
+        L02_HAP     =   Hydrogen Atom Potential
+        L02_HARE    =   Hydrogen Atom Rydberg Energies
+        L02_HARENU  =   Hydrogen Atom Rydberg Energies Natural Units
+        L02_HAREMS  =   Hydrogen Atom Rydberg Energies Momentum States
+        L02_HAWFP   =   Hydrogen Atom Wave Function Parity
+        L02_HASOHC  =   Hydrogen Atom Spin Orbit Hamiltonian Correction
+        L02_HASOT   =   Hydrogen Atom Spin Orbit Trick
+        L02_HASOOM  =   Hydrogen Atom Spin Orbit Order Magnitude
+        L02_HASSHC  =   Hydrogen Atom Spin Spin Hamiltonian Correction
+		L02_HATS	=	Hydrogen Atom Total Spin
+        L02_PRM     =   Positronium Reduced Mass
+        L02_PCCE    =   Positronium Charge Conjugation Eigenvalues
+        L02_MPCC    =   Multi Photon Charge Conjugation
+        L02_CME     =   Charmonium Matrix Element
+
+    ++ Figures (fig:):
+        L02_HPEL    =   Hydrogen Positronium Energy Levels (Tikz)
+        L02_PJPCS   =   Positronium JPC Scheme (Tikz)
+        L02_PSC     =   Pattern States Charmonium (Tikz)
+        L02_CF      =   Charmonium Family
+        L02_BF      =   Bottonium Family

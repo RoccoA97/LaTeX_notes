@@ -1,0 +1,24 @@
++ Arguments:
+	++
+
++ Labels:
+	++ Equations (eq:):
+		L09_DISS	=	Deep Inelastic Scattering S
+		L09_DISSH	=	Deep Inelastic Scattering S Hat
+		L09_DISYD	=	Deep Inelastic Scattering Y Definition
+		L09_DISYMI	=	Deep Inelastic Scattering Y Mandelstam Invariants
+		L09_DISYMIE	=	Deep Inelastic Scattering Y Mandelstam Invariants Equation
+		L09_DISQMP	=	Deep Inelastic Scattering Quark Massless Particle
+		L09_DISXD	=	Deep Inelastic Scattering X Definition
+		L09_DISQXYS	=	Deep Inelastic Scattering Q X Y S
+		L09_DISCSXY	=	Deep Inelastic Scattering Cross Section X Y
+		L09_DISCSFF	=	Deep Inelastic Scattering Cross Section Form Factor
+		L09_DISFFD	=	Deep Inelastic Scattering Form Factor
+
+
+	++ Figures (fig:):
+		L09_BSXVF	=	Bjorken Scaling X Versus F
+		L09_F2PDG	=	F2 Particle Data Group
+
+
+	++ Tables (tab:):

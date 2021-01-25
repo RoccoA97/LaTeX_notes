@@ -1,0 +1,26 @@
+\documentclass[border=3pt]{standalone}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{amsmath, mathtools}
+%\RequirePackage{luatex85}
+
+
+\begin{document}
+
+\feynmandiagram [scale=1.5, layered layout, horizontal=a to b] {
+	% Draw the top and bottom lines
+	i1 [particle={\small \( \bar{s} \)}]
+		-- [anti fermion] a [label={\tiny \( V^*_{sd} = - A\lambda^2 \)}]
+		-- [anti fermion, edge label'={\small \( \bar{t} \)}] b [label={\tiny \( V_{td} = - A\lambda^3(1-\rho-i\eta) \)}]
+		-- [anti fermion] f1 [particle={\small \( \bar{d} \)}],
+	i2 [particle={\small \( d \)}]
+		-- [fermion] c [label=below:{\tiny \( V_{cd} \)}]
+		-- [fermion, edge label={\small \( c \)}] d [label=below:{\tiny \( V^*_{cs} \)}]
+		-- [fermion] f2 [particle={\small \( s \)}],
+	% Draw the two internal fermion lines
+	{ [same layer] a -- [photon] c },
+	{ [same layer] b -- [photon] d},
+};
+
+\end{document}

@@ -1,0 +1,23 @@
++ Arguments:
+    ++
+
++ Labels:
+    ++ Equations (eq:):
+		L07_HPDCS	=	Hadron Production Differential Cross Section
+		L07_HPCS	=	Hadron Production Cross Section
+		L07_HPR		=	Hadron Production Ratio
+		L07_DISEP	=	Deep Inelastic Scattering Electron Proton
+		L07_EPDISCM	=	Electron Proton Deep Inelastic Scattering Current Matrix Element
+		L07_EPDISIM	=	Electron Proton Deep Inelastic Scattering Invariant Mass
+		L07_PMF		=	Parton Momentum Fraction
+		L07_PMSR	=	Parton Model Sum Rule
+		L07_PMCS	=	Parton Model Cross Section
+
+    ++ Figures (fig:):
+		L07_HPR		=	Hadronic and Muon Resonances
+		L07_SLDE	=	SLD Experiment
+		L07_EPDISFD	=	Electron Proton Deep Inelastic Scattering Feynman Diagram (Tikz)
+		L07_EPDISCS	=	Electron Proton Deep Inelastic Scattering Cross Section
+		L07_PMFD	=	Parton Model Feynman Diagram (Tikz)
+
+	++ Tables (tab:):

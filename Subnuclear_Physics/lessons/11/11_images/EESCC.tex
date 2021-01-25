@@ -1,0 +1,14 @@
+\documentclass[border=3pt]{standalone}
+\usepackage{siunitx}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{amsmath, mathtools}
+\begin{document}
+\feynmandiagram [vertical=b to c] {
+  i1 [particle=\(e^-\)] -- [anti fermion] a -- [anti fermion] i2 [particle=\(e^-\)],
+  a -- [photon] b
+  -- [fermion, half left, edge label=\(e^-\), looseness=1.71] c
+  -- [fermion, half left, edge label=\(e^+\), looseness=1.71] b,
+  c -- [photon] d,
+  f1 [particle=\(e^-\)] -- [fermion] d -- [fermion] f2 [particle=\(e^-\)],
+};
+\end{document}

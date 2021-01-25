@@ -1,0 +1,57 @@
+% Energy level diagrams - illustrating Hund's rule
+% Author: Henri Menke
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage{siunitx}
+\usetikzlibrary{shapes.callouts}
+\tikzset{
+  level/.style   = { ultra thick },
+  connect/.style = { dashed, red },
+  notice/.style  = { draw, rectangle callout, callout relative pointer={#1} },
+  label/.style   = { text width=2cm },
+  trans/.style   = { dashed, blue }
+}
+\begin{document}
+\begin{tikzpicture}
+	% PSEUDOSCALAR MESONS
+	\draw[level] (1,0) -- node[above] {\small\( \pi^{-} \)} (2,0);
+	\draw[level] (3,0) -- node[above] {\small\( \pi^{0} \)} (4,0);
+	\draw[level] (5,0) -- node[above] {\small\( \pi^{+} \)} (6,0);
+
+	\draw[level] (0,2) -- node[above] {\small\( K^{-} \)}		(1,2);
+	\draw[level] (2,2) -- node[above] {\small\( \bar{K}^{-} \)}	(3,2);
+	\draw[level] (4,2) -- node[above] {\small\( K^{0} \)}		(5,2);
+	\draw[level] (6,2) -- node[above] {\small\( K^{+} \)}		(7,2);
+
+	\draw[level] (3,4) -- node[above] {\small\( \eta \)}		(4,4);
+
+	\draw[level] (3,6) -- node[above] {\small\( \eta' \)}		(4,6);
+
+	\draw node at (8,0) {\small140};
+	\draw node at (8,2) {\small498};
+	\draw node at (8,4) {\small548};
+	\draw node at (8,6) {\small958};
+
+
+
+	% VECTOR MESONS
+	\draw[level] (11,0) -- node[above] {\small\( \rho^{-} \)} (12,0);
+	\draw[level] (13,0) -- node[above] {\small\( \rho^{0} \)} (14,0);
+	\draw[level] (15,0) -- node[above] {\small\( \rho^{+} \)} (16,0);
+
+	\draw[level] (13,0.8) -- node[above] {\small\( \omega^{0} \)} (14,0.8);
+
+	\draw[level] (10,2) -- node[above] {\small\( K^{+-} \)}			(11,2);
+	\draw[level] (12,2) -- node[above] {\small\( \bar{K}^{+0} \)}	(13,2);
+	\draw[level] (14,2) -- node[above] {\small\( K^{+0} \)}			(15,2);
+	\draw[level] (16,2) -- node[above] {\small\( K^{*+} \)}			(17,2);
+
+	\draw[level] (13,4) -- node[above] {\small\( \phi^{0} \)} (14,4);
+
+	\draw node at (18,0) 	{\small770};
+	\draw node at (18,0.8) 	{\small781};
+	\draw node at (18,2) 	{\small892};
+	\draw node at (18,4) 	{\small1020};
+
+
+\end{tikzpicture}
+\end{document}

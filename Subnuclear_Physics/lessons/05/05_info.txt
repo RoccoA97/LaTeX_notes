@@ -1,0 +1,26 @@
++ Arguments:
+    ++
+
++ Labels:
+    ++ Equations (eq:):
+		L05_EMSNOP	=	E M Shower Number Of Particles
+		L05_EMSME	=	E M Shower Maximum Expansion
+		L05_EMSMR	=	E M Shower Molière Radius
+		L05_NIL		=	Nuclear Interaction Length
+		L05_CSQF	=	Calorimeter Signal Quantum Fluctuations
+		L05_CSLF	=	Calorimeter Shower Leakage Fluctuations
+		L05_CIEF	=	Calorimeter Instrumental Effects Fluctuations
+		L05_CSF		=	Calorimeter Sampling Fluctuations
+		L05_CFQS	=	Calorimeter Fluctuations Quadrature Sum
+		L05_CFRC	=	Calorimeter Fluctuations Relevant Contributions
+		L05_CFHSR	=	Calorimeter Fluctuations Hadronic Shower Resolution
+
+    ++ Figures (fig:):
+		L05_EMSED	=	E M Shower Energy Deposit
+		L05_EMSAEF	=	E M Shower Average Energy Fraction
+		L05_HSAFCDD	=	Hadron Shower Average Fraction Contained Depth Dependent
+		L05_HSAFCRD	=	Hadron Shower Average Fraction Contained Radius Dependent
+		L05_NLRCD	=	Non Linear Response Calorimeter Data
+		L05_CFPPD	=	Calorimeter Fluctuations Pion Proton Distributions
+
+	++ Tables (tab:):

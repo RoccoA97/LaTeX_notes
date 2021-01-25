@@ -1,0 +1,92 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{28}{04}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 14.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+When the Higghs was proposed, Weinberg and Salam showed that the required mass of the vector bosons and of the fermions can be acquired by the interaction with the \( H \) field. The potential of this field is:
+\begin{equation}
+	V(\varphi)
+	=
+	-\mu^2 \abs{\varphi}^2 + \lambda \qty(\abs{\varphi}^2)^2
+	\label{eq:}
+\end{equation}
+The minimum of the potential is obtained by setting to zero the first derivative with respect to \( \varphi \) of the potential:
+\begin{equation}
+	0
+	=
+	-2\mu^2 \varphi + 4 \lambda \varphi \abs{\varphi}^2
+	\Longrightarrow
+	\abs{\varphi}^2
+	=
+	\frac{\mu^2}{2\lambda}
+	\label{eq:}
+\end{equation}
+If we compute the \( H \) field vacuum expectation value, we find:
+\begin{equation}
+	v
+	=
+	\sqrt{2} \left\langle \abs{\varphi} \right\rangle
+	=
+	\frac{\mu}{\sqrt{\lambda}}
+	\label{eq:}
+\end{equation}
+It is different from zero and it spontaneously breaks the \( SU(2) \times U(1) \) gauge symmetry.
+
+In the theory we need to introduce two coupling constants, \( g \) and \( g' \), related to the two gauge groups. Putting all together the previous facts, it is possible to show that:
+\begin{itemize}
+	\item One of the 4 bosons of theory remains massless and it is the photon.
+	\item Two bosons are charged with mass, namely:
+		\begin{equation}
+			M_W = g \frac{v}{\sqrt{2}}
+			\label{eq:}
+		\end{equation}
+	\item One boson is neutral and massive, with mass:
+		\begin{equation}
+			M_{Z^0} = \sqrt{g'^2 + g^2} \frac{v}{2}
+			\label{eq:}
+		\end{equation}
+	\item If we define the Weinberg angle \( \theta_W \), we have:
+		\begin{equation}
+			\tan \theta_W = \frac{g'}{g}
+			\label{eq:}
+		\end{equation}
+	\item It holds:
+		\begin{align}
+			M_W &= M_Z \cos \theta_W	\\
+			e &= g \sin \theta_W = g' \cos \theta_W
+		\end{align}
+\end{itemize}
+
+\( W^{\pm} \) and \( Z^0 \) bosons couple to quarks and leptons. In order to describe these couplings two quantum numbers are needed: the \textbf{weak isospin \( I \)} and the \textbf{hypercharge \( Y \)}. The electric charge is then related to these quantities by:
+\begin{equation}
+	Q
+	=
+	I_3 + \frac{Y}{2}
+	\label{eq:}
+\end{equation}
+Experimentally, we see that left-handed particles couple to \( W^{\pm} \) bosons, but right-handed particles have not this behaviour. Quarks and leptons are grouped:
+\begin{itemize}
+	\item Left-handed \( \Longrightarrow \) doublet \( \Longrightarrow I = \frac{1}{2} \)
+	\item Right-handed \( \Longrightarrow \) singlet \( \Longrightarrow I = 0 \)
+\end{itemize}
+Therefore the correct representation is:
+\begin{equation}
+	\begin{pmatrix}
+		\nu_L \\
+		e^-_L
+	\end{pmatrix}, e^-_R
+	\qquad
+	\begin{pmatrix}
+		u_L \\
+		d_L
+	\end{pmatrix}, u_R, d_R
+	\label{eq:}
+\end{equation}
+
+\end{document}

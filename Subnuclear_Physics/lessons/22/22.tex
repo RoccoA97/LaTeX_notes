@@ -1,0 +1,322 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{26}{05}{2020}
+
+
+\begin{document}
+
+\chapter{New Physics}
+
+\marginpar{ \textbf{Lecture 22.} \\  \displaydate{date}. \\ Compiled: \today.}
+
+\section{Neutrino and Standard Model}
+
+\subsection{Neutrino mass and \( \beta \) decay}
+The neutrino was introduced by Pauli in the study of \( \beta \) decay. This requires that the mass of the electron neutrino, at
+least, is very small. A bound on the mass of \( \nu_e \) can be set by studying in particular the endpoint of the electron energy distribution. If we consider the rate for the \( \beta \) decay of a nucleus \( A \) to \( B \), it has the following form:
+\begin{equation}
+	\Gamma(A \rightarrow Be^-\bar{\nu})
+	=
+	\frac{1}{2m_A}
+	\int \frac{\d{^3p_B} \d{^3p_e} \d{^3 p_{\nu}}}{(2\pi)^9 2E_B 2E_e 2E_{\nu}}
+	(2\pi)^4 \delta^{(4)}(p_A - p_B - p_e - p_{\nu})
+	\abs{\mathcal{M}}^2
+	\label{eq:}
+\end{equation}
+Since we are interested to the endpoint of \( e^- \) spectrum, we will have that \( \abs{\mathcal{M}}^2 \) is approximately constant in our study. \( A \) and \( B \) are very hevy compared to their mass difference (tipically of few \( \si{MeV} \)). So, it is also a good approximation to assume that the final nucleus \( B \) takes up the recoil momentum, so that the directions of the electron and neutrino are uncorrelated. In this limit, the energies of the final electron and neutrino sum to:
+\begin{equation}
+	E_e + E_{\nu}
+	=
+	m(A) - m(B)
+	=
+	\Delta m_{AB}
+	\label{eq:}
+\end{equation}
+Then, the rate becomes:
+\begin{equation}
+	\Gamma(A \rightarrow Be^-\bar{\nu})
+	=
+	\frac{1}{2m_A} \frac{1}{(2\pi)^5 2m_B}
+	\int \frac{\d{p_e} p_e^2}{2E_e}
+	\int \frac{\d{p_{\nu}} p_{\nu}^2}{2E_{\nu}}
+	\delta(\Delta m_{AB} - E_e - E_{\nu})
+	\abs{\mathcal{M}}^2
+	\label{eq:}
+\end{equation}
+Using:
+\begin{align*}
+	\d{p_e}p_e &= \d{E_e} E_e	\\
+	\d{p_{\nu}}p_{\nu} &= \d{E_{\nu}} E_{\nu}
+\end{align*}
+we can write the decay rate as:
+\begin{equation}
+	\Gamma
+	\sim
+	\int_{m_e}^{\Delta m_{AB}} \d{E_e}
+	\int_{0}^{\Delta m_{AB} - E_e} \d{E_{\nu}} p_{\nu}
+	\label{eq:}
+\end{equation}
+Assuming that the neutrino has zero mass, this gives:
+\begin{equation}
+	\dv{\Gamma}{E_e}
+	\sim
+	(\Delta m_{AB} - E_e)^2
+	\label{eq:}
+\end{equation}
+This energy distribution is conventionally represented by a \textbf{Kurie plot}, in Figure \ref{fig:L22_FKP}, plotting the square root of the event rate as a function of the electron energy. This should be a straight line for a zero mass neutrino. However, if the neutrino is massive, the plot falls off the kinematic endpoint:
+\begin{equation}
+	E_e
+	=
+	\Delta m_{AB} - m_{\nu}
+	\label{eq:}
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{22}/22_images/FKP.png}
+	\caption{\label{fig:L22_FKP} Example of Fermi-Kurie plot.}
+\end{figure}
+
+Measurements of \( \beta \) decay exclude \( \nu_e \) masses of more than a few \( \si{eV} \). However, \( \beta \) decay is not the most adequate way to measure \( m_{\nu} \) mass. The \( \beta \) electron can lose an energy of order \( \si{eV} \) when it exits the atom, and it loses \( \si{eV/mm} \) in traversing material. These energy losses must be accounted for in the interpretation of the electron energy distribution. The most accurate measure up to 2019 was done by Mainz and Troitsk and it gives the limit:
+\begin{equation}
+	m_{\nu_e}
+	<
+	2.05 \ \si{eV}
+	\label{eq:}
+\end{equation}
+In September 2019, the KATRIN experiment analyzed the decay of gaseous Tritium. From the fit of the collected data, it was found a new limit for the mass of electronic neutrino at 90\% CL:
+\begin{equation}
+	m_{\nu_e}
+	<
+	1.1 \ \si{eV}
+	\label{eq:}
+\end{equation}
+%sensitivity of 0.2 eV on neutrino mass from KATRIN
+The results of the two experiments are showed in Figure \ref{fig:L22_MKER}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{\figpath{22}/22_images/MKER.png}
+	\caption{\label{fig:L22_MKER} Left: measurement of the endpoint of the electron energy spectrum in tritium \( \beta \) decay, from Mainz experiment. Right: KATRIN experiment results, from the analysis of the decay of gaseous Tritium.}
+\end{figure}
+
+Direct limits on \( \nu_{\mu} \) and \( \nu_{\tau} \) mass are weaker with respect to the \( \nu_e \) limit. For them, we can study:
+\begin{align}
+	\pi^+ &\longrightarrow \mu^+ \nu_{\mu}	\\
+	\tau^- &\longrightarrow 2\pi^-\pi^+ \nu_{\tau}
+	\label{eq:}
+\end{align}
+and we find respectively the following limits on the masses:
+\begin{align}
+	m(\nu_{\mu}) &< 0.19 \ \si{MeV}	\\
+	m(\nu_{\tau})&< 18.2 \ \si{MeV}
+\end{align}
+
+With a cosmology argument, if we have a massive \( \nu \) that moves relativistically in the early universe, \( \nu \) would transfer energy and smear out cosmic structure, giving an observably different distribution of clusters of galaxies if the neutrino masses are sufficiently large. The absence of this effect gives a bound estimated to be:
+\begin{equation}
+	\sum_{i=1,2,3} m_{\nu_i}
+	<
+	0.23 \ \si{eV}
+	\label{eq:}
+\end{equation}
+
+
+
+
+
+\subsection{Adding neutrino mass to the Standard Model}
+Neutrino masses are thus very small compared to the weak interaction mass scale, sufficiently small that it is unclear how they can be observed. To understand the evidence for neutrino mass, we need to develop further the theory of neutrino massses within the Standard Model.
+
+Let's assume the gauge invariance and a \( SU(2) \times U(1) \) symmetry. Neutrino masses can arise in one of the following two ways.
+
+
+
+The simplest mechanism is to assume that there exist right-handed neutrinos that couple to the left-handed neutrinos through Yukawa couplings. This translates in adding to the Standard Model Lagrangian a term:
+\begin{equation}
+	\Delta \mathcal{L}
+	=
+	- y^{ij}_{\nu} L^{\dag i}_a \varepsilon_{ab} \varphi^*_b \nu^j_R
+	+ \text{h.c.}
+	\label{eq:}
+\end{equation}
+similar to the \( u \) quark mass term that couples to \( W^{\pm} \). This term can be treated in the same way the quark and lepton mass terms are treated. However, this is not appropriate. In elementary particle reactions, neutrinos are typically emitted at \( \si{MeV} \) or higher energies, at which effects of \( \si{eV} \)-scale masses are unimportant. Therefore it is most convenient to retain our earlier convention that the left-handed neutrinos are described in the basis that diagonalizes their weak interactions. We then treat the new term by making the change of variables:
+\begin{equation}
+	L^i \longrightarrow U^{(e)}_{L_{ij}} L^j
+	\label{eq:}
+\end{equation}
+This transforms:
+\begin{equation}
+	y_{\nu} \longrightarrow y'_{\nu} = U^{(e)\dag}_L y_{\nu}
+	\label{eq:}
+\end{equation}
+This transformation diagonalizes the charged lepton Yukawa matrix but does not necessarily diagonalize the neutrino Yukawa matrix. This basis for neutrino states will be denoted as the basis of \textbf{flavor eigenstates}. In this basis, the \( \nu_e \) is the linear combination of the three neutrino states that is produced in weak interaction decay together with an \( e^+ \), and the \( \nu_{\mu} \) and \( \nu_{\tau} \) are defined similarly.
+
+We can now diagonalize \( y'_{\nu} \) as before:
+\begin{equation}
+	y'_{\nu}
+	=
+	U^{(\nu)}_L Y_{\nu} U^{(\nu)}_R
+	\label{eq:}
+\end{equation}
+where \( Y_{\nu} \) is real and diagonal. We can transform away \( U^{(\nu)}_R \) but we cannot get rid of the matrix \( U^{(\nu)}_L \). This is a fixed unitary transformation between the basis of flavor eigenstates and the basis of mass eigenstates. We will refer to the the mass eigenstates as \( \nu_1 \), \( \nu_2 \), \( \nu_3 \), with masses \( m_1 \), \( m_2 \), \( m_3 \). As we did with the quark mixing matrix, we can redefine phases in \( U^{(\nu)}_L \) so that \( U^{(\nu)}_L \) contains three angles but only one phase.
+The mixing matrix \( U^{(\nu)}_L \) is called the \textbf{Pontecorvo-Maki-Nakagawa-Sakata} or \textbf{PMNS matrix} and is more commonly notated \( V \) or \( V_{\mathrm{PMNS}} \).
+
+
+
+
+
+There is another way to add neutrino masses to the Standard Model that is consistent with Lorentz invariance and \( SU(2) \times U(1) \). We can write:
+\begin{equation}
+	\Delta \mathcal{L}
+	=
+	- \frac{1}{2} \mu_{ij}
+	(L^{i}_{a \alpha} \varepsilon_{ab} \varphi^{*}_{b})
+	(L^{j}_{c \beta}  \varepsilon_{cd} \varphi^{*}_{d})
+	\varepsilon_{\alpha \beta}
+	\label{eq:L22_SMNM2}
+\end{equation}
+where \( \alpha, \beta = 1,2 \) are teh indices of 2-component spinors. This expression is Lorentz-invariant. It does not violate any gauge symmetry of the Standard Model. The expression does violate lepton number, but lepton number conservation is not a postulate in the description of the Standard Model.
+When the Higgs field \( \varphi \) acquires an expectation value and breaks \( SU(2) \times U(1) \), \ref{eq:L22_SMNM2} leads to a mixing of the \( \nu_L \) states with their antiparticles \( \bar{\nu_R} \), generating masses given by the eigenvalues of:
+\begin{equation}
+	m_{ij}
+	=
+	\mu_{ij} \frac{v^2}{2}
+	\label{eq:}
+\end{equation}
+This mass term, resulting from particle-antiparticle mixing, is called a \textbf{Majorana mass term}.
+
+The quantity \( \mu_{ij} \) has the dimensions \( (\si{GeV})^{-1} \), so we might also write the mass formula as:
+\begin{equation}
+	m_{ij}
+	=
+	\frac{\bar{\mu}_{ij} v^2 / 2}{M}
+	\label{eq:}
+\end{equation}
+where \( \bar{\mu} \) is dimensionless and \( M \) sets the mass scale.
+
+We can obtain this structure naturally by starting from a Lagrangian with neutrino Yukawa couplings and a lepton-number violating mass term for the right-handed neutrinos:
+\begin{equation}
+	\Delta \mathcal{L}
+	=
+	- \frac{1}{2} M_{ij} \nu^{i}_{R\alpha} \nu^{j}_{R\beta} \varepsilon_{\alpha\beta}
+	+ \text{h.c.}
+	\label{eq:}
+\end{equation}
+This is a direct Majorana mass term for the right-handed neutrinos. Note that, because the right-handed neutrinos do not transform under \( SU(2) \times U(1) \), we are free to write this term without violating any symmetry of the Standard Model. Thus, while quark, lepton, and vector boson masses are restricted to be of the size of the Higgs field expectation value, there is no reason why the scale of masses in \( M_{ij} \) cannot be very much larger. When we use the previous mass term together with the neutrino Yukawa coupling, the diagram in Figure \ref{fig:L22_SMD} generates Majorana masses for the left-handed neutrinos of the form of \( m_{ij} \) previously defined.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{\figpath{22}/22_images/SMD.png}
+	\caption{\label{fig:L22_SMD} Diagram representing geenration of Majorana masses for the left-handed neutrinos.}
+\end{figure}
+This is called the \textbf{seesaw mechanism} for generating small neutrino masses. It produces small masses by a modification of the theory at very high energies.
+
+The consequences of the Majorana mass term for neutrinos are almost the same as those of the Dirac mass term. We can diagonalize the Majorana neutrino mass as:
+\begin{equation}
+	m_{ij}
+	=
+	(V\bar{m}V^T)_{ij}
+	\label{eq:}
+\end{equation}
+where \( \bar{m} \) is complex and \( V \) is unitary. The matrix \( V \) is the PMNS matrix, reducible to three angles and one phase. There are two more possible phases in \( \bar{m} \). These have no significant effect on neutrino flavor oscillations.
+
+The Majorana mass term gives a new weak interaction process: the double \( \beta \) decay. At some points in the periodic table, ordinary \( \beta \) decay is energetically forbidden, but double \( \beta \) decay is allowed. For example:
+\begin{equation}
+	m(\text{Cs}^{136})
+	>
+	m(\text{Xe}^{136})
+	>
+	m(\text{Ba}^{136})
+	\label{eq:}
+\end{equation}
+Then, \( \text{Xe}^{136} \) can decay by:
+\begin{equation}
+	\text{Xe}^{136}
+	\longrightarrow
+	\text{Ba}^{136} + e^-\bar{\nu}_e e^-\bar{\nu}_e
+	\label{eq:}
+\end{equation}
+
+However, double \( \beta \) decay is one of the rarest physical processes known. For example, the EXO experiment measured:
+\begin{equation}
+	\tau(\text{Xe}^{136})
+	=
+	2 \cdot 10^{21} \ \si{yr}
+	\label{eq:}
+\end{equation}
+If the neutrino \( \bar{\nu}_e \) has a lepton-number violating Majorana mass term, then also the decay proces:
+\begin{equation}
+	\text{Xe}^{136}
+	\longrightarrow
+	\text{Ba}^{136} + e^-e^-
+	\label{eq:}
+\end{equation}
+is allowed, with no final-state neutrinos. The rate of this decay is expected to be small even in comparison to the lifetime of \( \text{Xe}^{136} \) previously given. This and similar decays are being intensively searched for, but none has yet been observed.
+
+
+
+
+
+\subsection{The \( V_{\mathrm{PNMS}} \) effect}
+We can now describe the physical effect of a neutrino mass term. I choose the process of \( \pi^+ \) decay as an example. The \( \pi^+ \) decays to \( \mu^+\nu_{\mu} \), that is, specifically to the \( \nu_{\mu} \) weak interaction eigenstate. The \( \nu_{\mu} \) is a linear combination of the three mass eigenstates. If the \( \pi^+ \) energy is fixed, the three components are emitted with slightly different values of momentum:
+\begin{equation}
+	p_i
+	=
+	E - \frac{m^2_i}{2E} + \dots
+	\label{eq:}
+\end{equation}
+This is permitted, because the pion decay region is of finite size, allowing the momentum to be uncertain. This uncertainty is small enough that the components of the \( \nu_{\mu} \) wavefunction are created with quantum coherence.
+
+The outgoing neutrino wavefunction then has the form:
+\begin{equation}
+	\sum_{i=1,2,3} V_{\mu i} e^{+i (E - m^2_i/2E)x}
+	\label{eq:}
+\end{equation}
+At very large distances \( x \), the components of this wavefunction go out of phase. Then the probability of finding a \( \nu_{\mu} \) is no longer 1. Instead, we find:
+\begin{equation}
+	\text{Prob}(\nu_{\mu} \rightarrow \nu_{\mu})
+	=
+	\abs{\sum_{i} V_{\mu i} V^*_{\mu i} e^{-i (m^2_i / 2E)x}}^2
+	\label{eq:}
+\end{equation}
+It is easiest to understand this formula if we evaluate it for the case of two-neutrino mixing with mixing angle \( \theta \):
+\begin{equation}
+	V
+	=
+	\begin{pmatrix}
+		\cos\theta & -\sin\theta \\
+		\sin\theta &  \cos\theta
+	\end{pmatrix}
+	\label{eq:}
+\end{equation}
+In that case, the formula becomes:
+\begin{equation}
+	\text{Prob}(\nu_{\mu} \rightarrow \nu_{\mu})
+	=
+	\abs{ \cos^2\theta e^{-i (m^2_1 / 2E)x} + \sin^2\theta e^{-i (m^2_2 / 2E)x} }^2
+	\label{eq:}
+\end{equation}
+which can be rewritten as:
+\begin{equation}
+	\text{Prob}(\nu_{\mu} \rightarrow \nu_{\mu})
+	=
+	1 - \sin^2(2\theta) \sin^2 \qty[\frac{\delta m^2}{4E} x]
+	\label{eq:}
+\end{equation}
+There is an oscillation between the flavor eigenstates with an oscillation length:
+\begin{equation}
+	L
+	=
+	4\pi \frac{E}{\Delta m^2}
+	=
+	(2.48 \ \si{m}) \frac{E \ (\si{MeV})}{\Delta m^2 \ (\si{eV}^2)}
+	\label{eq:}
+\end{equation}
+The conclusion is quite surprising. We can detect the presence of small neutrino masses if the neutrinos also exhibit flavor mixing. Then the effect of the mass term is to generate a \textbf{flavor oscillation} as a function of the distance from the neutrino source. For \( \si{MeV} \) neutrinos with \( 10^{-2} \ \si{eV} \) masses or for \( \si{GeV} \) neutrinos with \( 10^{-1} \ \si{eV} \) masses, the length scale of the oscillation can be \( \si{km} \).
+
+This is just the opposite of the way that we determine the masses and weak interaction flavor mixing among quarks. For quarks, we observe the particles as mass eigenstates, inside hadrons of definite mass. Decays through the weak interaction show that the mass eigenstates are linear combinations of weak interaction eigenstates.
+For neutrinos, the primary way that we observe the particles is through weak interaction decay. Then we characterize the neutrino eigenstates according to their weak interaction properties. It is the flavor mixing as the neutrinos travel that demonstrates that there is a mass eigenstate basis, with different masses for the three neutrinos, that is different from the flavor basis.
+
+\end{document}

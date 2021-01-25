@@ -1,0 +1,71 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{20}{05}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 21.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+%TODO manca la parte precedente
+
+The decay is shifted forward in time for an \( \bar{B}^0 \) and backward in time for an initial \( B^0 \). The asymmetry is predicted to have a time-dependence governed by \( \delta m \) with amplitude \( \sin 2\beta \). For the process \( B^0/\bar{B}^0 \rightarrow J/\psi K^0_L \), the relative minus sign in the decay amplitudes from \( B^0 \) and \( \bar{B}^0 \) becomes a plus sign and so the asymmetry takes the minus sign. The angle \( \beta \) is the phase angle taken directly from CKM matrix, without corrections due to strong interaction.
+
+The first thing to do in order to understand the time-dependent asymmetry is to find a way to produce a sufficient quantity of \( B^0 \) and \( \bar{B}^0 \) mesons. This can be done \( e^+e^- \) annihilation, which leads to a state with \( J=1 \). This means that for the production of spin-0 mesons, the two mesons are in an \( L=1 \) wavefunction, antisymmetric in the other meson quantum numbers. In particular, the \( B \) mesons go outward from the production point and, after some time, one of the mesons decays. If it decays to an \( e^+ \) or a \( \mu^+ \), this event tags this meson (at this time) as a \( B^0 \). The other meson must then be a \( \bar{B}^0 \). This state propagates for an additional time \( \Delta t \), possibly mixing to \( B^0 \) during that time, and then decays to the observed final state. Note that the relative time \( \Delta t \) might be negative if the leptonic decay takes place after the selected exclusive decay. These processes are schematized in Figure \ref{fig:L21_EPJP}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{21}/21_images/EPJP.png}
+	\caption{\label{fig:L21_EPJP} Production of \( B^0 \) and \( \bar{B}^0 \) mesons through \( e^+e^- \) annihilation and decay products.}
+\end{figure}
+
+The lifetime of the \( B \) meson is about \( 1.5 \ \si{ps} \), so it is difficult to measure the decay time directly. A possibility is to construct an asymmetric colliding beam accelerator, in which the \( e^+e^- \) center of mass frame is moving with respect to the lab. The boost of the center of mass is approximately \( v/c \sim 0.5 \). Therefore, two \( B \) decays would be separeted by about \( 200 \ \si{\mu m} \), which is a resolvable distance for a silicon tracking detector which pinpoints the decay vertices.
+
+In the late 1990's, two asymmetric \( e^+e^- \) colliders were constructed, one at SLAC (\( 9.0 \ \si{GeV} \ e^- \ \times 3.1 \ \si{GeV} \ e^+ \)), for the BaBar experiment, and one at KEK in Tsukuba, Japan (\( 8.0 \ \si{GeV} \ e^- \ \times 3.5 \ \si{GeV} \ e^+ \)), for BELLE experiment. In 2001, both experiments observed the \( CP \)-violating asymmetry in \( B^0 \rightarrow J/\psi K^0_S \).
+
+In Figure \ref{fig:L21_BABAR} it is presented the displacements of the decay distributions for \( B^0 \rightarrow J/\psi K^0 \) and \( \bar{B}^0 \rightarrow J/\psi K^0 \) measured by the BaBar experiment. The distributions are labelled by the tagging \( B \) meson, so the points labeled ``\( B^0 \) tags'' indicate \( \bar{B}^0(\tau) \) decays, and vice versa. The distributions for \( B^0 \) and \( \bar{B}^0 \) are shifted substantially with respect to one another, in just the directions predicted below. The shifts are in the opposite directions for \( K^0_L \) instead of \( K^0_S \) in the final state.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{\figpath{21}/21_images/BABAR.png}
+	\caption{\label{fig:L21_BABAR} Proper time distribution of \( B^0\bar{B}^0 \rightarrow J/\psi K^0 \) decays at the \( \Upsilon (4\text{S}) \), measured by the BaBar experiment at the PEP-II collider at SLAC. Panel (a) shows the decay distributions for \( B^0\bar{B}^0 \rightarrow J/\psi K^0_S \). Panel (b) shows the rate asymmetry. Panel (c) shows the decay distributions for \( B^0\bar{B}^0 \rightarrow J/\psi K^0_L \). Panel (d) shows the corresponding rate asymmetry.}
+\end{figure}
+
+The current best value of \( \beta \) from this measurement is:
+\begin{equation}
+	\sin 2\beta
+	=
+	0.679 \pm 0.20
+	\label{eq:}
+\end{equation}
+that is, \( \beta = 21\text{°} \). This is indeed a large \( CP \)-violating effect.
+
+Concerning the angles \( \alpha \) and \( \gamma \), they can also be measured by observable parameters of \( B \) decays. The angle \( \alpha \) is given by time-dependent asymmetries in \( B \) decay to light quarks:
+\begin{align}
+	B^0 &\longrightarrow \pi^+\pi^-	\\
+	B^0 &\longrightarrow \pi^{\pm}\rho^{\mp}	\\
+	B^0 &\longrightarrow \rho^+\rho^-
+\end{align}
+The angle \( \gamma \) can be extracted from asymmetries in \( B \) decays to \( DK \). These constraints are shown in Figure \ref{fig:L21_CKMC},vtogether with constraints from the value of \( \abs{V_{ub}} \), the values of the \( B^0 \)-\( \bar{B}^0 \) mixing amplitude, the value of \( B^0_s \)-\( \bar{B}^0_s \) mixing amplitude, and the value of \( \varepsilon \) from the neutral \( K \) system. In the Standard Model, all of these parameters must be consistent with a common value of \( (\rho + i\eta) \).
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{\figpath{21}/21_images/CKMC.png}
+	\caption{\label{fig:} Constraints on the CKM parameters \( (\rho,\eta) \) from measurements of \( CP \) violation, showing the fit by the CKMFitter collaboration.}
+\end{figure}
+
+So, any quantum field theory is invariant under \( CPT \), so \( CP \) violation implies \( T \) violation. However, it is interesting to ask whether one can directly see \( T \) violation in heavy quark decays.
+The BaBar experiment demonstrated this in the following way: We have seen
+that, in \( e^+e^- \) annihilation, \( B \) mesons are produced as pairs in a quantum coherent wavefunction. The decay of one meson breaks the coherence, identifying one meson of the pair as a \( B^0 \) or a \( \bar{B}^0 \), for a leptonic decay, or as a \( CP=+ \) or \( CP=- \) state (\( B_+ \) or \( B_- \)), for a decay to a \( CP \) eigenstate. We can then pick out events in which the leptonic decay happens first, followed by time evolution to a \( CP \) eigenstate, and also events in which the \( CP \) decay happens first, followed by time evolution to a state with a definite leptonic decay.
+If the equations of motion of nature were \( T \) symmetric, the rates for time evolution in the two directions would be equal. They are not. The asymmetries between the rates for pairs of time-reversed processes (e.g., \( B^0 \rightarrow B_- \) vs. \( B_- \rightarrow B^0 \)) are shown in Figure \ref{fig:L21_TRVA}. Note that the asymmetries reverse when one changes from \( B^0 \) to \( \bar{B}^0 \) and from even to odd \( CP \), consistent with the physics described above. This is the most direct
+evidence that the equations of nature violate time reversal invariance.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{\figpath{21}/21_images/TRVA.png}
+	\caption{\label{fig:L21_TRVA} Time reversal violating asymmetries measured as a function of proper time by the BaBar experiment at the PEP-II collider. The four panels refer to the transitions: \( \bar{B}^0 \rightarrow B_- \) (a), \( B_+ \rightarrow B^0 \) (b), \( \bar{B}^0 \rightarrow B_+ \) (c), \( B_- \rightarrow B^0 \) (d).}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,332 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{17}{03}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 3.} \\  \displaydate{date}. \\ Compiled:  \today. \\ Prof. Lucchesi}
+
+\subsection{Light mesons}
+Now we can go back to the \( \pi \) mesons and other relatively light hadrons. \( \pi \)s are the strongly interacting particles and  there are three \( \pi \) mesons: \( \pi^{0}, \pi^{+}\) and \( \pi^{-} \). Their history is the beginning of modern particle physics and they were discovered in 1947, when Lattes, Occhialini and Powell demonstrated the existence of \( \pi^{\pm} \) through \( \pi^{\pm} \longrightarrow \mu^{\pm} + \nu \).
+
+By detailed study of their interactions, it was determined that the \( \pi \) mesons also had \( J^{P} = 0^{-} \). The \( \pi^{0} \) decays to 2 photons, so it is \( C = +1 \). All of this is consistent with the interpretation of the pions as spin-\( \frac{1}{2} \) fermion-antifermion bound states.
+
+There are 9 relatively light \( 0^{-} \) hadrons, also known as \textbf{pseudoscalar mesons}, and 9 somewhat heavier \( 1^{-} \) hadrons, called the \textbf{vector mesons}, presented in Figure \ref{fig:L03_PVM}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\textwidth]{\figpath{03}/03_images/PVM.pdf}
+	\caption{\label{fig:L03_PVM} Light mesons summary. On the left there are the pseudoscalar mesons, on the right the vector mesons. The numbers given are the masses of the particles in MeV.}
+\end{figure}
+
+The \( K \) and \( K^* \) states are not produced singly in strong interactions. They are only produced together with one another, or with special excited states of the proton. For example, we see the reactions:
+\begin{align*}
+	\pi^{-}p &\longrightarrow nK^{+}K^{-}	\\
+	\pi^{-}p &\longrightarrow \Lambda^{0}K^{0}
+\end{align*}
+where \( \Lambda^{0} \) is a heavy excited state of the proton, but we don't see the reaction:
+\begin{align*}
+	\pi^{-}p &\longrightarrow nK^{0}
+\end{align*}
+For this reason, the \( K \) mesons and the \( \Lambda^{0} \) baryon became known as the strange particles.
+
+As a consequence of this discovery, a new quantum number, the \textbf{strangeness}, was introduced to describe the production and decay processes. It was found that the rules for \( K \) and \( K^* \) production can be expressed simply by saying that the strong interaction preserves the strangeness, with \( K^{0} \), \( K^{+} \), \( K^{*0} \) and \( K^{*+} \) having strangeness \( S = -1 \), their antiparticles having \( S = +1 \), and the \( \Lambda^{0} \) having \( S = +1 \). Moreover, with the introduction of strangeness, a new kind of quark was introduced in the theories, namely the strange quark \( s \). States with strangeness \( +1 \) will be assigned one \( s \) quark, and states with strangeness \( -1 \) will have one \( \bar{s} \) antiquark.
+
+
+
+
+
+\section{Leptons}
+The leptons are fundamental particles, divided in several classes. We have:
+\begin{itemize}
+    \item \textbf{Electron \( e \)}.\\
+        It was discovered by J.J. Thomson in 1897 while studying the properties of cathode rays.
+    \item \textbf{Muon \( \mu \)}.\\
+        It was discovered by Carl D. Anderson and Seth Neddermeyer in 1936 as component of the cosmic rays. At the beginning it was thought to be the Yukawa particle, the mediator of the strong force. Then Conversi, Pancini and Piccioni gave a proof that it does not interact strongly.
+    \item \textbf{Tauon \( \tau \)}.\\
+        It was discovered by a group led by Martin Perl at Stanford Linear Accelerator Center. They used \( e^+e^- \) collisions with final states events \( e\mu \).
+    \item \textbf{Neutrino \( \nu \)}.\\
+        Neutrino hypothesis was formulated by Pauli to explain the \( \beta \)-decay. It was discovered by Clyde Cowan and Fred Reines in the 1953. We don't know if mass is given to neutrinos through the same mechanism (Higgs mechanism) for the other particles or if there is something that does it that we still don't know.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+\chapter{Tools for calculations}
+To compare the results of elementary particle experiments to proposed theories of the fundamental forces, we must think carefully about what quantities we can compute and measure. We cannot directly measure the force that one elementary particle exerts on another. Most of our information about the subnuclear forces is obtained from scattering experiments or from observations of particle decay.
+
+In scattering experiments, the basic measureable quantity is called the \textbf{differential cross section}. In particle decay, the basic measureable quantity is called the \textbf{partial width}.
+
+
+
+
+
+\section{Observables in experimental particle physics}
+The basic observable quantity associated with a decaying particle is the \textbf{rate of decay}. In quantum mechanics, an unstable particle \( A \) decays with the same probability in each unit of time. The probability of survival to time \( t \) then obeys the differential equation:
+\begin{equation}
+    \dv{P(t)}{t} = - \frac{P}{\tau_A}
+    \overset{\text{solution}}{\Longrightarrow}
+    P(t) = P_0 e^{-\frac{t}{\tau_A}}
+    \label{eq:L03_PST}
+\end{equation}
+
+The decay rate \( \tau_{A}^{-1} \) is also called the \textbf{total width} \( \Gamma_{A} \) of the state \( A \). Its dimension is 1/sec, equivalent to GeV up to factors of \( \hbar \) and \( c \).
+\begin{equation}
+    \tau_A = \frac{1}{\Gamma_A}
+    \qquad
+    \Gamma_A = \text{Total width of the state } A
+    \label{eq:L03_TW}
+\end{equation}
+
+If there are multiple decay processes like \( A \longrightarrow f \), each process has a rate \( \Gamma(A\longrightarrow f) \), namely the \textbf{partial width}. Thus, the total decay rate is given by:
+\begin{equation}
+    \Gamma_A = \sum_{f} \Gamma(A \longrightarrow f)
+    \label{eq:L03_TDR}
+\end{equation}
+Another quantity called \textbf{branching ratio} can be defined by the definition of the previous ones:
+\begin{equation}
+    \frac{\Gamma(A \longrightarrow f)}{\Gamma_A}
+    =
+    \text{Branching ratio}
+    \label{eq:L03_BR}
+\end{equation}
+
+We can now introduce the \textbf{cross section}. Let's imagine a fixed target experiment, where a beam of \( A \) particles of density \( n_A \) and velocity \( v_A \), are shot at the fixed center \( B \). What we can measure includes the rate \( R \) at which we see scatterings from the beam:
+\begin{equation}
+    \text{R}
+    =
+    \frac{\text{Number of events}}{\text{Time}}
+    =
+    n_A v_A \sigma_i
+    \label{eq:L03_R1B}
+\end{equation}
+with \( \sigma_i \) the cross section of the process, which has the dimension of an area and it is measured in barn (\(10^{-28} \ \si{m^2} \)). It is the effective area that the target \( B \) presents to the beam. Another important quantity is the \textbf{luminosity}, i.e.:
+\begin{equation}
+    \mathcal{L} = \frac{R}{\sigma_i}
+    \label{eq:L03_L}
+\end{equation}
+
+Returning to the cross section, an alternative definition can be given. Imagine two bunches of particles \( A \) and \( B \) aimed at one another, namely a collision between two beams. The key idea is that the second beam is the target, so we consider \( N_B = n_B l_B A_B \) in order to calculate the rate:
+\begin{equation}
+    R = n_A n_B l_B A_B \abs{v_A - v_B} \sigma_i
+    \label{eq:L03_R2B}
+\end{equation}
+
+As pointed before, every beam is composed of bunches with the following gaussian distributuion:
+\begin{equation}
+    \dv{N}{s} = \frac{N}{2\pi \sigma_x \sigma_y} e^{-\qty(\frac{x^2}{2 \sigma_x^2} + \frac{y^2}{2 \sigma_y^2}) }
+    \label{eq:L03_BGD}
+\end{equation}
+The number of interations per bunch is \( N_\mathrm{int} = \sigma_\mathrm{int} \frac{N_1 N_2}{4\pi \sigma_x \sigma_y} \) and the bunch frequency is \( f \). Therefore, we can calculate the rate:
+\begin{equation}
+    R_i = N_\mathrm{int} f = \sigma_\mathrm{int} \frac{N_1 N_2}{4\pi \sigma_x \sigma_y}
+    \label{eq:L03_RB}
+\end{equation}
+% TODO luminosity
+
+
+
+
+
+\section{Partial Width and Cross Section calculation}
+The partial width and the cross section for a certain process can be calculated through \textbf{Fermi's Golden Rule} in a very practical way. By using the time evolution operator \( T \), we can write:
+\begin{equation}
+    \bra{1,2,\dots,n} T \ket{A(p_A)}
+    =
+    \underbrace{\mathcal{M}(A \longrightarrow 1,2,\dots,n)}_{\text{Invariant matrix element}} \qty(2\pi)^4 \underbrace{\delta^{(4)} \qty(p_A - \sum_{i=1}^{n} p_i )}_{E, \va{p} \ \text{conservation}}
+    \label{eq:L03_TEO}
+\end{equation}
+It is useful to work out the dimension of \( \mathcal{M} \). The operator \( T \) is dimensionless, and the states have total dimension \( \si{GeV^{-(n+1)}} \). The delta function has units \( \si{GeV^{-4}} \). Then the invariant matrix element has the units:
+\begin{equation}
+	\mathcal{M} \sim \si{GeV^{3-n}}
+	\label{eq:L03_MED}
+\end{equation}
+
+Now, to find the total rate, we must integrate over all possible values of the final momenta. This integral is called \textbf{phase space} and for \( n \) final particles, the expression for the phase space integral is:
+\begin{equation}
+    \int \d{\Pi_{n}}
+    =
+    \int_{}^{} \frac{\d{^3 p_1}}{(2\pi)^3 2 E_1} \cdots \frac{\d{^3 p_n}}{(2\pi)^3 2 E_n} (2\pi)^4 \delta^{(4)} \qty(p_A - \sum_{i=1}^{n} p_i )
+    \label{eq:L03_PSI}
+\end{equation}
+However, we also need to normalize. So the initial state \( \ket{A} \) will yield:
+\begin{equation}
+    \ket{A} \longrightarrow \frac{1}{2 E_A} \qquad \text{Initial state}
+    \label{eq:L03_ISN}
+\end{equation}
+
+Finally, the Fermi Golden Rule formula for a partial width to an \( n \)-particle final state \( f \) is:
+\begin{equation}
+    \Gamma(A \longrightarrow f)
+    =
+    \frac{1}{2 M_A} \int \d{\Pi_n} \abs{\mathcal{M}(A \longrightarrow f)}^2
+    \label{eq:L03_FGR}
+\end{equation}
+If the final state particles have spin, we need to sum over final spin states. The initial state \( A \) is in some state of definite spin. If we have not defined the spin of \( A \) carefully, an alternative is to average over all possible spin states of \( A \). By rotational invariance, the decay rate of \( A \) can't depend on its spin orientation.
+
+Concerning the cross section, a formula for this quantity is constructed in a similar way. We need the matrix element for a transition from the two initial particles \( A \) and \( B \) to the final particles through the interaction. So, it reads:
+\begin{equation}
+    \sigma(A + B \longrightarrow f)
+    =
+    \frac{1}{2 E_A E_B \abs{v_A - v_B}} \int \d{\Pi_n} \abs{\mathcal{M}(A + B \longrightarrow f)}^2
+    \label{eq:L03_FGRCS}
+\end{equation}
+
+
+
+
+
+\section{Phase Space integral calculation}
+Phase space plays a very important role in particle physics. The default assumption is that final state particles are distributed according to phase space. This assumption is correct unless the transition matrix element has nontrivial structure.
+We will procede with a couple of examples/exercises in order to understand the way of working with this kind of computations.
+
+\medskip
+\begin{example}{Phase space of 2 particles}{}
+	Most of the reactions we will discuss will have two particles in the final state. So it's better to start with this example. We have to compute:
+    \begin{equation}
+        \int \d{\Pi_2}
+        =
+        \int \frac{\d{^3 p_1}}{(2\pi)^3 2 E_1} \frac{\d{^3 p_2}}{(2\pi)^3 2 E_2} (2\pi)^4 \delta^{(4)} \qty(p - p_1 - p_2 )
+        \label{eq:L03_2PPSE}
+    \end{equation}
+
+    Let's work in the CM system, where \( \va{p}_1 + \va{p}_2 = 0 \) and so \( \va{p}_1 = - \va{p}_2 \). Hence:
+	\begin{subequations}
+		\begin{align}
+			P	&= (E_\mathrm{CM}, \va{0}) \\
+			p_1	&= (E_1, \va{p}) \\
+			p_2	&= (E_2, -\va{p})
+		\end{align}
+		\label{eq:L03_2PPSD}
+	\end{subequations}
+
+	We have to integrate over \( \va{p}_2 \) and exploit the properties of \( \delta \) function:
+    \begin{align}
+        \int \d{\Pi_2}
+        &=
+		\int \frac{\d{^3 p}}{(2\pi)^3)} \frac{1}{2 E_1 2 E_2} (2\pi) \delta(E_\mathrm{CM} - E_1 - E_2) \nonumber \\
+		&=
+        \int \frac{p^2 \d{\Omega}}{16 \pi^2 E_1 E_2)} \frac{E_1 E_2}{p E_\mathrm{CM}} \nonumber \\
+		&=
+		\frac{1}{8\pi} \qty(\frac{2p}{E_\mathrm{CM}}) \int \frac{\d{\Omega}}{4\pi}
+        \label{eq:L03_2PPSI}
+    \end{align}
+\end{example}
+
+\medskip
+\begin{example}{Phase space of 3 particles}{}
+	It is also possible to reduce the expression for three-body space to a relatively simple formula. Let's work again in the center of mass frame where \( \va{p}_1 + \va{p}_2 + \va{p}_3 = 0 \) and let the total energy-momentum in this frame be \( Q^0 = E_\mathrm{CM} \). The three momentum vectors lie in the same plane, called \textbf{event plane}. Then the phase space integral can be written as an integral over the orientation of this plane and over the variables:
+	\[
+		x_1 = \frac{2E_1}{E_\mathrm{CM}}
+		\qquad
+		x_2 = \frac{2E_2}{E_\mathrm{CM}}
+		\qquad
+		x_3 = \frac{2E_3}{E_\mathrm{CM}}
+	\]
+	which obey the constraint:
+	\[
+		x_1 + x_2 + x_3 = 2
+	\]
+
+	It can be shown that, after integrating over the orientation of the event plane, the integral over three-body phase space can be written as:
+	\begin{equation}
+		\int \d{\Pi_3}
+		=
+		\frac{E_\mathrm{CM}^2}{128 \pi^3} \int \d{x_1}\d{x_2}
+		\label{eq:L03_3PPSI}
+	\end{equation}
+	It can be shown, further, that this integral can alternatively be written in terms of the invariant masses of pairs of the three vectors (\( m_{12}^2 = (p_1 + p_2)^2 \) and \( m_{23}^2 = (p_2 + p_3)^2 \)):
+	\begin{equation}
+		\int \d{\Pi_3}
+		=
+		\frac{1}{128 \pi^3 E_\mathrm{CM}^2} \int \d{m_{12}^2}\d{m_{23}^2}
+		\label{eq:L03_3PPSI_2}
+	\end{equation}
+	This formula leads to an important construction in hadron physics called the \textbf{Dalitz plot}.
+\end{example}
+
+\medskip
+\begin{example}{\( \pi^+\pi^- \longrightarrow \rho^0 \longrightarrow \pi^+\pi^- \)}{}
+	One important type of structure that one finds in scattering amplitudes is a \textbf{resonance}. In ordinary quantum mechanics, a resonance is described by the \textbf{Breit-Wigner formula}:
+	\begin{equation}
+		\mathcal{M}
+		\sim
+		\frac{1}{E - E_\mathrm{R} + \frac{i}{2} \Gamma}
+		\label{eq:L03_BWF}
+	\end{equation}
+	where \( E_\mathrm{R} \) is the energy of the resonant state and \( \Gamma \) is its decay rate. The Fourier transform of Eq. \ref{eq:L03_BWF} is:
+	\begin{equation}
+		\psi(t)
+		=
+		i e^{-i E_\mathrm{R} t} e^{- \Gamma \frac{t}{2}}
+		\label{eq:L03_BWFFT}
+	\end{equation}
+	Then the probability of maintaining the resonance decays exponentially
+	\begin{equation}
+		\abs{\psi(t)}^2
+		=
+		e^{- \Gamma t}
+		\label{eq:L03_BWFPD}
+	\end{equation}
+	corresponding to the lifetime:
+	\begin{equation}
+		\tau_\mathrm{R}
+		=
+		\frac{1}{\Gamma}
+		\label{eq:L03_BWFL}
+	\end{equation}
+
+	It is useful to consider a specific example of a resonance in an elementary particle reaction, so we will consider \( \pi^+\pi^- \longrightarrow \rho^0 \longrightarrow \pi^+\pi^- \), where the meson \( \rho^0 \) is found as a resonance at the \( \rho^0 \) mass of \( 770 \ \si{MeV} \). We can represent this process by a diagram of evolution in space-time, as in Figure \ref{fig:L03_PPRPPD}.
+
+	\begin{center}
+		\centering
+		\includegraphics[width=0.3\textwidth]{\figpath{03}/03_images/pipi_rho_pipi.pdf}
+		\captionof{figure}{Diagram of \( \pi^+\pi^- \longrightarrow \rho^0 \longrightarrow \pi^+\pi^- \).}
+		\label{fig:L03_PPRPPD}
+	\end{center}
+
+    Briefly, what we find is that the final distributions of the invariant masses are not in agreement with what we expect from the phase space distributions for two particles. In this case we can do the calculation in an easy way by studying:
+    \begin{enumerate}
+        \item \( \pi^+\pi^- \longrightarrow \rho^0 \) and treat it as a stable particle
+        \item Using Feynman diagrams.
+    \end{enumerate}
+	So, if we consider the cross section of \( \pi^+\pi^- \longrightarrow \rho^0 \), we get:
+    \begin{equation}
+        \sigma(\pi^+\pi^- \rightarrow \rho^0)
+        =
+        \frac{1}{4 E_A E_B \abs{v_A - v_B}} \int_{}^{} \frac{\d{^3p_C}}{(2\pi)^3 2 E_C} \abs{\mathcal{M}}^2 (2 \pi)^4 \delta^4(p_C - p_A - p_B)
+        \label{eq:L03_PPRCS}
+    \end{equation}
+    where \( A = \pi^+ \), \( B = \pi^- \) and \( C = \rho^0 \). The partial width reads:
+    \begin{equation}
+        \Gamma_{\rho}
+        =
+        \frac{1}{2 m_{\rho}} \int_{}^{} \d{\Pi_2} \abs{\mathcal{M}}^2
+		=
+		\frac{g_{\rho}^2}{6\pi} \frac{p^3}{m_{\rho}^2}
+        \label{eq:L03_RPW}
+    \end{equation}
+
+	By studying the cross section of the whole process \( \pi^+\pi^- \longrightarrow \rho^0 \longrightarrow \pi^+\pi^- \), we get:
+    \begin{equation}
+        \sigma(\pi^+\pi^- \longrightarrow \rho^0 \longrightarrow \pi^+\pi^-)
+        =
+        \frac{1}{2m_{\rho}} \frac{1}{8\pi} \frac{2p}{m_{\rho}} \int_{}^{} \frac{\d{\Omega}}{4\pi} \frac{1}{(E^2_\mathrm{CM} - m^2_p)^2 - m^2_p \Gamma^2_{\rho}} \abs{k}^2
+        \label{eq:L03_PPRPPCS}
+    \end{equation}
+    where \( k \) is a part related to the spin of \( \rho^0 \).
+
+    We see a resonance and we are able to fit the data, so we can get the quantities we want to know as the parameters of the best fit.
+\end{example}
+
+
+\end{document}

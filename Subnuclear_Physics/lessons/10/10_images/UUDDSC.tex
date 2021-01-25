@@ -1,0 +1,37 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage{siunitx}
+\usepackage{physics}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows,decorations.markings,calc,fadings,decorations.pathreplacing, patterns, decorations.pathmorphing, positioning}
+
+\newcommand{\AxisRotator}[1][rotate=0]{%
+    \tikz \draw[color=red, x=.5em,y=1.25em,line width=.15ex,-stealth,#1] (0,0) arc (-150:150:1 and 1);%
+}
+
+\begin{document}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,310); %set diagram left start at 0, and has height of 310
+
+%Shape: Axis 2D [id:dp28236568156599784]
+\draw  (160,261) -- (450,261)(199,30) -- (199,300) (443,256) -- (450,261) -- (443,266) (194,37) -- (199,30) -- (204,37)  ;
+%Curve Lines [id:da24415265985869938]
+\draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ]   (220,60) .. controls (263,199) and (377,230) .. (430,230) ;
+%Curve Lines [id:da3578085432840936]
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (210,100) .. controls (241,223) and (321,243) .. (380,250) ;
+
+% Text Node
+\draw (160,32) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle f_{f}( x)$};
+% Text Node
+\draw (438,270) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+% Text Node
+\draw (187,262.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
+% Text Node
+\draw (239,212.4) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$u,\overline{u}$};
+% Text Node
+\draw (311,158.4) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$d,\overline{d}$};
+
+
+\end{tikzpicture}
+\end{document}

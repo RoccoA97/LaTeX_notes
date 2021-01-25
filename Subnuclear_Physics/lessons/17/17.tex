@@ -1,0 +1,63 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{06}{05}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 17.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+If the production of \( b_L \) dominates, the angular distribution should be highly forward peaked for an \( e^-_L \) beam and highly backward peaked for an \( e^-_R \) beam. The data from the experiment at the SLC are showed in Figure \ref{fig:L17_SLCCT}. Note that in the \( x \) axis it is reported the cosine of \( \theta_{\mathrm{thrust}} \). This is due to the fact that the angle is calculated with respect to the thrust axis \( \hat{n} \), defined through the following quantity:
+\begin{equation}
+	\mathrm{T}
+	=
+	\max \qty( \frac{\sum_i \abs{\va{p}_i} \cdot \hat{n}}{\sum_i \abs{\va{p}_i}} )
+	\label{eq:}
+\end{equation}
+The reason why we introduce this concept is due to the fact that experimentally in the final state we do not have a single particle to detect, but a shower since a jet is produced, and the trust axis is the most reliable direction of the initial particle that generates the jet.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{17}/17_images/SLCCT.png}
+	\caption{\label{fig:L17_SLCCT} Results of SLC for \( e^-_Le^+_R \rightarrow b_L\bar{b}_R \) and \( e^-_Re^+_L \rightarrow b_L\bar{b}_R \).}
+\end{figure}
+
+The asymmetries are diminished because it is difficult to distinguish the \( b \) from the \( \bar{b} \) jet, but, nevertheless, the effect is striking. The observed distributions are consistent with the almost maximal asymmetry predicted by the \( SU(2) \times U(1) \) theory.
+
+A summary on the results obtained for the Weinberg angle is given in Figure \ref{fig:L17_WARS}. What is clearly visible is that the measurement from SLD experiment at SLAC is very accurate, however is more than \( 2\sigma \) far from the average value taken from different experiments.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{17}/17_images/WARS.png}
+	\caption{\label{fig:L17_WARS} Summary on Weinberg angle measurements.}
+\end{figure}
+
+This variability in Weinberg angle is due to an (up to now) unknown behaviour. Indeed, the specific value of the angle is not a prediction of the Standard Model: it is an open, unfixed parameter. However, it is constrained and predicted through other measurements of Standard Model quantities. At this time, there is no generally accepted theory that explains why the measured value is what it is.
+
+
+\subsection{Global fit of SM measurements}
+%Not in programme
+%http://project-gfitter.web.cern.ch/project-gfitter/Standard_Model/
+The global fit to electroweak precision data routinely performed by the LEP electroweak working group and others, demonstrates impressively the predictive power of electroweak unification and quantum loop corrections. The fit is performed using the most recent experimental measurements and state-of-the-art SM predictions. Some examples of this powerful procedure are presented in Figure \ref{fig:L17_SMGF}.
+
+\begin{figure}[!h]
+	\begin{minipage}[c]{0.48\linewidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{\figpath{17}/17_images/2018_03_20_PullPlot_logo.pdf}
+	\end{minipage}
+	\begin{minipage}[c]{0.48\linewidth}
+		\centering
+		\includegraphics[width=1\textwidth]{\figpath{17}/17_images/2018_03_20_Scan2D_MWvsmt_logo.pdf}
+		\includegraphics[width=1\textwidth]{\figpath{17}/17_images/2018_03_20_Scan2D_MWvsSinEffLep_logo.pdf}
+	\end{minipage}
+	\caption{\label{fig:L17_SMGF} Several GFitter examples.\\
+		(\textbf{Left}) Comparing fit results with direct measurements: pull values for the SM fit, i.e. deviations between experimental measurements and theoretical calculations in units of the experimental uncertainty.\\
+		(\textbf{Top-Right}) Contours of 68\% and 95\% confidence level obtained from scans of fits with fixed variable pairs \( M_W \) vs. \( m_t \). The narrower blue and larger grey allowed regions are the results of the fit including and excluding the \( M_H \) measurement, respectively. The horizontal bands indicate the \( 1\sigma \) regions of the \( M_W \) and \( m_t \) measurements.\\
+		(\textbf{Bottom-Right}) Contours of 68\% and 95\% confidence level obtained from scans of fits with fixed variable pairs \( M_W \) vs. \( \sin^2\theta_{\mathrm{eff}} \). The narrower blue and larger grey allowed regions are the results of the fit including and excluding the \( M_H \) measurements, respectively. The horizontal bands indicate the \( 1\sigma \) regions of the \( M_W \) and \( \sin^2\theta_{\mathrm{eff}} \) measurements (world averages).}
+\end{figure}
+
+
+
+\end{document}

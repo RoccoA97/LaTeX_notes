@@ -1,0 +1,286 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{12}{05}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 18.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\section{Cabibbo Theory and CKM matrix}
+% p.284
+The theory of the weak interaction developed so far still omits some of the processes with which we began our discussion of this
+theory. We still have not proposed a mechanism for the strangeness changing decays such as:
+\begin{align}
+	K^0 &\longrightarrow \pi^- e^+ \nu \\
+	\Lambda^0 &\longrightarrow pe^-\bar{\nu}
+\end{align}
+These decays seem to call for a contribution to the weak charged current of the form:
+\begin{equation}
+	u^{\dag}_L \bar{\sigma}^{\mu} s_L
+	\label{eq:}
+\end{equation}
+However, there is a strong constraint on this modification of the V-A theory. Although the charged-current weak interaction has sizable terms that change quark generation, the neutral-current weak interaction does not. Our theory of weak interactions must provide for flavor-changing charged-current decays while restricting flavor-changing neutral current decays.
+
+
+
+\subsection{The Cabibbo mixing angle}
+To begin, we must work out what interaction strength we need for
+the \( s \rightarrow u \) weak decays. Writing the matrix elements for the weak interaction as a V-A interaction with the Fermi constant measured in muon decay, the weak interaction current will read:
+\begin{equation}
+	j^{\mu +}
+	=
+	\nu^{\dag} \bar{\sigma} \mu_L +
+	\dots +
+	V_{us} u^{\dag}_L \bar{\sigma}^{\mu} s_L +
+	\dots
+	\label{eq:L18_CMAVUS}
+\end{equation}
+That is, \( V_{us} \) gives the strength of the strangeness changing interaction relative to the strength of the weak interaction in muon decay.
+
+It is possible to determine the value of \( V_{us} \) from the rates of \( \Lambda^0 \), \( \Sigma^- \), and \( K \) meson \( \beta \) decay. For example, by measuring the rate of \( k \rightarrow \pi e \nu \) decays, the KLOE experiment at the INFN Frascati laboratory in Frascati determined:
+\begin{equation}
+	V_{us}
+	=
+	0.2249 \pm 0.0010
+	\label{eq:}
+\end{equation}
+
+This question is coupled to another one. To a first approximation, the strength of the V-A interaction in the \( \beta \) decay of nuclei is equal to that in muon decay. But, is this equality exact? Beginning in the late 1950's, attempts were made to measure the strength of the weak interaction in \( \beta \) decay precisely. To discuss this strength quantitatively, we might parametrize the \( d \rightarrow u \) term in the V-A charged current as a term in Eq. \ref{eq:L18_CMAVUS} of the form:
+\begin{equation}
+	j^{\mu +}
+	=
+	\dots +
+	V_{ud} u^{\dag}_L \bar{\sigma}^{\mu} d_L +
+	\dots
+	\label{eq:}
+\end{equation}
+In \( SU(2) \times U(1) \) theory gauge invariance would require that the \( W \) boson couple to muon, electron and \( (u,d) \) doublets with the same strength. Then, we would have \( V_{ud} = 1 \). However, persistently, the values from experiment were somewhat smaller. The best experimental determinations come from the rates of superallowed \( \beta \) decay transitions between \( 0^+ \) nuclei. These use only the vector current. \( V_{ud} \) can be extracted as a normalization factor from the rates of the weak interaction decays. The best currect value obtained from these measurements is:
+\begin{equation}
+	V_{ud}
+	=
+	0.97425 \pm 0.00022
+	\label{eq:}
+\end{equation}
+This value is significantly less than 1.
+
+In 1963, working from the much more uncertain numbers then available, Cabibbo suggested that these two values fit together through the relation:
+\begin{equation}
+	\abs{V_{ud}}^2 + \abs{V_{us}}^2
+	=
+	1
+	\label{eq:}
+\end{equation}
+That is, we can represent:
+\begin{align}
+	V_{ud} &= \cos\theta_C	\\
+	V_{us} &= \sin\theta_C
+\end{align}
+where \( \theta_C \) is called the \textbf{Cabibbo angle}. Evaluating the relation from the numbers above, we get:
+\begin{equation}
+	\abs{V_{ud}}^2 + \abs{V_{us}}^2
+	=
+	0.9997 \pm 0.0005
+	\label{eq:}
+\end{equation}
+Apparently, the \( SU(2) \) gauge interaction does couple with the same strength to quarks as to leptons, as is required by the structure of the gauge theory, but it couples the \( u \) quark to a linear combination of \( d \) and \( s \).
+
+
+
+\subsection{Quark and lepton mass terms in the Standard Model}
+The structure just described can arise in a natural way in the \( SU(2) \times U(1) \) model. To understand this, we must first explore how quark and lepton masses arise in that model. A mass term is a term in the Lagrangian:
+\begin{equation}
+	\Delta \mathcal{L}
+	=
+	- m_f (f^{\dag}_R f_L + f^{\dag}_L f_R)
+	\label{eq:}
+\end{equation}
+linking the two chiral components of a fermion field. However, we are forbidden to write such a term for any quark or lepton. The \( SU(2) \times U(1) \) theory puts the left-handed quarks and leptons into \( I = \frac{1}{2} \) doublets, but assigns the right-handed quarks and leptons \( I=0 \). Thus, any mass term violates the \( SU(2) \) gauge symmetry.
+
+Thus, generation of mass for any quark or lepton requires the spontaneous breaking of \( SU(2) \times U(1) \). The Higgs field \( \varphi \) has the quantum numbers \( I = \frac{1}{2} \), \( Y = \frac{1}{2} \). So, it is consistent with all symmetries of theory to add to the Lagrangian the terms:
+\begin{equation}
+	\Delta \mathcal{L}
+	=
+	- y_e L^{\dag}_a \varphi_a e_R
+	- y_d Q^{\dag}_a \varphi_a d_R
+	- y_u Q^{\dag}_a \varepsilon_{ab} \varphi_b^{*} u_R
+	+ \text{h.c.}
+	\label{eq:L18_QALMTL}
+\end{equation}
+where \( a,b = 1,2 \), and:
+\begin{equation}
+	L
+	=
+	\begin{pmatrix}
+		\nu \\
+		e^-
+	\end{pmatrix}_L
+	\qquad
+	Q
+	=
+	\begin{pmatrix}
+		u \\
+		d
+	\end{pmatrix}_L
+	\label{eq:}
+\end{equation}
+The coefficients \( y_f \) are called \textbf{Yukawa couplings}. Each term is invariant under isospin, and each term has the sum of the hypercharges of the fields summing to zero.
+
+If we replace the Higgs field by its vacuum expectation value:
+\begin{equation}
+	\varphi
+	\longrightarrow
+	\begin{pmatrix}
+		0 \\
+		\frac{v}{\sqrt{2}}
+	\end{pmatrix}
+	\label{eq:}
+\end{equation}
+we find that Eq. \ref{eq:L18_QALMTL} becomes:
+\begin{equation}
+	\Delta \mathcal{L}
+	=
+	- \frac{y_e v}{\sqrt{2}} e^\dag_L e_R
+	- \frac{y_d v}{\sqrt{2}} d^\dag_L d_R
+	- \frac{y_u v}{\sqrt{2}} u^\dag_L u_R
+	+ \text{h.c.}
+	\label{eq:}
+\end{equation}
+By comparison, we see that it has just the structure of mass terms for the \( e \), \( d \), and \( u \). Then:
+\begin{equation}
+	m_f
+	=
+	y_f \frac{v}{\sqrt{2}}
+	\label{eq:}
+\end{equation}
+for all three species and this is what we want to measure. Note that in the previous Lagrangian mass terms do not appear the ones for the neutrinos. This is an excellent approximation for particle physics at \( \si{GeV} \) energies. However, the assumption that the neutrino masses are zero has important consequences and will be discussed in the following lectures.
+
+The construction presented here gives an origin for the quark and lepton mass terms. But, it does not solve the problem of the large range of values of these terms. It only pushes the problem back one level, onto the physics of the fermion couplings to the Higgs field. This does not make the problem of quark and lepton masses any less mysterious.
+
+
+
+\subsection{Discrete space-time symmetries and the Standard Model}
+In nature, we see three fermions with each type of quantum number, for example, \( e \), \( \mu \), and \( \tau \) for charged leptons. We refer to the three states of each kind as belonging to three \textbf{generations}. To give mass to the second and third generations, we could simply repeat the structure above. However, it is instructive to write a more general set of Yukawa couplings, in fact, the most general set of couplings consistent with \( SU(2) \times U(1) \) gauge invariance.
+
+Gauge invariance requires that the gauge couplings of the fermions of the three generations are absolutely identical. But, gauge invariance puts much weaker constraints on the Yukawa couplings. The most general Yukawa couplings consistent with gauge invariance include arbitrary mixtures of couplings among the three generations. Letting \( i, j = 1,2,3 \) label generations, this most general set of Yukawa couplings is written:
+\begin{equation}
+	\Delta \mathcal{L}
+	=
+	- y_{e}^{ij} L^{\dag i}_a \varphi_a e^{j}_R
+	- y_{d}^{ij} Q^{\dag i}_a \varphi_a d^{j}_R
+	- y_{u}^{ij} Q^{\dag i}_a \varepsilon_{ab} \varphi^*_b u{j}_R
+	+ \text{h.c.}
+	\label{eq:}
+\end{equation}
+where the \( y^{ij}_{f} \) are complex-valued \( 3 \times 3 \) matrices of general symmetry.
+
+We can simplify this structure by diagonalizing the \( y_f \) matrices and making appropriate changes of variables among the fields. The Yukawa matrices are not Hermitian. But, they can be diagonalized by considering:
+\begin{equation}
+	y_f y_f^{\dag}
+	\qquad
+	y_f^{\dag} y_f
+\end{equation}
+These are Hermitian and positive and have the same eigenvalues. We can represent them as:
+\begin{align}
+	y_f y_f^{\dag} &= U_L^{(f)} \mathbf{Y}_f U_L^{(f)\dag}	\\
+	y_f^{\dag} y_f &= U_R^{(f)} \mathbf{Y}_f U_R^{(f)\dag}
+\end{align}
+where \( U_L^{(f)} \) and \( U_R^{(f)} \) are (in general, different) unitary matrices and \( \mathbf{Y}_f \) is real, positive and diagonal, identical in the two formulae. Then, if:
+\begin{equation}
+	Y_f
+	:=
+	\sqrt{\mathbf{Y}_f}
+	\label{eq:}
+\end{equation}
+we have:
+\begin{equation}
+	y_f
+	=
+	U_L^{(e)} Y_f U_R^{(f)\dag}
+	\label{eq:}
+\end{equation}
+
+For leptons, we now make the change of variables:
+\begin{align}
+	e^i_R &\longrightarrow U_{R,ij}^{(e)} e_{R}^j	\\
+	L^i   &\longrightarrow U_{L,ij}^{(e)} L^j
+\end{align}
+The matrices \( U^{(e)}_L \) and \( U_R^{(e)} \) disappear from the Yukawa couplings. The lepton mass terms are now diagonal in generation, and the new fields \( L^i \), \( e^i_R \) correspond to mass eigenstates. These are now the fields of the familiar leptons \( e \), \( \mu \) and \( \tau \). This change of variables moves the matrices \( U_L^{(e)} \) and \( U_R^{(e)} \) to the lepton kinetic terms. But these matrices cancel out completely, because the three generations have the same gauge interactions. For example:
+\begin{equation}
+	e^{\dag}_R (i \sigma \cdot D) e_R
+	\longrightarrow
+	e^{\dag}_R U_R^{(e) \dag} (i \sigma \cdot D) U_R^{(e)} e_R
+	=
+	e^{\dag}_R (i \sigma \cdot D) U_R^{(e) \dag} U_R^{(e)} e_R
+	=
+	e^{\dag}_R (i \sigma \cdot D) e_R
+	\label{eq:}
+\end{equation}
+There are no interactions remaining that couple the lepton generations. Thus, lepton number conservation, separately for each generation, is a consequence, not an assumption, of the \( SU(2) \times U(1) \) theory. However, we have not considered neutrino mass terms. If we had included a neutrino mass term, the matrices \( U_L^{(e)} \) and \( U_R^{(e)} \) would not have cancelled out of that term and we would have very small generation-changing interactions proportional to the neutrino masses.
+
+The construction for the quarks is somewhat more complicated. We make the change of variables:
+\begin{align}
+	u^{i}_{R} &\longrightarrow U^{(u)}_{R,ij} u^{j}_R	\\
+	u^{i}_{L} &\longrightarrow U^{(u)}_{L,ij} u^{j}_L	\\
+	d^{i}_{R} &\longrightarrow U^{(d)}_{R,ij} d^{j}_R	\\
+	d^{i}_{L} &\longrightarrow U^{(d)}_{L,ij} d^{j}_L
+\end{align}
+After this change of variables, the matrices \( U_L \), \( U_R \) have disappeared from the Yukawa couplings. The new \( u^i \) and \( d^i \) fields correspond to mass eigenstates, i.e. the physical quarks \( u \), \( c \), \( t \) and \( d \), \( s \), \( b \). The unitary matrices are transfered to the quark kinetic terms. Then they cancel, just as for the leptons, at least, in the couplings to the gluon, photon, and \( Z \) boson. We now see that, for the most general structure of Yukawa couplings, the neutral current interaction mediated by the \( Z \) boson is always diagonal in flavor. In the coupling to the \( W \) boson, the unitary matrices do not completely cancel. Instead, we find:
+\begin{equation}
+	u^{\dag} (i\bar{\sigma}^{\mu}) d_L
+	\longrightarrow
+	u^{\dag}_L U^{(u)\dag}_L (i\bar{\sigma}^{\mu}) U^{(d)}_L d_L
+	=
+	u^{\dag}_L (i\bar{\sigma}^{\mu}) V_{\mathrm{CKM}} d_L
+	\label{eq:}
+\end{equation}
+where:
+\begin{equation}
+	V_{\mathrm{CKM}}
+	=
+	U^{(u)\dag}_L U^{(d)}_L
+	\label{eq:}
+\end{equation}
+The \( U_L \) matrices can thus be combined into a single unitary matrix, \( V_{\mathrm{CKM}} \). called \textbf{Cabibbo-Kobayashi-Maskawa matrix}. After the changes of variables, this is the only term in the weak interaction Lagrangian that contains generation-changing interactions. The matrix elements of \( V_{\mathrm{CKM}} \) are exactly the parameters \( V_{ud} \), \( V_{us} \), etc., that were introduced before. So:
+\begin{equation}
+	V_{\mathrm{CKM}}
+	=
+	\begin{pmatrix}
+		V_{ud}	&	V_{us}	&	V_{ub}	\\
+		V_{cd}	&	V_{cs}	&	V_{cb}	\\
+		V_{td}	&	V_{ts}	&	V_{tb}
+	\end{pmatrix}
+	\label{eq:}
+\end{equation}
+Thus, each physical \( u \) quark is linked by charged-current interactions to a different linear combination of the \( d \) quarks. \( V_{\mathrm{CKM}} \) is a unitary matrix, and so these linear combinations are orthogonal. At this point, the combinations have complex coefficients. The imaginary parts of the coefficients can be shown to lead to \( CP \) and \( T \) violating interactions.
+
+However, we can simplify the structure even further. A \( 3 \times 3 \) unitary matrix has 9 parameters. If this matrix were real-valued, it would be a rotation matrix in 3 dimensions, parametrized by 3 Euler angles. So a \( 3 \times 3 \) unitary matrix is parametrized by 3 angles and 6 phases. By a further change of variables to change the phases of the quark fields:
+\begin{align}
+	u^{j}_L &\longrightarrow e^{i\alpha_j}u^{j}_L	\\
+	d^{j}_L &\longrightarrow e^{i\beta_j} d^{j}_L
+\end{align}
+we can remove 5 phases. The overall phase of the quark fields drops out of the Lagrangian and cannot be used to simplify \( V_{\mathrm{CKM}} \). So, finally, \( V_{\mathrm{CKM}} \) can be written with 4 parameters: 3 angles and 1 phase. This phase is a single parameter that produces \( CP \) and \( T \) violation in the weak interaction.
+
+A very convenient parametrization of the CKM matrix is that developed by Wolfenstein (1983). This parametrization uses the fact that \( V_{us} \), \( V_{cb} \), and \( V_{ub} \) are successively smaller. From these elements, the whole unitary matrix can be constructed using the requirement that, in a unitary matrix, the rows and the column are orthogonal vectors. The following formula maintains this orthogonality up to terms of order \( V^4_{us} \):
+\begin{equation}
+	V_{\mathrm{CKM}}
+	=
+	\begin{pmatrix}
+		1 - \frac{\lambda^2}{2}	&	\lambda	&	A\lambda^3(\rho - i\eta)	\\
+		-\lambda	&	1 - \frac{\lambda^2}{2}	&	A\lambda^2	\\
+		A\lambda^3(1 - \rho - i\eta)	&	-A\lambda^2	&	1
+	\end{pmatrix}
+	+
+	O(\lambda^4)
+	\label{eq:}
+\end{equation}
+where:
+\begin{align}
+	&\lambda = \frac{\abs{V_{us}}}{\sqrt{\abs{V_{ud}}^2 + \abs{V_{us}}^2}}	\\
+	&A\lambda^2 = \lambda \frac{\abs{V_{cb}}}{\abs{V_{us}}}	\\
+	&A\lambda^3(\rho +i\eta) = V^*_{ub}
+\end{align}
+
+\end{document}

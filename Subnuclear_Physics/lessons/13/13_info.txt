@@ -1,0 +1,18 @@
++ Arguments:
+	++
+
++ Labels:
+	++ Equations (eq:):
+		L13_VATNSCS	=	V-A Theory Neutrino Scattering Cross Section
+		L13_MDBWD	=	Muon Decay Breit-Wigner Denominator
+		L13_CFGTU1	=	Complex Fields Gauge Theory U(1)
+		L13_CFGTCD	=	Complex Fields Gauge Theory Covariant Derivative
+
+
+	++ Figures (fig:):
+		L13_NUTEV	=	NuTeV
+		L13_CDHS	=	CDHS
+		L13_MDFD	=	Muon Decay Feynman Diagram (Tikz)
+
+
+	++ Tables (tab:):

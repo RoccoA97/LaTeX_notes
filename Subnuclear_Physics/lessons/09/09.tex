@@ -1,0 +1,128 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{07}{04}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 9.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\section{Bjorken scaling}
+Let's go further. First of all, \( \hat{t} = q^2 = - Q^2 \) and this quantity is directly measured in the deep inelastic scattering experiment. Next, we compare \( s \) for the full \( e^-p \) reaction with \( \hat{s} \) for the parton reaction:
+\begin{align}
+	s 		&= (k + P)^2 = 2 k \cdot P						\label{eq:L09_DISS}	\\
+	\hat{s}	&= (k + p)^2 = 2 k \cdot p = 2 k \cdot \xi P	\label{eq:L09_DISSH}
+\end{align}
+So it's evident that \( \hat{s} = \xi s \). It is useful to define the quantity \( y \):
+\begin{equation}
+	y
+	=
+	\frac{2P \cdot q}{2P \cdot k}
+	\xrightarrow{\text{proton rest frame}}
+	\frac{q^0}{k^0}
+	\label{eq:L09_DISYD}
+\end{equation}
+The physical meaning of \( y \) is the fraction of the initial electron energy that is transfered to the proton, so it is bounded between 0 and 1. What we can do now is to express \( y \) in function of the Mandelstam invariants for the parton reaction:
+\begin{equation}
+	y
+	=
+	\frac{2 \xi P \cdot q}{2 \xi P \cdot k}
+	=
+	\frac{2p \cdot (k - k')}{2p \cdot k}
+	=
+	\frac{\hat{s} + \hat{u}}{\hat{s}}
+	\label{eq:L09_DISYMI}
+\end{equation}
+By reordering, we get:
+\begin{equation}
+	\Longrightarrow
+	\frac{\hat{u}}{\hat{s}} = -(1-y)
+	\qquad \text{or} \qquad
+	\hat{s}^2 + \hat{u}^2 = \hat{s}^2 \qty[1 + (1-y)^2]
+	\label{eq:L09_DISYMIE}
+\end{equation}
+
+All these results should be included in the expression for the cross section \( \sigma(e^-p \longrightarrow e^-X) \). However, there is one more important kinematic relation to consider. In the parton model, we assumed that the quark is a free point-like Dirac particle and that the electron-quark scattering is elastic. If the final quark is treated as massless particle, then:
+\begin{equation}
+	0
+	=
+	(p + q)^2
+	=
+	2p \cdot q + q^2
+	=
+	2\xi P \cdot q - Q^2
+	\label{eq:L09_DISQMP}
+\end{equation}
+By reordering Eq. \ref{eq:L09_DISQMP}, we can express the parameter \( \xi \) as an observable combination of momenta and we will denote it with \( x \):
+\begin{equation}
+	x
+	=
+	\xi
+	=
+	\frac{Q^2}{2P \cdot q}
+	\label{eq:L09_DISXD}
+\end{equation}
+This is a good thing to see since in the parton model a deep inelastic scatter at a fixed value of \( x \) is due to an initial parton carrying the fraction \( x \) of the initial proton momentum. By measuring \( x \), we can sample the momentum distributions of quarks in the proton wavefunction. By combining the previous results:
+\begin{equation}
+	Q^2
+	=
+	xys
+	\label{eq:L09_DISQXYS}
+\end{equation}
+and with \( x \) fixed:
+\begin{equation}
+	\d{\hat{t}}
+	=
+	\d{Q^2}
+	=
+	xs \d{y}
+	\label{eq:L09_DISQXYS_2}
+\end{equation}
+This gives our final formula for the deep inelastic scattering cross section:
+\begin{equation}
+	\frac{\d{\sigma}}{\d{x}\d{y}}(e^-p \rightarrow e^-X)
+	=
+	\sum_{f} x Q^2_f \qty[f_f(x) f_{\bar{f}}(x)] \cdot \frac{2\pi \alpha^2 s}{Q^4} \qty[1 + (1-y)^2]
+	\label{eq:L09_DISCSXY}
+\end{equation}
+with \( 0 < x,y < 1 \).
+
+We can rewrite this result by introducing a \textbf{form factor} \( F_2 \), which contains the information about the proton structure and it is unknown:
+\begin{equation}
+	\frac{\d{\sigma}}{\d{x}\d{y}}(e^-p \rightarrow e^-X)
+	=
+	F_2 \cdot \frac{2\pi \alpha^2 s}{Q^4} \qty[1 + (1-y)^2]
+	\label{eq:L09_DISCSFF}
+\end{equation}
+\( F_2 \) could depend on the general kinematics of the problem, so it could be a general function of \( x \) and \( Q^2 \):
+\begin{equation}
+	F_2(x)
+	=
+	\sum_{f} x Q^2_f \qty[f_f(x) f_{\bar{f}}(x)]
+	\label{eq:L09_DISFFD}
+\end{equation}
+
+What is surprising is that the predicted form depends only on \( x \) and it is independent of \( Q^2 \). This behaviour is called \textbf{Bjorken scaling}, from the name of the physicist who predicted this simple dependence based on more advanced hypotheses about the behaviour of current matrix elements at high energy. An example of the described behaviour is showed in Figure \ref{fig:L09_BSXVF}, where all of
+the data falls on a single curve as a function of \( x \).
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{\figpath{09}/09_images/BSXVF.png}
+	\caption{\label{fig:L09_BSXVF} Measurements of the quantity \( F_2 \) by the SLAC-MIT experiment, at energy and angle settings giving \( Q^2 > 1 \ \si{GeV^2} \), plotted as a function of \( x \).}
+\end{figure}
+
+Over the past decades, \( F_2 \) has been measured repeatedly at higher energies, using muons and neutrinos produced by proton beams of hundreds of \( \si{GeV} \). The full world data set, collected by the Particle Data Group is showed in Figure \ref{fig:L09_F2PDG}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{\figpath{09}/09_images/F2PDG.png}
+	\caption{\label{fig:L09_F2PDG} Measurements of the quantity \( F_2 \) at increasing values of \( x \) as a function of \( Q^2 \), compiled by the Particle Data Group.}
+\end{figure}
+
+\medskip
+In conclusion, we saw that \( e^-p \) deep inelastic scattering allows us to meaure a quantity \( F_2(x) \), interpreted as a sum over
+parton distributions for quarks and antiquarks in the proton, and where \( x \) is the fraction of the momentum of a proton carried by a quark and \( f_f(x) \), \( f_{\bar{f}}(x) \) are the parton distribution functions. In particular, these ones are the probability distribution of quarks and antiquarks of flavor \( f \) in the proton as a function of \( x \).
+
+\end{document}

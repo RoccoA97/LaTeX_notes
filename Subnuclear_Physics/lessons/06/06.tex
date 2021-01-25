@@ -1,0 +1,208 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{25}{03}{2020}
+
+
+\begin{document}
+
+\chapter{Cross section of \( e^+e^- \rightarrow \mu^+\mu^- \) and \( e^+e^- \rightarrow hh \)}
+
+\marginpar{ \textbf{Lecture 6.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+The first is a quantum electromagnetic process and it is relatively simple to compute its cross section at first order. It is also our benchmark when we start to study the second process.
+
+
+
+
+
+\section{Muon-Antimuon pair production: \( e^+e^- \rightarrow \mu^+\mu^- \)}
+The idea is now to study the cross section of the first process \( e^+e^- \longrightarrow \mu^+\mu^- \). The matrix elements for this process can be constructed by breaking the process down into components. First, the \( e^+e^- \) state is annihilated by an electromagnetic current. This current couples to a quantum state of electromagnetic excitation. Finally, this state couples to another current matrix element describing the creation of the muon pair. These passages can be drawn in a Feynman diagram in a very simple way, as in Figure \ref{fig:L06_FDEPA}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{06}/06_images/FDEPA.pdf}
+	\caption{\label{fig:L06_FDEPA} Feynamn diagram of \( e^+e^- \longrightarrow \mu^+\mu^- \).}
+\end{figure}
+
+The\marginpar{Description as a Breit-Wigner resonance} intermediate photon state can be described as a Breit-Wigner resonance at zero mass. Taking the limit of zero resonance mass in the Breit-Wigner formuala, it would then contribute to the scattering amplitude by a factor:
+\begin{equation}
+	\frac{1}{q^2 - m^2_\mathrm{R} + \frac{i}{2} m_\mathrm{R}\Gamma_\mathrm{R}}
+	\sim
+	\frac{1}{q^2}
+	\label{eq:L06_PAF}
+\end{equation}
+where \( q \) is the momentum carried by the photon from the initial to the final state. Moreover, we consider the reaction at energies large compared to the muon mass and, certainly, very far from the mass shell condition \( q^2 = 0 \) for a photon, therefore we approximate: \( m_e = m_\mu = 0\). A resonance contributing to an elementary particle reaction very far from its mass shell is called a \textbf{virtual particle}\marginpar{Virtual particle definition and matrix element}. In this case, we say that the reaction is mediated by a \textbf{virtual photon}.
+
+So, the matrix element reads:
+\begin{equation}
+	\mathcal{M}(e^+e^- \longrightarrow \mu^+\mu^-)
+	=
+	(-e) \bra{\mu^+\mu^-} j^{\mu} \ket{0}
+	\frac{1}{q^2}
+	(-e) \bra{0} j_{\mu} \ket{e^+e^-}
+	\label{eq:L06_EPMAME}
+\end{equation}
+
+The operator structure \( j^\mu j_\mu \) that appears in Eq. \ref{eq:L06_EPMAME} is called \textbf{current-current interaction}.
+
+
+
+\subsection{Properties of massless spin-\( \frac{1}{2} \) fermions}
+We will focus now on the properties of the massless spin-\( \frac{1}{2} \) fermions in order to evaluate Eq. \ref{eq:L06_EPMAME}.
+
+The dynamics of fermions and the calculation of matrix elements is quite simplified in the ultrarelativistic limit\marginpar{Dirac equation in ultrarelativistic limit}, which is our case since we are considering energies so large that both the electrons and muons are moving relativistically and their masses can be neglected. In this approximation, the Dirac equation takes the form:
+\begin{equation}
+	i \gamma^{\mu} \partial_{\mu} \psi
+	=
+	0
+	\label{eq:L06_DEUL}
+\end{equation}
+where:
+\begin{equation}
+	\gamma^0
+	=
+	\begin{pmatrix}
+		0   & \id \\
+		\id & 0
+	\end{pmatrix}
+	\qquad
+	\gamma^i
+	=
+	\begin{pmatrix}
+		0   & \sigma_i \\
+		-\sigma_i & 0
+	\end{pmatrix}
+	\label{eq:L06_DM}
+\end{equation}
+It is convenient to write this representation by defining \( \sigma^\mu = (\id, \va{\sigma})^\mu \) and \( \bar{\sigma}^\mu = (\id, - \va{\sigma})^\mu \), so:
+\begin{equation}
+	\gamma^\mu
+	=
+	\begin{pmatrix}
+		0   & \sigma^\mu \\
+		\bar{\sigma}^\mu   & 0
+	\end{pmatrix}
+	\label{eq:L06_DMT}
+\end{equation}
+Moreover, we will write \( \Psi = (\psi_L, \psi_R) \), so the Dirac equation splits into 2-component equations:
+\begin{subequations}
+	\begin{align}
+		i\bar{\sigma} \cdot \partial{\psi_L} &= 0	\\
+		i\sigma \cdot \partial{\psi_R} &= 0
+	\end{align}
+	\label{eq:L06_D2CE}
+\end{subequations}
+
+The fields \( \psi_L \) and \( \psi_R \) annihilate different electron states and create different positron states. These states are not connected by the Dirac equation in this massless limit. When we couple the Dirac equation to electromagnetism, we modify the derivative to include the \( A_\mu \) field:
+\marginpar{Gauge covariant derivative}
+\begin{equation}
+	\partial_\mu \longrightarrow D_\mu = (\partial_\mu - i e A_\mu)
+	\label{eq:L06_GCD}
+\end{equation}
+This preserves the separation of the fields \( \psi_L \) and \( \psi_R \) and of the associated electrons and positrons. The two pieces of the Dirac field communicate only through the mass term. Thus, for zero electron mass or for very high energy where the mass can be neglected, there are essentially two different species of electrons, namely \( e^-_L \) and \( e^-_R \). Electromagnetic interactions cannot turn electrons of one kind into the other.
+
+Now, let's take the equation for \( \psi_R \) and let's try to find the plane wave solutions:
+\marginpar{Plane wave solutions}
+\begin{equation}
+	(i \partial_t + i \va{\sigma} \cdot \grad) \psi_R = 0
+	\Longrightarrow
+	\psi_R(x) = u_R(p) e^{-iEt + i \va{p} \cdot \va{x}}
+	\label{eq:L06_PWS}
+\end{equation}
+where \( u_R(p) \) is the 2-component spinor. For simplicity, look for a plane wave moving in the \( \hat{z} =: \hat{3} \) direction: \( \va{p} = p \hat{3} \). Then:
+\begin{equation}
+	(E - p \sigma^3) u_R
+	=
+	\begin{pmatrix}
+		E-p   & 0 \\
+		0   & E+p
+	\end{pmatrix}
+	u_R
+	=
+	0
+	\label{eq:L06_PWS_2}
+\end{equation}
+So, we get two solutions, with the following characteristics:
+\begin{itemize}
+	\item \( E = p > 0 \), \( S_3 = \frac{1}{2} \)\\
+		So the corresponding electron moves at the speed of light and spins in the right-handed sense. The field operator \( \psi_R(x) \) destroys an electron in this state.
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[width=0.3\textwidth]{\figpath{06}/06_images/SUE.pdf}
+			\caption{\label{fig:L06_SUE} Spin up electron.}
+		\end{figure}
+
+	\item \( E =-p < 0 \), \( S_3 = \frac{1}{2} \).\\
+	This solution corresponds to the creation of a positron by the Dirac field. The positron has spin down with respect to the direction of motion.
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.3\textwidth]{\figpath{06}/06_images/SDP.pdf}
+		\caption{\label{fig:L06_SDP} Spin down positron.}
+	\end{figure}
+\end{itemize}
+So we find an electron which is left-handed and a positron which is right-handed
+\footnote{We can consider the helicity \( h = \hat{p} \cdot \va{S} \) to describe the solutions. So we get \( h = + \frac{1}{2} \) for the left-handed electron and \( h = - \frac{1}{2} \) for the right-handed positron.}
+, and viceversa for the other two solutions of the \( \psi_L \) equation, a couple of right-handed electron and left-handed positron.
+
+
+
+\subsection{Matrix element and cross section evaluation}
+The first step is to evaluate the matrix element for \( e^-_R e^+_L \) and \( e^-_L e^+_R \) annihilations. In all, the process \( e^-e^+ \longrightarrow \mu^-\mu^+ \) has four amplitudes for the various spin states that are permitted by helicity conservation. All of the differential cross sections have the same structure. So, by considering that:
+\marginpar{Matrix element evaluation for the all possible annihilations}
+\begin{subequations}
+	\begin{align}
+		\abs{\mathcal{M}(e^-_R e^+_L \rightarrow \mu^-_R \mu^+_L)}^2
+		&=
+		\abs{\mathcal{M}(e^-_L e^+_R \rightarrow \mu^-_L \mu^+_R)}^2
+		=
+		e^4 (1 + \cos \theta)^2
+		\\
+		\abs{\mathcal{M}(e^-_R e^+_L \rightarrow \mu^-_L \mu^+_R)}^2
+		&=
+		\abs{\mathcal{M}(e^-_L e^+_R \rightarrow \mu^-_R \mu^+_L)}^2
+		=
+		e^4 (1 - \cos \theta)^2
+	\end{align}
+	\label{eq:L06_MEE}
+\end{subequations}
+we have for example, for \( e^-_R e^+_L \longrightarrow \mu^-_R \mu^+_L \):
+\begin{align}
+	\sigma 	&= \frac{1}{2E \cdot 2E \cdot E} \int \d{\Pi_2} \abs{\mathcal{M}}^2 \nonumber \\
+	 		&= \frac{1}{2E^2_\mathrm{CM}} \frac{1}{8\pi} \int \frac{\d{\cos \theta}}{2} e^4 (1 + \cos \theta)^2
+	\label{eq:L06_CSI_1}
+\end{align}
+and for \( e^-_R e^+_L \longrightarrow \mu^-_L \mu^+_R \):
+\begin{align}
+	\sigma 	&= \frac{1}{2E \cdot 2E \cdot E} \int \d{\Pi_2} \abs{\mathcal{M}}^2 \nonumber \\
+	 		&= \frac{1}{2E^2_\mathrm{CM}} \frac{1}{8\pi} \int \frac{\d{\cos \theta}}{2} e^4 (1 - \cos \theta)^2
+	\label{eq:L06_CSI_2}
+\end{align}
+
+With some algebra, we get the differential cross sections:
+\marginpar{Differential cross section}
+\begin{subequations}
+	\begin{align}
+		\dv{\sigma}{\cos \theta}	&=	\frac{\pi \alpha^2}{2E^2_\mathrm{CM}} (1 + \cos \theta)^2
+		\qquad \text{for} \ e^-_R e^+_L \rightarrow \mu^-_R \mu^+_L \ \text{and} \ e^-_L e^+_R \rightarrow \mu^-_L \mu^+_R
+		\\
+		\dv{\sigma}{\cos \theta}	&=	\frac{\pi \alpha^2}{2E^2_\mathrm{CM}} (1 - \cos \theta)^2
+		\qquad \text{for} \ e^-_R e^+_L \rightarrow \mu^-_L \mu^+_R \ \text{and} \ e^-_L e^+_R \rightarrow \mu^-_R \mu^+_L
+	\end{align}
+	\label{eq:L06_DCS}
+\end{subequations}
+
+At the end, we get the final result:
+\marginpar{Cross section result}
+\begin{equation}
+	\sigma
+	=
+	\frac{4\pi \alpha^2}{3E^2_\mathrm{CM}}
+	\label{eq:L06_CS}
+\end{equation}
+What is important to remember is that the cross section goes as the inverse squared of the energy in the center of mass. This is a common behaviour for electromagnetic interactions. However, at very high energies this behaviour is broken and there are corrections to consider.
+
+How can we measure muons in a given polarization state? Actually, this is very difficult and it is not possible with the odiern technology, so we can measure only in average.
+
+\end{document}

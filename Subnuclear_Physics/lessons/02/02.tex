@@ -1,0 +1,227 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{11}{03}{2020}
+
+
+\begin{document}
+
+\section{Hydrogen atom and Positronium}
+\marginpar{ \textbf{Lecture 2.} \\  \displaydate{date}. \\ Compiled:  \today. \\ Prof. Lucchesi}
+We are going to study the already known system of the hydrogen atom, and compare it to the system of positronium. More in detail, our goal is to understand the \( e^+ e^- \) bound state and the possible application of this model to the description of other systems. Therefore, we start from the hydrogen atom since it has some characteristics in common with the positronium.
+
+In QM Physics, this bound state is really similar to the hydrogen atom. The assumptions for this one in the non relativistic limit are that the mass of the proton is much bigger than the mass of the electron (\( m_p >> n_e \)) and the potential is given by:
+\begin{equation}
+    V(r)
+    =
+    - \frac{e^2}{4 \pi r}
+    =
+    - \frac{\alpha}{r}
+    \label{eq:L02_HAP}
+\end{equation}
+
+From this potential, by solving the Schr$\ddot{o}$dinger equation, we get the bound state energies:
+\begin{equation}
+    E
+    =
+    - \frac{R_y}{n^2}
+    \label{eq:L02_HAE}
+\end{equation}
+
+\( R_y \) is known as \textbf{Rydberg energy}, whose expression reads:
+\begin{align}
+    R_y &= \frac{1}{2} \frac{me^4}{\qty(4\pi)^2} = 13.6 \ \si{eV} \label{eq:L02_HARE} \\
+    R_y &= \frac{1}{2} \alpha^2 m_p \qquad \qquad \qquad \text{In natural units} \label{eq:L02_HARENU}
+\end{align}
+
+The bound states of hydrogen are arranged in levels associated with integers \( n = 1,2,3, \dots \). Each level contains the orbital angular momentum states:
+\begin{equation}
+    \begin{aligned}
+        \ell &= 0, 1, \dots, n-1 \\
+        m    &= -\ell, \dots, \ell
+    \end{aligned}
+    \label{eq:L02_HAREMS}
+\end{equation}
+The orbital wavefunctions are the spherical harmonics \( Y_{\ell m}(\theta, \varphi) \), which are even under spatial reflection for even \( \ell \) and odd for odd \( \ell \). Then, under \( P \), these states transform as:
+\begin{equation}
+    P \ket{n \ell m} = \qty(-1)^{\ell} \ket{n \ell m}
+    \label{eq:L02_HAWFP}
+\end{equation}
+
+However, with these assumptions, we are not considering that the real hydrogen atom has more structure. In fact, we are negleting that the electron is a particle with intrinsic spin and we have to take into account also this quantity. In a more technical way, we have to add the contribution of the spin-orbit interaction (fine splitting), which is proportional to the scalar product \( \va{L} \cdot \va{S} \). Concerning the Hamiltonian of this contribution, it is given by:
+\begin{equation}
+    \Delta H
+    =
+    \frac{g-1}{2} \frac{\alpha}{m^2 r^3} \va{L} \cdot \va{S}
+    \label{eq:L02_HASOHC}
+\end{equation}
+The sign is such that the state with \( \va{L} \) and \( \va{S} \) opposite in sign has lower energy. Moreover, it may be useful to express the operator \( \va{L} \cdot \va{S} \) in terms of \( J^2, L^2, S^2 \):
+\begin{equation}
+    \va{J} = \va{L} + \va{S}
+    \Longrightarrow
+    \va{L} \cdot \va{S} = \frac{1}{2} \qty(\qty(\va{L} + \va{S})^2 - L^2 - S^2)
+    =
+    \frac{1}{2} \qty(J^2 - L^2 - S^2)
+    \label{eq:L02_HASOT}
+\end{equation}
+By this way it is straightforward to diagonalize the operator \( \va{L} \cdot \va{S} \). At the end we get the order of magnitude of the spin-orbit interaction:
+\begin{equation}
+    \left\langle \frac{\alpha}{m^2 r^3} \right\rangle
+    \sim
+    \frac{\alpha}{m^2 a_0^3}
+    \sim
+    \alpha^4 m
+    \sim
+    \alpha^2 R_y
+    \label{eq:L02_HASOOM}
+\end{equation}
+Thus, this effect is a factor of \( 10^{-4} \) smaller than the splitting of the principal levels of hydrogen.
+
+Another contribution that we have to add is the spin-spin interaction (hyperfine splitting) between electron and proton, which leads to the addition of another term into the total Hamiltonian. The magnetic moments of the proton and the electron interact, with the ground state favoring the configuration in which the two spins are opposite. Therefore:
+\begin{equation}
+    \Delta H
+    =
+    C \va{S}_p \cdot \va{S}_e
+    \label{eq:L02_HASSHC}
+\end{equation}
+where the \( C \) constant depends on the electron wavefunction.
+
+Hence, we have several levels for the spin states. For example, the 1S state of hydrogen is split into two levels, corresponding to the total spin:
+\begin{equation}
+    \va{J} = \va{S}_p + \va{S}_e
+    \label{eq:L02_HATS}
+\end{equation}
+
+The possibilities we have are 2: \( J = 0 \) and \( J = 1 \), depending on how the two spin states of proton and electron combine. The projection on the \( z \)-axis gives 3 possibilities: \( J_z = 1, 0, -1 \) (corresponding to \( \ket{\uparrow \uparrow} \), \( \frac{1}{\sqrt{2}} (\ket{\downarrow  \uparrow} + \ket{\uparrow \downarrow}) \), \( \ket{\downarrow \downarrow} \)).
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{\figpath{02}/02_images/HA_P_levels.pdf}
+    \caption{\label{fig:L02_HPEL} Comparison of the 1S, 2S, and 2P energy levels of hydrogen atom and positronium.}
+\end{figure}
+
+Now the possibility that we have to evaluate is that \( e^+ e^- \) forms bounded states. In fact, the same ideas can be applied to a particle-antiparticle system and the simplest case is the positronium.
+
+It is relatively easy to make positronium. In colliders, when working with a beam of positrons which enter in the matter, they can pick up an electron and form a bounded state of positronium, so this the starting point of the idea. All the considerations applied to the case of hydrogen atom can be applied to the positronium case as well. All the calculations are omitted. The first consideration is that here we can't apply the approximation \( m_p >> m_e \), in fact the two particles here have the same mass. The solution for this two-body problem is to use the reduced mass \( \mu \), namely:
+\begin{equation}
+    \mu
+    =
+    \frac{m_1 m_2}{m_1 + m_2}
+    =
+    \frac{m_e}{2}
+    \label{eq:L02_PRM}
+\end{equation}
+
+At the end of all the calculations we won't do, we get that the hyperfine splitting contribution is approximately of the same of order of magnitude of the fine splitting and both are of the order \( \alpha^4 m_e \).
+
+Now we have to classify the eigenstates under parity and charge conjugation of the positronium. Let's consider first \( P \). The intrinsic parity of the electron is \( P_{e^-} = +1 \), of the positron \( P_{e^+} = -1 \). So the parity of a single particle goes like \( P = (-1)^{\ell} \) and the overall parity goes like \( P = (-1)^{\ell +1} \).
+
+For \( C \), we must account three effects:
+\begin{itemize}
+    \item \( C \) converts the electron to the positron and the positron to the electron. The electron and positron are fermions, and so, when we put the electron and positron back into their original order in the wavefunction, we get a factor \( -1 \).
+
+    \item Reversal of the coordinate in the orbital wavefunction gives a factor \( (-1)^{\ell} \).
+
+    \item Finally, the electron and positron spins are interchanged. The \( S = 1 \) state is symmetric in spin, but the \( S = 0 \) state is antisymmetric.
+    \begin{align*}
+        S = 0 & \longrightarrow \frac{1}{2} (\ket{\uparrow \downarrow} - \ket{\downarrow \uparrow}) \\
+        S = 1 & \longrightarrow \ket{\uparrow \uparrow} \qquad \frac{1}{2} (\ket{\uparrow \downarrow} + \ket{\downarrow \uparrow}) \qquad \ket{\downarrow \uparrow}
+    \end{align*}
+    and so gives another factor \( (-1) \).
+\end{itemize}
+
+In all, the positronium states have \( C \):
+\begin{equation}
+    C
+    =
+    (-1)^{\ell+1} \cdot
+    \begin{cases}
+        1   &   S=1\\
+        -1  &   S=0
+    \end{cases}
+    \label{eq:L02_PCCE}
+\end{equation}
+and what we get is the \( J^{PC} \) scheme. The low-lying states of the positronium spectrum then have the \( J^{PC} \) values as in Figure \ref{fig:L02_PJPCS}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{\figpath{02}/02_images/J_PC_scheme.pdf}
+    \caption{\label{fig:L02_PJPCS} \( J^{PC} \) scheme. The 2P states \( 0^{++} \), \( 1^{++} \) and \( 2^{++} \) arise from coupling the \( L = 1 \) orbital angular momentum to the \( S = 1 \) total spin angular momentum.}
+\end{figure}
+
+We know that electron and positron annhilate each other, so this state decays into something. The rules are \( E \) and \( \va{P} \) conservation. It can't decay into a single photon since the momentum is not conserved. Recall that:
+\begin{equation}
+    C \ket{\gamma}
+    =
+    -1
+    \Longrightarrow
+    C \ket{n \gamma}
+    =
+    (-1)^n
+    \label{eq:L02_MPCC}
+\end{equation}
+If we are looking for the two photon decay (so positive conjugation) of the positronium, the only possible state is the one with \( S = 0 \). If we are looking for a three photon decay (so negative conjugation), the only possible state is the one with \( S = 1 \). This kind of decay has been verified experimentally.
+
+Positronium with state \( S = 0 \) is also known as \textbf{para-positronium}. If the state is \( S = 1 \), it is also known as \textbf{ortho-positronium}. Their medium lifes are:
+\begin{align}
+    \frac{1}{\tau_\mathrm{p}} &= \frac{1}{2} \alpha^5 m &   \tau_\mathrm{p} &= 1.2 \cdot 10^{-10} \ \si{s}  \\
+    \frac{1}{\tau_\mathrm{o}} &= \frac{2}{9\pi} (\pi^2 - 9) \alpha^6 m &   \tau_\mathrm{o} &= 1.4 \cdot 10^{-7} \ \si{s}
+\end{align}
+
+So, when we emit positrons into a gas, \( \frac{1}{4} \) of the states decays quickly in \( \tau_\mathrm{p} \), while \( \frac{3}{4} \) of the states decays slower in \( \tau_\mathrm{o} \). It is a strange result, but experiment verifies it (Berko and Pendleton, 1980).
+
+
+
+
+
+\section{Static Quark Model}
+A beautifully simple way to create any particle, together with its antiparticle, is to annihilate electrons and positrons at high energy. The annihilation results in a short-lived excited state of electromagnetic fields. This state can then re-materialize into any particle-antiparticle pair that couples to electromagnetism and has a total mass less than the total energy of the annihilating  \( e^+ e^- \) system.
+
+
+
+\subsection{Light quarks: charm and beauty}
+By this way, the importance of the positronium state is clear. Moreover, it is linked to the discovery of quark charm and beauty.
+
+Their discovery takes place in 1974 at SPEAR experiment, where by studying the process \( e^+ e^- \longrightarrow hh, \mu^+\mu^-, \ e^+e^- \), an enormous, very narrow, resonance at about \( \SI{3.1}{GeV} \) was discovered. This resonance would correspond to a new strongly interacting particle.
+
+When they announced this discovery, they learned that the group of Samuel Ting, working at Brookhaven National Laboratory in Upton, New York, had also observed this new particle. Ting's group had studied the reaction \( pp \longrightarrow e^+e^- + X \), where the particles \( X \) are not observed.
+
+This never observed particle is now called the \( J/\psi \). A few weeks later, the SPEAR group discovered a second narrow resonance at \( \SI{3686}{MeV} \), the \( \psi' \).
+
+Another group of narrow resonances is found in \( e^+ e^- \) annihilation at higher energy. The lightest state of this family, called \( \Upsilon \), has a mass of \( \SI{9600}{MeV} \). It was discovered by the group of Leon Lederman in the reaction \( pp \longrightarrow \mu^+\mu^- + X \) at the Fermilab proton accelerator.
+
+
+
+Concerning the \( J/\psi \), this particle is given by a quark doublet \( c \bar{c} \) called \textbf{charmonium}. If this state exists, we will see phenomena like the ones observed with positronium. In the process \( e^+e^- \longrightarrow hh \), the highest rate reactions are those in which \( e^+e^- \) pair is annihilated by the electromagnetic current \( \va{j} = \bar{\psi} \va{\gamma} \psi \) through the matrix element:
+\begin{equation}
+    \bra{0} \va{J}(x) \ket{e^+e^-}
+    \label{eq:L02_CME}
+\end{equation}
+The current has spin 1, \( P = -1 \), and \( C = -1 \). These must also be properties of the annihilating \( e^+e^- \) state, and of the new state that is produced. So, all of the \( \psi \) and \( \Upsilon \) states must have \( J^{PC} = 1^{--} \).
+
+The current creates or annihilates a particle and antiparticle at a point in space. So, if these particles are particle-antiparticle bound states, the wavefunctions in these bound states must be nonzero at the origin. Most probably, they would be the 1S, 2S, etc. bound states of a potential problem. If this guess is correct, the states with higher \( L \) must also exist. They might be produced in radiative decays of the \( \psi \) and \( \Upsilon \) states. Indeed, there is an experimental evidence, with a pattern of states as in Figure \ref{fig:L02_PSC}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{\figpath{02}/02_images/charmonium.pdf}
+    \caption{\label{fig:L02_PSC} Pattern of states for the charmonium.}
+\end{figure}
+
+Remarkably, this reproduces exactly the pattern of the lowest-energy states of positronium and makes even more clear that the analogy to positronium is precise. In the case of the \( \psi \) family, the fermion is called the charm quark (\( c \)); this quark has a mass of about \( \SI{1.8}{GeV} \). In the case of the \( \Upsilon \) family, the fermion is called the bottom quark (\( b \)); this quark has a mass of about \( \SI{5}{GeV} \).
+
+\begin{figure}[!h]
+    \begin{minipage}[c]{0.45\linewidth}
+        \centering
+        \includegraphics[width=0.97\textwidth]{\figpath{02}/02_images/charmonium_family.png}
+        \caption{\label{fig:L02_CF} Observed states and transitions of the \( J/\psi \) system.}
+    \end{minipage}
+    \hspace{0.03\linewidth}
+    \begin{minipage}[c]{0.45\linewidth}
+        \centering
+        \includegraphics[width=1.\textwidth]{\figpath{02}/02_images/bottonium_family.png}
+        \caption{\label{fig:L02_BF} Observed states and transitions of the \( \Upsilon \) system.}
+    \end{minipage}
+\end{figure}
+
+\end{document}

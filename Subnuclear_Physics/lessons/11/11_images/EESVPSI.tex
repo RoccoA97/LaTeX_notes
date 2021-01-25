@@ -1,0 +1,44 @@
+\documentclass[border=3pt]{standalone}
+\usepackage{siunitx}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{amsmath, mathtools}
+\begin{document}
+
+
+\begin{minipage}[h]{0.25\linewidth}
+	\centering
+	\feynmandiagram [vertical=b to c] {
+		i1 -- [anti fermion] a -- [anti fermion] i2,
+		a -- [gluon] b
+		-- [gluon, half left, edge label=\(g\), looseness=1.71] c
+		-- [gluon, half left, edge label=\(g\), looseness=1.71] b,
+		c -- [gluon] d,
+		f1 -- [fermion] d -- [fermion] f2,
+	};
+\end{minipage}
+\( \qquad = \qquad \)
+\begin{minipage}[h]{0.25\linewidth}
+	\centering
+	\feynmandiagram [vertical=b to c] {
+		i1 -- [anti fermion] a -- [anti fermion] i2,
+		a -- [scalar] b
+		-- [gluon, half left, edge label=\(g\), looseness=1.71] c
+		-- [gluon, half left, edge label=\(g\), looseness=1.71] b,
+		c -- [scalar] d,
+		f1 -- [fermion] d -- [fermion] f2,
+	};
+\end{minipage}
+\( \qquad + \qquad \)
+\begin{minipage}[h]{0.25\linewidth}
+	\centering
+	\feynmandiagram [vertical=b to c] {
+		i1 -- [anti fermion] a -- [anti fermion] i2,
+		a -- [scalar] b
+		-- [gluon, half left, edge label=\(g\), looseness=1.71] c
+		-- [scalar] b,
+		c -- [scalar] d,
+		f1 -- [fermion] d -- [fermion] f2,
+	};
+\end{minipage}
+
+\end{document}

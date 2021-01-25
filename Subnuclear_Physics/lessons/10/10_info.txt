@@ -1,0 +1,17 @@
++ Arguments:
+	++
+
++ Labels:
+	++ Equations (eq:):
+		L10_MSRFPDF	=	Momentum Sum Rule For PDFs
+		L10_TEMF	=	Total Energy Momentum Fraction
+
+
+	++ Figures (fig:):
+		L10_UUDDVC	=	U U D Distributions Valence Components (Tikz)
+		L10_UUDDSC	=	U U D Distributions Sea Components (Tikz)
+		L10_PDF		=	Parton Distribution Functions
+		L10_EPQAPFD	=	Electron Positron Quark Antiquark Photon Feynman Diagram
+
+
+	++ Tables (tab:):

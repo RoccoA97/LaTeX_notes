@@ -1,0 +1,240 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{01}{04}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 8.} \\  \displaydate{date}. \\ Compiled:  \today.}
+
+\section{Crossing symmetry}
+To compute the cross section, we need to evaluate the matrix elements for electron-quark scattering, which can be described by the Feynman diagram in Figure \ref{fig:L08_EQSFD}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{\figpath{08}/08_images/EQSFD.pdf}
+	\caption{\label{fig:L08_EQSFD} Electron-quark scattering Feynman diagram.}
+\end{figure}
+
+This diagram is similar to the one for \( e^-e^+ \longrightarrow \mu^-\mu^+ \), so the matrix element will have the same structure:
+\begin{equation}
+	\mathcal{M}(e^-q_f \rightarrow e^-q_f)
+	=
+	(-e) \bra{e^-} j^\mu \ket{e^-} \frac{1}{q^2} (Q_f e) \bra{q_f} j_\mu \ket{q_f}
+	\label{eq:L08_EQSME}
+\end{equation}
+To evaluate this matrix element, we need the concept of \textbf{crossing symmetry}, applied in a phenomenological way. To begin, we compare the diagram in Figure \ref{fig:L08_EQSFD} with the following one for \( e^+e^- \longrightarrow q\bar{q} \) in Figure \ref{fig:L08_EQSCSFD}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{\figpath{08}/08_images/EQSCSFD.pdf}
+	\caption{\label{fig:L08_EQSCSFD} Feynman diagram representing quark pair production via electron-positron annihilation.}
+\end{figure}
+
+The two Feynamn diagrams actually show the same process, laid out in different ways in space-time. The situations with a final quark and an initial antiquark are strongly related, because the same quantum field that creates the electron destroys the positron, and similarly for a quark and antiquark. So, the matrix elements have the same functional form with appropriate identification of the external momenta.
+\begin{equation}
+	\sum_{\text{spin}} \abs{\mathcal{M}_\mathrm{scat}}^2
+	\longrightarrow
+	\sum_{\text{spin}} \abs{\mathcal{M}_\mathrm{pair}}^2
+	\label{eq:L08_CSEME}
+\end{equation}
+
+Moreover, a theorem from QFT states that processes related by this kind of symmetry are described by the same function of external momenta. It is useful to introduce a rigorous and standard notation for the kinematic invariants of 2-body scattering process. So, we want to study:
+\begin{equation}
+	1(p_1) + 2(p_2)
+	\longrightarrow
+	3(p_3) + 4(p_4)
+	\label{eq:}
+\end{equation}
+The Mandelstam invariants read (with \( p^0_1, p^0_2 < 0 \) and \( p^0_3, p^0_4 > 0 \)):
+\begin{subequations}
+	\begin{align}
+		s &= (p_1 + p_2)^2 = (p_3 + p_4)^2	\\
+		t &= (p_1 + p_3)^2 = (p_2 + p_4)^2	\\
+		u &= (p_1 + p_4)^2 = (p_2 + p_3)^2
+	\end{align}
+	\label{eq:L08_MI}
+\end{subequations}
+where:
+\begin{equation}
+	s + t + u
+	=
+	m_1^2 + m_2^2 + m_3^2 + m_4^2
+	\label{eq:L08_MIC}
+\end{equation}
+We write down now the kinematics of the process in the center of mass frame and with the assumption of massless particles, in order to understand better the meaning of \( s,t,u \). The 4-momenta are:
+\begin{subequations}
+	\begin{align}
+		p_1 &= (-E, 0, 0, -E)	\\
+		p_2 &= (-E, 0, 0,  E)	\\
+		p_3 &= (E, E\sin \theta, 0, E\cos \theta)	\\
+		p_4 &= (E, -E\sin \theta, 0, -E\cos \theta)
+	\end{align}
+	\label{eq:L08_4M}
+\end{subequations}
+and:
+\begin{align}
+	s &= (2E)^2 = E^2_\mathrm{CM}	\label{eq:L08_SMI}	\\
+	t &= -2E^2 (1 - \cos \theta)	\label{eq:L08_TMI}	\\
+	u &= -2E^2 (1 + \cos \theta)	\label{eq:L08_UMI}
+\end{align}
+Eqs. \ref{eq:L08_SMI}, \ref{eq:L08_TMI}, \ref{eq:L08_UMI} are true even for general masses. The two independent variables represented by \( s,t,u \) correspond to the CM energy and the CM scattering angle. So \( s,u,t \) provide a Lorentz-invariant way to parametrize the two key variables of a scattering process. Concerning the crossing symmetry, an easy way to implement it is to permute the three invariants as the legs of the diagram are switched between the initial and the final state.
+
+In the last chapter, we stated that we could represent an intermediate state in a Feynman diagram with a Breit-Wigner denominator. When the intermediate state separates the initial and the final state, the denominator depends on \( (p_1 + p_2)^2 = s \):
+\begin{equation}
+	\abs{
+	\begin{minipage}[h]{0.20\linewidth}
+		\includegraphics[width=\linewidth]{\figpath{08}/08_images/SCP.pdf}
+	\end{minipage}
+	}
+	\longrightarrow
+	\frac{1}{(p_1+p_2)^2 - m^2_R + im_R\Gamma_R}
+	=
+	\frac{1}{s - m^2_R + im_R\Gamma_R}
+	\label{eq:L08_SCP}
+\end{equation}
+This type of reation is called an \textbf{\( s \)-channel process}. If the amplitude depends on \( t \), we have a \textbf{\( t \)-channel process}, if it depends on \( u \), we have an \textbf{\( u \)-channel process}:
+\begin{align}
+	\abs{
+	\begin{minipage}[h]{0.20\linewidth}
+		\includegraphics[width=\linewidth]{\figpath{08}/08_images/TCP.pdf}
+	\end{minipage}
+	}
+	&\longrightarrow
+	\frac{1}{(p_1+p_3)^2 - m^2_R + im_R\Gamma_R}
+	=
+	\frac{1}{t - m^2_R + im_R\Gamma_R}
+	\label{eq:L08_TCP}
+	\\
+	\abs{
+	\begin{minipage}[h]{0.20\linewidth}
+		\includegraphics[width=\linewidth]{\figpath{08}/08_images/UCP.pdf}
+	\end{minipage}
+	}
+	&\longrightarrow
+	\frac{1}{(p_1+p_4)^2 - m^2_R + im_R\Gamma_R}
+	=
+	\frac{1}{u - m^2_R + im_R\Gamma_R}
+	\label{eq:L08_UCP}
+\end{align}
+
+
+
+
+
+\section{Cross section for electron-quark scattering}
+Crossing symmetry allows us to convert the calculations we did in the previous chapter for \( e^+e^- \) annihilation into calculations of the invariant amplitudes for electron-quark scattering. So, by denoting with \( Q_f \) the electric charge of the quark in question, we get the following results:
+\begin{align}
+	\abs{\mathcal{M}(e^-_R e^+_L \rightarrow q_R \bar{q}_L)}^2
+	&=
+	\abs{\mathcal{M}(e^-_L e^+_R \rightarrow q_L \bar{q}_R)}^2
+	=
+	Q^2_f e^4 (1 + \cos \theta)^2
+	=
+	4 Q^2_f e^4 \frac{u^2}{s^2}
+	\\
+	\abs{\mathcal{M}(e^-_R e^+_L \rightarrow q_L \bar{q}_R)}^2
+	&=
+	\abs{\mathcal{M}(e^-_L e^+_R \rightarrow q_R \bar{q}_L)}^2
+	=
+	Q^2_f e^4 (1 - \cos \theta)^2
+	=
+	4 Q^2_f e^4 \frac{t^2}{s^2}
+\end{align}
+These expressions are correct in any frame and they yield the expressions for the crossed amplitudes after an appropriate permutation of variables. For example, consider the crossing symmetry;
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{\figpath{08}/08_images/CSFD.pdf}
+	\caption{\label{fig:L08_CSFD} Feynman diagram representing the action of crossing symmetry.}
+\end{figure}
+
+The \( eq \) scattering diagram on the right of Figure \ref{fig:L08_CSFD} is obtained by moving the final antiquark \( \bar{q}_L \) to the initial state, where it becomes the quark \( q_R \), and moving the initial positron \( e^+_L \) to the final state, where it becomes the electron \( e^-_R \). Note that helicity is conserved. The interchange of momenta is:
+\begin{equation}
+	\begin{gathered}
+		\begin{rcases}
+			p_1 \longrightarrow p_1	\\
+			p_2 \longrightarrow p_3	\\
+			p_3 \longrightarrow p_4	\\
+			p_4 \longrightarrow p_2
+		\end{rcases}
+		\Longrightarrow
+		\begin{cases}
+			s \longrightarrow t \\
+			t \longrightarrow u \\
+			u \longrightarrow s
+		\end{cases}
+	\end{gathered}
+	\label{eq:L08_CSMI}
+\end{equation}
+
+If we do this exchange, the matrix element for \( e^-_Rq_R \longrightarrow e^-_Rq_R \) is given by:
+\begin{equation}
+	\abs{\mathcal{M}(e^-_Rq_R \rightarrow e^-_Rq_R)}^2
+	=
+	4 Q^2_f e^4 \frac{s^2}{t^2}
+	\label{eq:L08_CSEQME}
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{\figpath{08}/08_images/CSFD2.pdf}
+	\caption{\label{fig:L08_CSFD2} Feynman diagram representing the action of crossing symmetry..}
+\end{figure}
+
+Similarly, the crossing symmetry in Figure \ref{fig:L08_CSFD2} produces:
+\begin{equation}
+	\abs{\mathcal{M}(e^-_Rq_L \rightarrow e^-_Rq_L)}^2
+	=
+	4 Q^2_f e^4 \frac{u^2}{t^2}
+	\label{eq:L08_CSEQME2}
+\end{equation}
+Notice that this matrix element is proportional to \( u^2 \sim (1 + \cos \theta)^2 \) and vanishes for backward scattering (\( \cos \theta = -1 \)). If we look at the flow of spin angular momentum, we can see that in this case backward scattering is forbidden by angular momentum conservation. The matrix elements for the other helicity combinations allowed by helicity conservation can be obtained in the same way:
+\begin{align}
+	\abs{\mathcal{M}(e^-_Lq_L \rightarrow e^-_Rq_L)}^2
+	&=
+	4 Q^2_f e^4 \frac{s^2}{t^2}
+	\\
+	\abs{\mathcal{M}(e^-_Lq_R \rightarrow e^-_Rq_R)}^2
+	&=
+	4 Q^2_f e^4 \frac{u^2}{t^2}
+\end{align}
+
+We can now assemble the cross section for eq scattering. Averaging over the spins in the initial state and summing over the spins in the final state, the cross section is given by:
+\begin{equation}
+	\sigma(eq \rightarrow eq)
+	=
+	\frac{1}{2E} \frac{1}{2E} \frac{1}{8\pi}
+	\int \frac{\d{\cos \theta}}{2} \frac{1}{4}
+	\sum_{\text{spins}} \abs{\mathcal{M}(eq \rightarrow eq)}^2
+	\label{eq:L08_EQSCSFR}
+\end{equation}
+There is no color factor of 3 in this equation. Whatever color the quark has in the initial state, that color is passed to the quark in the final state. Summing over the matrix elements for the allowed processes, we find:
+\begin{equation}
+	\dv{\sigma}{\cos \theta}
+	=
+	\frac{1}{2s} \pi \alpha^2 \frac{2}{4} \qty(4Q^2_f \frac{s^2 + u^2}{t^2})
+	=
+	\frac{\pi Q^2_f \alpha^2}{s} \frac{s^2 + u^2}{t^2}
+	\label{eq:L08_DCSFR}
+\end{equation}
+By changing variable through \( \d{t} = \frac{1}{2} s \d{\cos \theta} \), we can rewrite the result completely invariantly:
+\begin{equation}
+	\dv{\sigma}{t}(eq \rightarrow eq)
+	=
+	\frac{2\pi Q^2_f \alpha^2}{s^2} \frac{s^2 + u^2}{t^2}
+	\label{eq:L08_IDCSFR}
+\end{equation}
+
+Lastly, by combining Eq. \ref{eq:L07_PMCS} with Eq. \ref{eq:L08_IDCSFR}, we obtain the parton model prediction for deep inelastic scattering cross section:
+\begin{equation}
+	\sigma(e^-p \rightarrow e^-X)
+	=
+	\int\d{\xi} \int\d{\hat{t}} \sum_{f} \qty[f_f(\xi) + f_{\bar{f}}(\xi)] \frac{2\pi Q^2_f \alpha^2}{\hat{s}^2} \frac{\hat{s}^2 + \hat{u}^2}{\hat{t}^2}
+	\label{eq:L08_DISCSPMP}
+\end{equation}
+The invariants with the hat symbol are used here for the electron-parton scattering process, reserving the symbols without hats for the full electron-proton scattering reaction.
+
+\end{document}

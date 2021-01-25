@@ -1,0 +1,95 @@
+\providecommand{\main}{../../main}
+\providecommand{\figpath}[1]{\main/../lessons/#1}
+\documentclass[../../main/main.tex]{subfiles}
+
+\newdate{date}{27}{05}{2020}
+
+
+\begin{document}
+
+\marginpar{ \textbf{Lecture 23.} \\  \displaydate{date}. \\ Compiled: \today.}
+
+\subsection{Neutrino mixing evidence}
+Now that we know how to look for neutrino mass, we can discuss the experimental evidence that the neutrino masses are indeed nonzero.
+
+The first clear evidence for neutrino flavor mixing, and, thus, for neutrino mass, came in the study of the neutrinos produced in cosmic ray interactions in the atmosphere. These were observed in underground water Cherenkov detectors originally built to look for proton decay. It was observed that the flux of \( \nu_{e} \) from atmospheric interactions was close to the predictions, while the flux of \( \nu_{\mu} \) was too small by a factor of 2.
+
+In 1998, the SuperKamiokande experiment, a very large water Cherenkov detector in the Kamioka mine in Japan, resolved this question by observing the directions of \( \nu_{\mu} \)'s from their conversion to muons in charge-changing interactions. The downward-going \( \nu_{\mu} \) were present with a flux that was essentially unsuppressed, while upward-going \( \nu_{\mu} \), created on the other side of the earth, were highly supressed. For \( \nu_{e} \), the ratio of the predicted to the observed flux was independent of direction. The data is showed in Figure \ref{fig:L23_ENFSK}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{23}/23_images/ENFSK.png}
+	\caption{\label{fig:L23_ENFSK} Measurement of the flux of electron and muon type neutrinos from atmospheric cosmic ray events, compared to models of neutrino production with and without neutrino mixing.}
+\end{figure}
+
+This strongly indicated a flavor mixing \( \nu_{\mu} \leftrightarrow \nu_{\tau} \) on the scale of the Earth's diameter. The mixing angle was consistent with a maximal value:
+\begin{equation}
+	\sin^2(2\theta)
+	=
+	1
+	\label{eq:}
+\end{equation}
+This flavor mixing has since been confirmed by accelerator experiments that create beams of \( \nu_{\mu} \) at \( \si{GeV} \) energies and detect the neutrinos over a long path length. Some examples are K2K and MINOS experiments. The current best values of the oscillation parameters are:
+\begin{align}
+	\Delta m^2 &= (2.43 \pm 0.08) \cdot 10^{-3} \ \si{eV^2} = (5 \cdot 10^{-2} \ \si{eV})^2	\\
+	\sin^2\theta &= 0.386 \pm 0.023
+\end{align}
+
+The mass of the \( \nu_{e} \) is related to another long-standing anomaly in neutrino physics. In the 1960's, John Bahcall suggested testing the mechanism of energy generation in the sun by observing the flux of neutrinos produced by the sun. Raymond Davis took up the challenge. He designed an experiment with a tank containing 600 tons of \( \text{CCl}_4 \) underground in the Homestake mine in South Dakota. Solar neutrinos would convert \( \text{Cl}^{37} \) to \( \text{Ar}^{37} \) at the rate of atoms/month.
+The radioactive \( \text{Ar} \) atoms could then be extracted and counted. The rate of \( \text{Ar} \) production was observed to be consistenly low compared to the solar model prediction.
+
+The production of neutrinos by the sun is quite complex. The dominant process, accounting for 99\% of solar neutrinos, is:
+\begin{equation}
+	pp
+	\longrightarrow
+	\text{D} + e^+\nu_e
+	\label{eq:}
+\end{equation}
+where \( \text{D} \) is a deuterium nucleus. However, the resulting neutrinos, at \( 0.5 \ \si{MeV} \) energy, are of too low energy to be detected in Davis’s experiment. Instead, rarer reactions are needed to give neutrinos of energy above the \( 0.8 \ \si{MeV} \) threshold for this detection technique. A typical solar neutrino spectrum is showed in Figure \ref{fig:L23_SNS}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{23}/23_images/SNS.png}
+	\caption{\label{fig:L23_SNS} Predicted energy spectrum of neutrinos from the sun.}
+\end{figure}
+
+Over the decades, solar neutrino experiments were mounted in other energy regions, and eventually experiments with a gallium detection medium observed the neutrinos from the dominant \( pp \) process. Always, the rate was smaller than required.
+
+Finally, the situation was resolved by the Sudbury Neutrino Observatory (SNO) experiment, using a heavy water (\( \text{D}_2\text{O} \)) Cherenkov detector located in the Sudbury mine in northern Ontario. This experiment was sensitive only to the highest energy solar neutrinos, from \( \text{B}^8 \rightarrow \text{Be}^8 e^+ \nu_e \). However, it was able to simultaneously observe three different neutrino reactions:
+\begin{align}
+	\nu_e \text{D} &\longrightarrow ppe^-		\label{eq:L23_P1}	\\
+	\nu_i \text{D} &\longrightarrow pn\nu_i		\label{eq:L23_P2}	\\
+	\nu_i e^-      &\longrightarrow \nu_i e^-	\label{eq:L23_P3}
+\end{align}
+The first reaction, charged current neutrino scattering from
+deuterium, measures the flux of \( \nu_e \). The second reaction is the neutral current scattering from deuterium, which has equal cross section for all three neutrino species. Neutrino-electron scattering is sensitive to all neutrino species, but the cross section for \( \nu_e \) is larger than that for \( \nu_{\mu} \), \( \nu_{\tau} \) by about a factor 6, reflecting contributions from both \( Z \) and \( W \) exchange processes, in Figure \ref{fig:L23_ZWEP}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{\figpath{23}/23_images/ZWEP.png}
+	\caption{\label{fig:L23_ZWEP} \( Z \) and \( W \) exchange processes.}
+\end{figure}
+
+The flux determinations from SNO are shown in \ref{fig:L23_SNO}. The flux of \( \nu_e \) is indeed smaller than expected by more than a factor of 2, but the total neutrino flux is in good agreement with the prediction for \( \nu_e \) production in solar models. Apparently, the solar neutrinos are converting to \( \nu_{\mu} \) and \( \nu_{\tau} \) on their way to the earth.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{23}/23_images/SNO.png}
+	\caption{\label{fig:L23_SNO} luxes of solar neutrinos of the various types, extracted from the data of the SNO experiment. The estimates of \( \nu_e \) and \( \nu_{\mu} \)/\( \nu_{\tau} \) fluxes from the three processes listed in Eqs. \ref{eq:L23_P1}-\ref{eq:L23_P3} are showed as the red, blue, and green bands, respectively.}
+\end{figure}
+
+This neutrino flavor oscillation, which requires a small \( \Delta m^2 \), was confirmed by the KamLAND experiment, a scintillator detector in the Kamioka mine which observed neutrinos from nuclear reactors in Japan at baselines of order \( 100 \ \si{km} \). The oscillation in the \( \bar{\nu}_e \) survival probability as a function of neutrino energy is showed in \ref{fig:L23_KLAND}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{\figpath{23}/23_images/KLAND.png}
+	\caption{\label{fig:L23_KLAND} Probability of \( \nu_e \rightarrow \nu_e \) for neutrinos from nuclear reactors as a function of proper time, as measured by the KamLAND experiment.}
+\end{figure}
+
+The current best values for the oscillation parameters are:
+\begin{align}
+	\Delta m^2 &= (7.54 \pm 0.024) \cdot 10^{-5} \ \si{eV^2} = (0.9 \cdot 10^{-2} \ \si{eV})^2	\\
+	\sin^2\theta &= 0.307 \pm 0.017
+\end{align}
+
+\end{document}

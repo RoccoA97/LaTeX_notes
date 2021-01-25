@@ -1,0 +1,24 @@
++ Arguments:
+    ++
+
++ Labels:
+    ++ Equations (eq:):
+		L06_PAF		=	Photon Amplitude Factor
+		L06_EPMAME	=	Electron-Positron Muon-Antimuon Matrix Element
+		L06_DEUL	=	Dirac Equation Ultrarelativistic Limit
+		L06_DM		=	Dirac Matrices
+		L06_DMT		=	Dirac Matrices Tensor
+		L06_D2CE	=	Dirac 2 Components Equation
+		L06_GCD		=	Gauge Covariant Derivative
+		L06_PWS		=	Plane Wave Solutions
+		L06_MEE		=	Matrix Element Evaluation
+		L06_CSI		=	Cross Section Integral
+		L06_DCS		=	Differential Cross Section
+		L06_CS		=	Cross Section
+
+    ++ Figures (fig:):
+		L06_FDEPA	=	Feynamn Diagram Electron Positron Annihilation (Tikz)
+		L06_SUE		=	Spin Up Electron (Tikz)
+		L06_SDP		=	Spin Down Positron (Tikz)
+
+	++ Tables (tab:):
