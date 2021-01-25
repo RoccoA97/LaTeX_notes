@@ -8,7 +8,8 @@ Notes taken in LaTeX in real time during lectures. The repository is organized a
 
 
 
-### Lecture Notes of Subnuclear Physics
+***
+## Lecture Notes of Subnuclear Physics
 Lectures notes of the Master degree course "Subnuclear Physics", held by professor Donatella Lucchesi at the University of Padua (Academic Year 2019/2020).
 
 <center>
@@ -17,7 +18,7 @@ Lectures notes of the Master degree course "Subnuclear Physics", held by profess
 
 
 
-##### Topics of the course
+### Topics of the course
 The topics treated during the course are:
 * introduction and recap;
 * detectors for particle physics experiments;
@@ -40,7 +41,8 @@ The topics treated during the course are:
 
 
 
-### Lecture Notes of Digital Signal Processing
+***
+## Lecture Notes of Digital Signal Processing
 Lectures notes of the Master degree course "Digital Signal Processing", held by professor Federica Battisti at the University of Padua (Academic Year 2020/2021).
 
 <center>
@@ -49,7 +51,7 @@ Lectures notes of the Master degree course "Digital Signal Processing", held by 
 
 
 
-##### Topics of the course
+### Topics of the course
 The topics treated during the course are:
 * introduction and motivations of the field of Digital Signal Processing;
 * discrete-time signals;
